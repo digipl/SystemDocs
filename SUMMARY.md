@@ -1,4 +1,4 @@
-# Summario
+# Sumario
 
 * [Introducción](README.md)
 * [Que es](what_it_is/README.md)
