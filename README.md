@@ -1,18 +1,18 @@
-# SAFE Network description
+# Descripción de la red SAFE
 
-This book is written for anyone who wants to know more about the **SAFE (Secure Access For Everyone) Network** from MaidSafe. The book explains the details and benefits of using the SAFE Network. The following areas are covered:
+Este libro está escrito para cualquiera que desee conocer más sobre la red **SAFE (Secure Access For Everyone)** de Maidsafe. Este libro exlica los detalles y los beneficios del uso de esta red. Están cubiertas la siguientes areas: 
 
-* **What it is**<br />
-Provides an overview of the components that make up the SAFE Network.
+* **Que es**<br />
+Proporciona una visión general de la red SAFE.
 
-* **How it works**<br />
-Provides an overview of the components and processes that make the network function.
+* **Como funciona**<br />
+Proporciona una visión general de los componentes y procesos de la red.
 
-* **How to use it**<br />
-Provides information on interacting with the network and the roles of different users.
+* **Como usarlo**<br />
+Proporciona información de como interactuar con la red y los roles de los diferentes usuarios.
 
-* **Get involved**<br />
-Provides information on where to go if you want to get involved.
+* **Como involucrarse**<br />
+Proporciona información de como involucrarse.
 
 * **FAQs**<br />
-If you could not find the information you are looking for, the FAQs list common questions and answers.
+Si no puedes encontrar la información que estás buscando, la lista FAQ proporciona preguntas y respuestas comunes.
