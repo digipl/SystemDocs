@@ -1,6 +1,6 @@
-# Summary
+# Summario
 
-* [Introduction](README.md)
+* [Introducción](README.md)
 * [Que es](what_it_is/README.md)
    * [Datos en la red SAFE](what_it_is/data_on_the_safe_network.md)
    * [Aplicaciones y programas en la red SAFE](what_it_is/apps_and_programs_on_the_safe_network.md)
@@ -26,13 +26,13 @@
    * [Asegurando la red SAFE](attacks/README.md)
        * [Simulación de red por un ISP](attacks/isp_simulates_network.md)
        * [Ataque de un Vault deshonesto](attacks/dishonest_vault_attack.md)
-       * [Paradija del cumpleaños/Ataque Sybil](attacks/birthday_paradoxsybil_attack.md)
+       * [Paradoja del cumpleaños/Ataque Sybil](attacks/birthday_paradoxsybil_attack.md)
        * [Guardado de datos corruptos](attacks/store_bad_data.md)
 * [Como usarlo](how_to_use_it/README.md)
    * [Un Farmer](how_to_use_it/farmers.md)
    * [Un usuario final](how_to_use_it/an_end_user.md)
    * [Un desarrollador de aplicaciones](how_to_use_it/app_devs.md)
-   * [Un desarrollador del nucleo](how_to_use_it/a_core_developer.md)
+   * [Un desarrollador de base](how_to_use_it/a_core_developer.md)
 * [Como involucrarse](get_involved/README.md)
    * [Librerias](detail/README.md)
        * [Common](detail/Common.md)
