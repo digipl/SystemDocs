@@ -1,5 +1,5 @@
 # Vaults
-La red SAFE consiste en diferentes procesadores de software (nodos) que se conocen como Vault. Cada Vault reside en el disdo duro del usuario y realiza multiples funciones necesarias para el funcionamiento de la red. Una de las funciones principales es el guardado de datos encriptados que otros Vault se encargan de hacerselo llegar.
+La red SAFE consiste en diferentes procesadores de software (nodos) que se conocen como Vault. Cada Vault reside en el disco duro del usuario y realiza multiples funciones necesarias para el funcionamiento de la red. Una de las funciones principales es el guardado de datos encriptados que otros Vault se encargan de hacerselo llegar.
 
 Otra función, o "persona", de un vault es gestionar otros Vault. En la medida que diferentes chunk de datos se envian de un vault a otro, tambien se gestiona y monitoriza la integridad de dichos datos.
 
