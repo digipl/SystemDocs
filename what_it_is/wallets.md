@@ -1,8 +1,8 @@
 # Wallets
-Wallets are virtual storage locations for safecoins. The user's wallet contains a digital record of the safecoins owned by a user. As a user provides more storage or an App Builder provides more applications, their wallet balance will increase as additional resources are provided.
+Un Wallet es un lugar de almacenamiento virtual para los safecoin. Cada wallet de usuario contiene un registro digital de los safecoin que posee. En la medida que un usuario proporciona mas recursos a la red o un desarrollador crea mas aplicaciones, el balance de su wallet se incrementará en relación a los recursos cedidos.
 
-An App Builder is a user that creates applications that can be used on the SAFE Network.
+Un creador de aplicaciones (App Builder) es un usuario de desarrolla aplicaciones para ser usadas en la red SAFE.
 
-A user's wallet is created when they join the SAFE Network.
+Una wallet es creado de forma automática por cada usuario que se une a la red SAFE.
 
-The wallet is part of the user's private data so correspondingly it is encrypted and distributed around other Vaults in the network. This means that a user's wallet can be accessed from any device connected to the SAFE Network. Also, because data in the wallet is cryptographically encoded, the contents of the wallet are secure and can not be changed or deleted.
+Cada wallet forma parte de los datos privados de usuario y como tales son encriptados y distribuidos por otros vault de la red. Esto hace que cada wallet sea accesible desde cualquier dispositivo conectado a la red SAFE. De la misma manera, en tanto en cuanto dichos datos están criptograficamente codificados, los contenidos de un wallet están seguros y no pueden ser borrados o modificados.
