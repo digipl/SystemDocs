@@ -1,7 +1,7 @@
-#Data on the SAFE Network
+#Datos en la red SAFE
 
-As a user saves their data or interacts with applications, their data is broken up, encrypted, and then distributed randomly throughout the network to other Vaults. It is not possible to identify which chunks fit together to comprise a file. These Vaults are independent and autonomous, each storing a small part of the encrypted data.
+Cuando un usuario guarda datos o interactua con aplicaciones, sus datos son divididos, encriptados y distribuidos de forma aleatoria por otros Vaults de la red. No es posible identificar a una de estas divisiones (chunk) con el fichero original. Los diferentes Vault son independientes y autónomos, y cada una de ellos guarda una pequeña parte de los datos encriptados.
 
-When the user needs to access their data they simply log into the SAFE Network and retrieve their data. At no point does the user’s password or login details get sent out into the network. Each piece of data is encrypted using the data itself and can only be decrypted using the user’s credentials. No data is stored or cached locally and can only be accessed by users with the appropriate login details. This means that there is no synchronisation required whenever a user needs to access their data.
+Cuando un usuario necesita acceder a sus datos simplemente entra en la red SAFE y los lee. En ningún momento ni el password ni su login se envian a traves de la red. Cada trozo de dato (chunk) está autoencriptado y solo puede ser desencriptado usando las credenciales del usuario. Ningún dato o caché esta guardado localmente y solo es accesible por un usuario que posea los datos de entrada (paswords) correctos. Esto hace que no se necesite ninguna sincronización a la hora de acceder a dichos datos.
 
-As new users join the SAFE Network, they each provide additional resources, directly or by paying for others to provide the required resources. This means that as the network grows, so does its capacity to store and manage data.
+Cuando un nuevo usuario accede a la red SAFE provee de recursos adicionales ya sea directamente o a traves de la compra a otros de dichos recursos. Esto hace que a medida que la red SAFE crece tambien lo hace su capacidad de guarda y procesar datos.
