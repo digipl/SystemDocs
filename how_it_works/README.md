@@ -8,7 +8,7 @@ Un vault de usuario tambien podra manejar datos dinámicos como, por ejemplo, un
 
 Antes que los datos se guarden en la red SAFE son automaticamnet encriptados. El proceso de autoencriptación implica dividir los datos en pequeños pedazos llamados chunks y encriptarlos usando tanto los datos del inicio de sesión (clave, pin, password) del usuario como los propios datos en sí mismo. Esto hace que para ver los datos se necesitan tanto los correspondientes al inicio de sesión como los de los datos y ninguna de esta información se guarda en en ningún servidor u otro tercer lugar.
 
-Típicamente el usuario se conecta a la red a traves de un router. En la red SAFE el router usa el protocol RUDP (Reliable UDP) para dicha conexion. RUDP es un protocolo más robusto que UDP ya que los paquetes perdidos son retrasmitidos y es capaz de atravesar el NAT del router no como el TCP. El uso del RUDP para la red SAFE permite que los datos pasen a traves de los router sin poder ser corrompidos o interceptados.
+Típicamente el usuario se conecta a la red a traves de un router. En la red SAFE el router usa el protocol RUDP (Reliable UDP) para dicha conexion. RUDP es un protocolo más robusto que UDP ya que los paquetes perdidos son retrasmitidos y es capaz de atravesar el NAT del router al contrario que el TCP. El uso del RUDP para la red SAFE permite que los datos pasen a traves de los router sin poder ser corrompidos o interceptados.
 
 The user's Vault connects to other Vaults as part of the storage and management of data. The Vaults are constantly checked and ranked (by the Data holder managers personna) using the following criteria:
 
