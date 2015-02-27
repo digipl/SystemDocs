@@ -1,14 +1,14 @@
-# How it works
+# Como funciona
 
-When a user downloads and installs the MaidSafe client, a Vault is configured on their computer.
+Cuando un usuario decarga e instala el cliente Maidsafe, un vault se configura en su ordenador..
 
-After joining and signing in to the SAFE Network, the user can see a new virtual mounted drive on their system. Selecting this drive displays their static data that has been encrypted and distributed around other Vaults.
+Despues de unirse y firmar en la red SAFE, el usuarío verá un nuevo disco virtual montado en su sistema. Seleccionando este disco le mostrará los datos estáticos que han sido encriptados y distribuidos por otros vault.
 
-The user's Vault can also handle dynamic data, for example, communications through a VoIP app.
+Un vault de usuario tambien podra manejar datos dinámicos como, por ejemplo, una comunicación a través a una aplicación VOIP.
 
-Before the data is stored on the SAFE Network it is automatically encrypted. The self-encryption process involves breaking up the data into small chunks and then encrypting those chunks with the user's login details and the data itself. This means that if anyone wanted to see the data they would need the user's secure login details and have knowledge about the specific chunk of data. None of this information is held on 3rd party systems or servers.
+Antes que los datos se guarden en la red SAFE son automaticamnet encriptados. El proceso de autoencriptación implica dividir los datos en pequeños pedazos llamados chunks y encriptarlos usando tanto los datos del inicio de sesión (clave, pin, password) del usuario como los propios datos en sí mismo. Esto hace que para ver los datos se necesitan tanto los correspondientes al inicio de sesión como los de los datos y ninguna de esta información se guarda en en ningún servidor u otro tercer lugar.
 
-Typically the user connects to the network through a router. The router uses Reliable UDP (RUDP) protocol to connect to the network. RUDP is a more robust protocol than UDP as lost packets are retransmitted and are capable of traversing NAT routers, unlike TCP. The use of RUDP on the SAFE Network enables data to travel through a router without being corrupted or intercepted.
+Típicamente el usuario se conecta a la red a traves de un router. En la red SAFE el router usa el protocol RUDP (Reliable UDP) para dicha conexion. RUDP es un protocolo más robusto que UDP ya que los paquetes perdidos son retrasmitidos y es capaz de atravesar el NAT del router no como el TCP. El uso del RUDP para la red SAFE permite que los datos pasen a traves de los router sin poder ser corrompidos o interceptados.
 
 The user's Vault connects to other Vaults as part of the storage and management of data. The Vaults are constantly checked and ranked (by the Data holder managers personna) using the following criteria:
 
