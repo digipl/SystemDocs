@@ -5,7 +5,7 @@ El cliente Maidsafe es un programa utilizado para introducir nuestras claves y a
 * PIN
 * Password
 
-Con estos datos la red SAFE autentifica al usuario dentro de la red SAFE y desencripta su atlas de datos lo cual le permite el acceso a la totalidad de sus datos encriptados.
+Con estos datos la red SAFE autentifica al usuario dentro de la red SAFE y desencripta su atlas de datos lo cual le permite el acceso a la totalidad de sus datos igualmente encriptados.
 
 El cliente Maidsafe es un pequeño programa multiplataforma que, por los bajos recursos necesarios, no modifica el rendimiento del equipo. Posteriormente a la autentificación, a traves de dicho cliente, ya no será necesario nuevos password o cualquier otro tipo de identificación para acceder a datos compartidos o aplicaciones dentro de la red SAFE.
 
