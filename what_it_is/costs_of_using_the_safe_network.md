@@ -1,22 +1,22 @@
-#Accessing the SAFE Network
-The MaidSafe client is a program used to log in to and access the SAFE Network. After starting the MaidSafe client you are asked to provide login details.
+#Accediendo a la red SAFE
+El cliente Maidsafe es un programa utilizado para introducir nuestras claves y acceder a la red SAFE. Una vez inicializado el programa cliente Maidsafe pedirá los siguientes datos.
 
-* Keyword
+* Clave
 * PIN
 * Password
 
-With these details the SAFE Network authenticates the user on the SAFE Network and decrypts their data atlas, which provides them with access to all their encrypted data.
+Con estos datos la red SAFE autentifica al usuario dentro de la red SAFE y desencripta su atlas de datos lo cual le permite el acceso a la totalidad de sus datos encriptados.
 
-The MaidSafe client is a small, cross-platform and non-resource intensive program that does not impact your computer's performance. After you have been authenticated through the MaidSafe client you do not have to enter further passwords or keys to access other shared data or apps on the SAFE Network.
+El cliente Maidsafe es un pequeño programa multiplataforma que, por los bajos recursos necesarios, no modifica el rendimiento del equipo. Posteriormente a la autentificación, a traves de dicho cliente, ya no será necesario nuevos password o cualquier otro tipo de identificación para acceder a datos compartidos o aplicaciones dentro de la red SAFE.
 
-No passwords or log in details are cached by the MaidSafe client or stored on the network. This means that no details about you or your access security is left on the PC you have used to access the SAFE Network. You can log in to the SAFE Network from another PC that has the MaidSafe client installed.
+Ningún password o rastro se guarda ni por el cliente Maidsafe ni en la red. Ningún detalle sobre el usuario o sus datos se guardan en el ordenador usado para acceder a la red SAFE. Esto permite el acceso a la red SAFE desde cualquier ordenador que simplemente posea el cliente Maidsafe.
 
-As well as the MaidSafe client, users also require safecoins to access the SAFE Network. Safecoins are the token-based currency of the SAFE Network.
+De la misma manera que el cliente Maidsafe, el usuario necesita safecoin para acceder a la red. Safecoin es el token que sirve como moneda dentro de la red SAFE.
 
-To earn safecoins users can do the following:
+Se pueden ganar safecoin de las siguientes maneras:
 
-* Donating spare computer resources to the network
-* Creating network applications
-* Contributing to the underlying SAFE Network codebase.
+* Donando recursos sobrantes a la red SAFE (disco duro, CPU, ancho de banda)
+* Creando aplicaciones para la red SAFE
+* Contribuyendo al desarrollo del codigo base de la red SAFE.
 
-It is anticipated that soon after public launch, it will also be possible to buy safecoins from decentralised exchanges that will exist on the SAFE Network.
+Se espera que, poco despues del lanzamiento al público de la red SAFE, sea posible comprar safecoin a traves de exchanges descentralizados que existirán dentro de dicha red.
