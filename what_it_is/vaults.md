@@ -1,12 +1,12 @@
 # Vaults
-The SAFE Network consists of software processes (nodes) which are known as Vaults. Each Vault resides on the hard drive of the user's computer and fulfils multiple functions, specialising and adapting to the needs of the network. One of their main roles is the storage of encrypted data that has been passed to it from other Vaults around the network.
+La red SAFE consiste en diferentes procesadores de software (nodos) que se conocen como Vault. Cada Vault reside en el disdo duro del usuario y realiza multiples funciones necesarias para el funcionamiento de la red. Una de las funciones principales es el guardado de datos encriptados que otros Vault se encargan de hacerselo llegar.
 
-Another function, or persona, of a Vault is to manage other Vaults. As chunks of data are passed between Vaults the manager part of the Vault detects and monitors data integrity.
+Otra función, o "persona", de un vault es gestionar otros Vault. En la medida que diferentes chunk de datos se envian de un vault a otro, tambien se gestiona y monitoriza la integridad de dichos datos.
 
-Vaults can also have a Transaction manager or Transaction validator persona. These personas are used for managing safecoin transfers.
+Un Vaults tambien puede ser gestor de transcciones o validador. Estos se encargan de gestionar las transferencia de safecoin.
 
-Vaults know nothing of the data they have been asked to store (it can only be decrypted by the client) and because the data is only a small chunk, it is not possible to decipher what the original source data was, for example, a document or communications.
+Los Vaults no saben nada de los datos que gestionan o que guardan (estos solo son desencriptables por cada cliente) y, en tanto en cuanto cada dato solo es un pequeño trozo del original no es posible descifrar cual es su fuente, ya sea, por ejemplo, un documento o una comunicación.
 
-For every Vault that holds data there are another thirty one Vaults holding the same data. This means that if a Vault goes offline or a data chunk becomes corrupted, that data is not lost. Each Vault automatically finds another Vault to store the data.
+Por cada Vault que guarda un dato, hay otros 31 que tambien se encargan de guardar los mismos datos. Eso hace que si un Vault se apaga o sus datos se corrompen, ningún dato se pierda. Inmediatamente, y de forma automática, se encuentra otro Vault que se encarga de guardar dichos datos.
 
-Vaults are not visible to the users of the SAFE Network. Instead the user only sees a virtual mounted drive on their computer. With the Vaults constantly talking to, and monitoring each other, a user accesses data instantaneously from the mounted drive.
+Los Vaults no son visibles para los usuarios de la red SAFE. Lo que un usuario ve es un disco virtual montado en su ordenador. Mientras tanto los diferentes Vaults se comunican y monitorizan unos a otros para que el acceso a los datos de dicho disco virtua sea instantaneo.
