@@ -15,7 +15,7 @@ De la misma manera que el cliente Maidsafe, el usuario necesita safecoin para ac
 
 Se pueden ganar safecoin de las siguientes maneras:
 
-* Donando recursos sobrantes a la red SAFE (disco duro, CPU, ancho de banda)
+* Donando recursos sobrantes a la red SAFE (espacio disco, CPU, ancho de banda)
 * Creando aplicaciones para la red SAFE
 * Contribuyendo al desarrollo del codigo base de la red SAFE.
 
