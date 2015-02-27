@@ -1,4 +1,4 @@
-#Accediendo a la red SAFE
+#Acceso a la red SAFE
 El cliente Maidsafe es un programa utilizado para introducir nuestras claves y acceder a la red SAFE. Una vez inicializado el programa cliente Maidsafe pedirá los siguientes datos.
 
 * Clave
