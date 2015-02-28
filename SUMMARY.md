@@ -9,7 +9,7 @@
    * [Safecoins](what_it_is/safecoins.md)
    * [Wallets](what_it_is/wallets.md)
 * [Como funciona](how_it_works/README.md)
-   * [Seguridad - Self encryption](system_components/self_encryption.md)
+   * [Seguridad - Autoencripción (Self encryption)](system_components/self_encryption.md)
    * [Resistencia - Autonomous network](system_components/autonomous_network.md)
        * [Criptograficamente seguro](system_components/cryptographically_secure.md)
        * [Identificación del Vault garantizado](system_components/guaranteed_vault_identification.md)
