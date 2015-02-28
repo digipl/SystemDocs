@@ -1,8 +1,8 @@
 # Conexiones subida-bajada en los routers
-la red SAFE permite la conexión entre diferentes Vaults.
+La red SAFE permite la conexión entre diferentes Vaults.
 
-La mayoria de las conexiones en los hogares se realizan usando routes que proveen de conexiones privadas que no pueden retrasmitirse al exterior. Una manera estandar es el uso de servidores [STUN](http://es.wikipedia.org/wiki/STUN).
+La mayoría de las conexiones en los hogares se realizan usando routes que proveen de conexiones privadas que no pueden retransmitirse al exterior. Un mecanismo estándar es el uso de servidores [STUN](http://es.wikipedia.org/wiki/STUN).
 
-This mechanism is not acceptable in a decentralised network. In the SAFE Network, RUDP is used in a mechanism that emulates a decentralised STUN server, with the distributed hash table (DHT) providing connection information to negotiating Vaults.
+Este mecanismo no es aceptable en una red descentralizada. En la red SAFE, RUDP (reliable UDP) se usa como mecanismo para emular un servidor STUN descentralizado. Esto, junto a la tabla distribuida Hash (DHT), proporciona la información de conexión para la negociación entre los diferentes Vault.
 
-The SAFE Network can handle router connections without the user having to adjust their connection to the network through their router.
+La red SAFE puede gestionar las conexiones sin que el usuario tenga que realizar ningún cambio o ajuste en su router.
