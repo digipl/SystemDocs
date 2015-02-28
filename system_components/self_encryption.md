@@ -1,5 +1,5 @@
 # Seguridad - Autoencriptación (Self encryption)
-La seguridad de los datos de usuarios es un aspecto crítico de la red SAFE y, en parte, está proporcionado por el sistema de autoencriptación (Self encryption). La red SAFE requiere que los datos guardados sean irreconocibles como dato y resistentes a la desencriptación, incluso en el caso que el algoritmo de encriptación este comprometido.
+La seguridad de los datos de usuarios es un aspecto crítico de la red SAFE y, en parte, está proporcionada por el sistema de autoencriptación (Self encryption). La red SAFE requiere que los datos guardados sean irreconocibles como dato y resistentes a la desencriptación, incluso en el caso que el algoritmo de encriptación este comprometido.
 
 La autoencriptación (Self encryption) se usa para mezclar y encriptar los datos antes de enviarlos a la red SAFE. Este proceso se realiza de forma automática e instantánea.
 
