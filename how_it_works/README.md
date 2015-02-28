@@ -17,7 +17,7 @@ Los Vault de los usuarios se conectan a otros Vault como parte de guardado y ges
 * **CPU** - Cuantos recursos de CPU tiene el Vault
 * **Ancho de banda** - Como de rápido o lento se acceden a los datos del Vault
 
-En tanto en cuanto las peticiones y recursos de la red SAFE son cambiantes, los Vault se adaptan y equilibran continuamente la carga de la red. este ajuste se realiza de forma automática por los propios Vault. Como la red SAFE es completamente autónoma, reacciona de forma rápida y sin intervención humana.
+En tanto en cuanto las peticiones y recursos de la red SAFE son cambiantes, los Vault se adaptan y equilibran continuamente la carga de la red. Este ajuste se realiza de forma automática por los propios Vault. Como la red SAFE es completamente autónoma, reacciona de forma rápida y sin intervención humana.
 
 Cuando un usuario proporciona a la red SAFE mas almacenamiento del que usa es premiado, en un proceso aleatorio, con safecoin. Los safecoin son necesarios para acceder a los servicios de la red. El usuario puede ver cuantos safecoin posee a través de su wallet. Este wallet se crea y configura de forma automática como parte de la instalación del cliente Maidsafe.
 
