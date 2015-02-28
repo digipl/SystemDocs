@@ -1,7 +1,7 @@
-# Routers with connections both ways
-The SAFE Network allows for communication between Vaults.
+# Conexiones subida-bajada en los routers
+la red SAFE permite la conexión entre diferentes Vaults.
 
-Many home connections are made using routers which supply private addresses that cannot appear on the Internet. A commonly used mechanism is to make use of [STUN](http://en.wikipedia.org/wiki/STUN) servers.
+La mayoria de las conexiones en los hogares se realizan usando routes que proveen de conexiones privadas que no pueden retrasmitirse al exterior. Una manera estandar es el uso de servidores [STUN](http://es.wikipedia.org/wiki/STUN).
 
 This mechanism is not acceptable in a decentralised network. In the SAFE Network, RUDP is used in a mechanism that emulates a decentralised STUN server, with the distributed hash table (DHT) providing connection information to negotiating Vaults.
 
