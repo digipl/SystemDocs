@@ -1,27 +1,27 @@
-# Proof of resource
-Proof of resource enables the network to validate actions or services using a mathematically verifiable mechanism.
+# Prueba de Recursos
+La Prueba de Recursos permite a la red validar acciones o servicios usando un mecanismo matemáticamente verificable.
 
-This process measures a Vaults ability to store and retrieve data chunks. This depends on the following user's computer criteria:
+Este proceso mide la habilidad de los diferentes Vaults a la hora de gestionar los diferentes chunks de datos, y esto depende de los siguientes criterios:
 
-* CPU speed
-* Bandwidth availability
-* Disk space
-* On-line time
+* Velocidad de CPU
+* Disponibilidad del ancho de banda
+* Espacio de disco
+* Tiempo on-line
 
-This allows the proof to be a useful, measurable and an immediately verifiable entity. Proof of resource is a very efficient mechanism with zero transaction fees.
+Esto permite probar que se es una entidad útil, medible y verificable. La prueba de Recursos es un eficiente mecanismo sin gastos de transacción.
 
-Proof of resource in the SAFE Network uses a mechanism similar to a [zero knowledge proof](http://en.wikipedia.org/wiki/Zero-knowledge_proof). In this case the checking mechanism does not require to know the content of any data to be checked, but must know the data is in fact held and held in a manner that is accurate.
+La prueba de recurso usa un mecanismo similar a la [prueba de conocimiento cero](http://es.wikipedia.org/wiki/Prueba_de_conocimiento_cero). En este caso el mecanismo de comprobación no requiere conocer el contenido de ningún dato que se va a comprobar pero requiere saber que el dato existe y que es preciso.
 
-The proof of resource follows a series of steps.
+la Prueba de Recursos sigue una serie de pasos.
 
-1. A checking group of Vaults creates a random string
-2. This random string is sent encrypted to all holders of the data
-3. The data holder takes this string, appends it to the original data, and hashes the result
-4. The result is collected and decrypted by the checking group and compared
-5. If any Vault returns a different result then it is believed compromised and de-ranked
+1. Un grupo de control compuesto de Vaults crea una cadena aleatoria
+2. Esta cadena aleatoria se envía encriptada a todos los poseedores de los datos
+3. Los gestores de datos (Data Holders) añaden esta cadena a los datos originales y crean un Hash con el resultado
+4. El resultado se recoge y desencripta, por el grupo de control, y se compara
+5. Si algún Vault devuelve un resultado diferente se considera comprometido y se le baja de nivel
 
-This mechanism is triggered on Get requests and during account transfers. It is non-deterministic and randomised by use by users. It is considered to be secure and uses zero knowledge, not to conceal content (as anyone can ask for any data), but to ensure any data which is contaminated is not required to be transferred.
+Este mecanismo se activa en las peticiones Get y durante las transferencia de cuentas. Es no determinista y aleatorio de usuaria a usuario. Se considera seguro y el uso de una pruba de cero conocimiento no se realiza para ocultar el contenido (cualquiera puede pedir cualquier dato) sino para asegurar que no se transferiran datos contaminados.
 
-Here is an overview of the proof of resource process.
+Aquí hay un resumen del proceso de Prueba de Recursos.
 
 ![Proof of resource figure](./img/por-diagram.png)
