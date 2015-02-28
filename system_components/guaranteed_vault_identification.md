@@ -1,7 +1,7 @@
-# Guaranteed Vault identification
-Vault identification is essential if Vaults are to be responsible in a measured way for resource management.
+# Garantía de identificación del Vault
+La identificación de los Vaults es esencial si estos se van a encargar y responsabilizarse, en gran medida, de la gestión de los recursos.
 
-Without identification any Vault could impersonate another. There are known methods to identify digital identities, such as a certificate authority (such as Verisign) or in some cases a web of trust. As this network has no servers, no human involvement and is completely trust less, these options are not suitable.
+Sin identificación, cualquier Vault podria suplantar cualquier otro. Hay métodos conocidos de identificación digital, como los emitidos por una autoridad de certificación (como Verisign) o, en algunos casos una web de confianza. En tanto en cuanto la red SAFE no tiene servidores, no hay intervención humana y es completamente no confiable, estas opciones no son adecuadas.
 
 The Vault identification process involves creating two key pairs. One key pair is a revocation key and is used only to create and invalidate a real key.
 
