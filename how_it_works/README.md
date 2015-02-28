@@ -8,19 +8,19 @@ Un vault de usuario tambien podra manejar datos dinámicos como, por ejemplo, un
 
 Antes que los datos se guarden en la red SAFE son automaticamnet encriptados. El proceso de autoencriptación implica dividir los datos en pequeños pedazos llamados chunks y encriptarlos usando tanto los datos del inicio de sesión (clave, pin, password) del usuario como los propios datos en sí mismo. Esto hace que para ver los datos se necesitan tanto los correspondientes al inicio de sesión como los de los datos y ninguna de esta información se guarda en en ningún servidor u otro tercer lugar.
 
-Típicamente el usuario se conecta a la red a traves de un router. En la red SAFE el router usa el protocol RUDP (Reliable UDP) para dicha conexion. RUDP es un protocolo más robusto que UDP ya que los paquetes perdidos son retrasmitidos y es capaz de atravesar el NAT del router al contrario que el TCP. El uso del RUDP para la red SAFE permite que los datos pasen a traves de los router sin poder ser corrompidos o interceptados.
+Normalmente el usuario se conecta a la red a traves de un router. En la red SAFE el router usa el protocol RUDP (Reliable UDP) para dicha conexion. RUDP es un protocolo más robusto que UDP ya que los paquetes perdidos son retrasmitidos y es capaz de atravesar el NAT del router al contrario que el TCP. El uso del RUDP para la red SAFE permite que los datos pasen a traves de los router sin poder ser corrompidos o interceptados.
 
-The user's Vault connects to other Vaults as part of the storage and management of data. The Vaults are constantly checked and ranked (by the Data holder managers personna) using the following criteria:
+Los Vault de los usuarios se conectan a otros Vault como parte de guardado y gestión de los datos. Los Vauls son constatemente controlados y clasificados por unos gestores llamados "Data holder managers personna" usando los siguientes criterios:
 
-* **Availability** - how often the Vault is on or off
-* **Storage** - how much storage space is in the Vault
-* **CPU** - how much CPU resource of the Vault
-* **Bandwidth** - how fast or slow the access is to the Vault
+* **Disponibilidad** - La frecuencia en que el Vault se apaga y enciende
+* **Almacenamiento** - Cuanto espacio de almacenamiento existe en el Vault
+* **CPU** - Cuantos recursos de CPU tiene el Vault
+* **Ancho de banda** - Como de rápido o lento se acceden a los datos del Vault
 
-As demand and resources on the SAFE Network change, the Vaults adapt and continually balance the load of the network. This adjustment process is done automatically by the Vaults themselves. As the SAFE Network is completely autonomous, it can react quickly and without the need for any human intervention.
+En tanto en cuanto las peticiones y recursos de la red SAFE son cambiantes, los Vault se adaptan y equilibran continuamente la carga de la red. este ajuste se realiza de forrma automática por los propios Vault. Como la red SAFE es completamente autónoma, reacciona de forma rápida y sin intervención humana.
 
-When a user provides more storage space than the amount they use on the SAFE Network, they are awarded safecoins at random by the network. Safecoins are required to access services on the network. The user can see how many safecoins they have by looking at their wallet. The wallet is automatically set up and configured as part of the MaidSafe client installation and sign up process.
+Cuando un usuario proporciona a la red SAFE mas almacenamiento del que usa es premiado, en un proceso aleatorio, con safecoin. Los safecoin son necesarios para acceder a los servicios de la red. El usuario puede ver cuantos safecoin posee a traves de su wallet. Este wallet se crea y configura de forma automática como parte de la instalación del cliente Maidsafe.
 
-App Builders earn safecoins when they create apps and programs for the SAFE Network. As the apps are used, the App Builder earns safecoins.
+Los desarrolladores de aplicaciones ganan safecoin cuando crean aplicaciones y programas para la red SAFE. En la medidad que esas aplicaciones se usan, el desarrollador gana safecoin.
 
-Core Developers can also be awarded safecoins by contributing to the SAFE Network codebase.
+Los desarrolladores de nucleo tambien pueden ganar safecoin contribuyendo al desarrollo de su código base.
