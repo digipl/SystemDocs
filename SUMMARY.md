@@ -10,7 +10,7 @@
    * [Wallets](what_it_is/wallets.md)
 * [Como funciona](how_it_works/README.md)
    * [Seguridad - Autoencripción (Self encryption)](system_components/self_encryption.md)
-   * [Resistencia - Autonomous network](system_components/autonomous_network.md)
+   * [Resistencia - Redes autónomas (Autonomous network)](system_components/autonomous_network.md)
        * [Criptograficamente seguro](system_components/cryptographically_secure.md)
        * [Identificación del Vault garantizado](system_components/guaranteed_vault_identification.md)
        * [Precisa evaluación de la proximidad de la red P2P](system_components/accurate_p2p_network_proximity_assessment.md)
