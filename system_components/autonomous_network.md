@@ -1,16 +1,16 @@
-# Resilience - Autonomous network
-The SAFE Network is a resilient and autonomous network. There are many factors that have an impact on a network's performance and its ability to adapt to a changing environment. These factors have to be assessed and handled without the intervention of humans or large server systems.
+#Resistencia - Redes autónomas (Autonomous network)
+La red SAFE es autónoma y resistente. Hay muchos factores que que pueden tener un gran impacto en el rendimiento de una red y en su capacidad de adaptarse a un entorno cambiante. Estos factores tienen que ser evaluados y controlados sin intervención humana o necesidad de grandes sistemas de servidores.
 
-The requirements of the resilient SAFE Network are as follows:
+Los requisitos requeridos para lograr una red resistente son lo siguientes:
 
-* Cryptographically secured
-* A system of guaranteed Vault identification
-* A peer to peer (p2p) network that is very accurate and can guarantee Vault proximity to any address
-* Ensure home routers are able to allow connections both ways (NAT traversal)
-* A mechanism where users can prove they have provided resources
-* A mechanism of resource measurement and reward
-* Dealing with very high levels of churn (computers going off and on, potentially staying off)
-* The power to remove any administrative requirement
+* Criptograficamente segura
+* Un sistema que garantice la identificación de cada Vault
+* Una red distribuida (P2P), precisa y que garantice al acceso de cada Vault a cualquier dirección
+* Asegurarse que los router domésticos son capaces de conectarse en ambos sentidos (NAT trasversal)
+* Un mecanismo donde los usuarios puedan probar que suministran recursos
+* Un mecanismo que mida los recursos y su recompensa
+* Tratar con altos niveles de agitación (ordenadores encendiéndose o apagándose, desapareciendo....)
+* La eliminación de cualquier necesidad administrativa
 
-By meeting all these requirements the SAFE Network is able to support a network that can adapt quickly and automatically to hostile network environments, such as the Internet.
+Cumpliendo todos estos requisitos, la red SAFE es capaz de adaptarse rápida y automáticamente a un entorno hostil como el de internet.
 
