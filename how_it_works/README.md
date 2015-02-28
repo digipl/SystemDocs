@@ -23,4 +23,4 @@ Cuando un usuario proporciona a la red SAFE mas almacenamiento del que usa es pr
 
 Los desarrolladores de aplicaciones ganan safecoin cuando crean aplicaciones y programas para la red SAFE. En la medida que esas aplicaciones se usan, el desarrollador gana safecoin.
 
-Los desarrolladores de núcleo también pueden ganar safecoin contribuyendo al desarrollo de su código base.
+Los desarrolladores del software del núcleo también pueden ganar safecoin contribuyendo al desarrollo de su código base.
