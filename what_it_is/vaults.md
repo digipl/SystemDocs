@@ -9,4 +9,4 @@ Los Vaults no saben nada de los datos que gestionan o que guardan (estos solo so
 
 Por cada Vault que guarda un dato, hay otros 31 que también se encargan de guardar los mismos datos. Eso hace que si un Vault se apaga o sus datos se corrompen, ningún dato se pierda. Inmediatamente, y de forma automática, se encuentra otro Vault que se encarga de guardar dichos datos.
 
-Los Vaults no son visibles para los usuarios de la red SAFE. Lo que un usuario ve es un disco virtual montado en su ordenador. Mientras tanto los diferentes Vaults se comunican y monitorizan unos a otros para que el acceso a los datos de dicho disco virtua sea instantáneo.
+Los Vaults no son visibles para los usuarios de la red SAFE. Lo que un usuario ve es un disco virtual montado en su ordenador. Mientras tanto los diferentes Vaults se comunican y monitorizan unos a otros para que el acceso a los datos de dicho disco virtual sea instantáneo.
