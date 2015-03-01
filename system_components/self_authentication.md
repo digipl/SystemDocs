@@ -1,31 +1,30 @@
-# Efficient - Self authentication
+# Eficiencia - Self authentication
 
-The SAFE Network supports self authentication. This is a mechanism that enables users to create accounts on the SAFE Network and log in from any computer without the need or knowledge of third parties.
+La red SAFE posee self authentication (autentificación propia). Este es un mecanismo que permite a los usuarios crear cuentas en la red SAFE e iniciar la sesión sin necesidad o conocimiento de un tercero.
 
-To achieve this the authentication privileges (login token) have to be stored on the SAFE Network as part of the self authentication process.
+Para lograr esto, los privilegios de autenticación (token de inicio de sesión) tienen que ser almacenados en la red de forma segura como parte del proceso de autenticación propia.
 
-A user creates their own key (K) and password (W). A [salt][wikipedia-salt-crypto] (S) is derived (in a repeatable way) from the key and password.
+Un usuario crea su propia clave (K) y Password (W). Una serie de bits llamados [sal] http://es.wikipedia.org/wiki/Sal_%28criptograf%C3%ADa%29A son creados (de forma reproducible) de la clave y la contraseña.
 
-Then to generate a unique identifier, a hash is created from the concatenated keyword and the salt, H(K + S).
+Entonces se crea un identificador único, un hash de la concatenación de la clave y la sal, H(K + S).
 
-A Password Based Key Derivation File (PBKDF2) is used to strengthen the password. This is required as user selected passwords are commonly weak.
+Se realiza una derivación de clave [(PBKDF2)] http://en.wikipedia.org/wiki/PBKDF2 para fortalecer el password. Esto ocurre porque normalmente los usuarios suelen usar password débiles.
 
-Finally the encrypted access permission are stored on the SAFE Network using the following structure:
+Finalmente el permiso de acceso encriptado se guarda en la red SAFE usando la siguiente estructura:
 
-**Store On Network [H(K+S)] Symmetric Encrypt [ PBKDF2[P][S] ] (Account)**
+**Guardado en la red [H(K+S)] Encriptación simétrica [ PBKDF2[P][S] ] (Cuenta)
 
-Self authentication relies on a system where a Vault can create a unique key, to store a value in the SAFE Network. The value stored with this key should contain an encrypted passport to data.
+Self authentication se basa en un sistema donde un Vault puede crear una clave única, para almacenar un valor en la Red SAFE. El valor almacenado con esta clave debe contener un pasaporte cifrado a los datos.
 
-This passport contains cryptographically secure keys and/or a list of other keys to make use of the information to be stored or shared.
+Este pasaporte contiene claves criptográficamente seguras y / o una lista de otras claves usadas para que la información sea almacenada o compartida.
 
-The location of this initial key is masked or at least not obvious in the SAFE Network. This approach is the basis for self authentication and is extended into the SAFE Network to allow access to data to be stored publicly and with no additional requirement such as firewalls or access controls.
+La situación de esta clave inicial se enmascara o, por lo menos, su situación no es obvia dentro de la red SAFE. Este enfoque es la base de la self authentication y se extiende por toda la red SAFE para permitir acceder a los datos guardados de forma pública sin necesidad de requisitos adicionales como cortafuegos o controles de acceso.
 
-##Guessing login information
+##Adivinando la información de acceso
 
-An intruder or hostile person on the network can test for the presence of a user and download the login token. This is similar to continual testing of a password on a centralised server. In centralised servers this is alleviated by backing off log in attempts.
+Un intruso o persona hostil en la red pueden detectar la presencia de un usuario y tratar de descargar el token de inicio de sesión. Esto es similar a la prueba continua de una contraseña en un servidor centralizado. En servidores centralizados esto se trata de evitar restringiendo los intentos de registro.
 
-In the SAFE Network as a user requests a login token, they are provided with one. Invalid tokens are provided on every attempt. This means that an attacker will have to decrypt many millions of strongly encrypted log in tokens. This process should render such attacks computationally infeasible.
+En la red SAFE, cuando un usuario solicita un token de inicio se le proporciona uno. En cada intento que realice se le proporcionará un token inválido. Esto hace que un atacante tenga que desencriptar millones de tokens fuertemente cifrados. Este proceso hace que este tipo de ataque sea computacionalmente irrealizable.
 
-The login token is only useful for authentication after it is validated against the password and user details, which are never sent out onto the SAFE Network.
+El token de inicio de sesión sólo es útil para la autentificación después de que se validen con las diferentes contraseñas de usuario que nunca se envían a la red SAFE.
 
-[wikipedia-salt-crypto]: http://en.wikipedia.org/wiki/Salt_(cryptography)
