@@ -1,24 +1,24 @@
 # Vaults
-Vaults are created on a user's computer when they install the MaidSafe client and join the SAFE Network.
+Los Vaults se crean en el ordenador del usuario cuando se instala el cliente Maidsafe y se une a la red SAFE.
 
-The Vault on the user's computer can not be seen by the user. Instead the user sees a virtual mounted drive that provides access to their distributed data.
+El vault de un usuario no puede ser visto por este. En lugar de ello, un usuario ve un nuevo disco virtual montado en su ordenador que proporciona acceso a sus datos distribuidos.
 
-When a user creates or alters files on their virtual drive, the file goes through several processes to ensure the file is secure and makes best use of the SAFE Network resources.
+Cuando un usuario crea o altera un fichero de su disco virtual, este fichero es sometido a diversos procesos para asegurar su seguridad y hacer el mejor uso de los recursos de la red SAFE.
 
-## Vault persona
-Vaults can have a different data handling persona. Each persona serves a different role in the SAFE Network.
-* **Client managers**<br/>
-Client manager Vaults receives the chunks of self encrypted data from the user's Vault.
-* **Data managers**<br/>
-These Vaults manage the chunks of data from the Client manager Vaults. They also monitor the status of the SAFE Network.
-* **Data holders**<br/>
-Data holder Vaults are used to hold the chunks of data.
-* **Data holder managers**<br/>
-Data holder managers monitor the Data holder Vaults. They report to the Data manager if any of the chunks are corrupted or changed. They also report when a Data holder has gone offline.
-* **Vault managers**<br/>
-The Vault manager keeps the software updated and the Vault running; restarting it on any error.
-* **Transaction managers**<br/>
-The Transaction manager helps to manage safecoin tranfers.
+## Roles en cada Vault
+Un Vault puede tener diferentes roles (llamados "persona") que realizan diferentes gestiones de los datos dentro de la red SAFE.
+* **Client managers (Gestor de cliente)**<br/>
+Un Vault Client manager recibe los chunks de datos de los vault de usuarios.
+* **Data managers (Gestor de datos)**<br/>
+Estos Vaults gestionan los chunks de datos de los Gestores de cliente (Client manager Vaults). tambien monitorizan el estatus e la red SAFET.
+* **Data holders (Depositario de datos)**<br/>
+Los Vault Data holder se usan para guardar chunks de datos.
+* **Data holder managers (Gestor de depositario de datos)**<br/>
+Data holder managers monitorizan los Vaults de los Data holder. Informan a los Data Manager si alguno de los chunks está corrompido o ha sido cambiado. Tambien informan si algún Data Holders está fuera de linea.
+* **Vault managers (Gestor de Vaults)**<br/>
+Los Vault manager mantiene el software actualizado y el Vault ejecutandose; reiniciandolo en caso de error.
+* **Transaction managers (gestor de tranferencia)**<br/>
+Los Transaction manager ayudan a gestionar las transferencias de safecoin.
 
 ## Data on the SAFE Network
 
