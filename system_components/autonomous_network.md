@@ -1,5 +1,5 @@
 #Resistencia - Redes autónomas (Autonomous network)
-La red SAFE es autónoma y resistente. Hay muchos factores que que pueden tener un gran impacto en el rendimiento de una red y en su capacidad de adaptarse a un entorno cambiante. Estos factores tienen que ser evaluados y controlados sin intervención humana o necesidad de grandes sistemas de servidores.
+La red SAFE es autónoma y resistente. Hay muchos factores que pueden tener un gran impacto en el rendimiento de una red y en su capacidad de adaptarse a un entorno cambiante. Estos factores tienen que ser evaluados y controlados sin intervención humana o necesidad de grandes sistemas de servidores.
 
 Los requisitos requeridos para lograr una red resistente son lo siguientes:
 
