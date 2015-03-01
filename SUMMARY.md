@@ -17,7 +17,7 @@
        * [Conexiones en los routers](system_components/routers_with_connections_both_ways.md)
        * [Prueba de recursos](system_components/proof_of_resources.md)
        * [Medida y recompensa](system_components/measurement_and_reward.md)
-       * [Cancelación en la red](system_components/network_churn.md)
+       * [Rotación en la red](system_components/network_churn.md)
        * [Eliminación de la administración](system_components/remove_administration.md)
    * [Eficiencia - Self authentication](system_components/self_authentication.md)
    * [Vaults](how_it_works/vault.md)
