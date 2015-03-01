@@ -1,7 +1,7 @@
-# Remove administration
+# Eliminación de la administración
 
-The SAFE Network is autonomous and therefore no administrators are required to manage and maintain data, or the network itself. Each Vault constantly adapts to its local environment and ongoing data integrity checks detect corruption and mutation within data chunks, by checking the hash of each chunk.
+La red SAFE es autónoma y por lo tanto no se necesitan administradores para gestionar o mantener los datos, red incluida. Cada Vault se adapta constantemente a su entorno local y las comprobaciones de integridad de los datos permite detectar corrupciones o mutaciones en los chunk de datos simplemente chequeando el hash de cada chunk.
 
-The network automatically maintains four live copies of each piece of data, but also up to 16 dead copies, as offline machines are likely to re-join the network at some point in the future.
+La red mantiene automáticamente cuatro copias disponibles de cada trozo de dato pero también hasta diez y seis copias perdidas en tanto en cuanto máquinas apagadas podrian volver a unirse a la red en el futuro.
 
-Data is also stored at random across the 2^512 address space by the network. This automatically distributes the load evenly across the network, which is a task traditionally undertaken by network administrators.
+Los datos son guardados de forma aleatoria en un espacio de 2^512 direcciones de red. Esto distribuye automáticamente la carga uniformemente a través de la red, que es una tarea tradicionalmente realizada por los administradores de red.
