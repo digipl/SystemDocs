@@ -18,7 +18,7 @@ Las transferencias de safecoin entre usuarios son gestionadas automáticamente p
 
 Como existen múltiples Transaction managers coordinando diferentes transacciones a la vez, no existen restricciones sobre su número realizándose estas a la velocidad de la red.
 
-Un safecoin es un trozo de información digital. El único historial que posee es detalles sobre el poseedor actual y el anterior y dichos detalles son utilizados solo como verificación. Esto hace que los safecoin funcionen como efectivo (cash digital) sin dejar rastro de uso.
+Un safecoin es un trozo de información digital. El único historial que posee son detalles sobre el poseedor actual y el anterior y dichos detalles son utilizados solo como verificación. Esto hace que los safecoin funcionen como efectivo (cash digital) sin dejar rastro de uso.
 
 
 
