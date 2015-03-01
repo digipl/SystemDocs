@@ -14,7 +14,7 @@
        * [Criptográficamente segura](system_components/cryptographically_secure.md)
        * [Garantía de identificación del Vault](system_components/guaranteed_vault_identification.md)
        * [Evaluación precisa de la proximidad de la red P2P](system_components/accurate_p2p_network_proximity_assessment.md)
-       * [Conexiones subida-bajada en los routers](system_components/routers_with_connections_both_ways.md)
+       * [Conexiones en los routers](system_components/routers_with_connections_both_ways.md)
        * [Prueba de recursos](system_components/proof_of_resources.md)
        * [Medida y recompensa](system_components/measurement_and_reward.md)
        * [Cancelación en la red](system_components/network_churn.md)
