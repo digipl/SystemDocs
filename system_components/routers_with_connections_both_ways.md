@@ -1,4 +1,4 @@
-# Conexiones subida-bajada en los routers
+# Conexiones en los routers
 La red SAFE permite la conexión entre diferentes Vaults.
 
 La mayoría de las conexiones en los hogares se realizan usando routers que proveen de conexiones privadas que no pueden retransmitirse directamente al exterior. Para ello, un mecanismo estándar es el uso de servidores [STUN](http://es.wikipedia.org/wiki/STUN).
