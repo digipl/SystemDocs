@@ -10,7 +10,7 @@ Un Vault puede tener diferentes roles (llamados "persona") que realizan diferent
 * **Client managers (Gestor de cliente)**<br/>
 Un Vault Client manager recibe los chunks de datos de los vault de usuarios.
 * **Data managers (Gestor de datos)**<br/>
-Estos Vaults gestionan los chunks de datos de los Gestores de cliente (Client manager Vaults). Tambien monitorizan la situación de la red SAFE.
+Estos Vaults gestionan los chunks de datos de los vault Client manager. Tambien monitorizan la situación de la red SAFE.
 * **Data holders (Depositario de datos)**<br/>
 Los Vault Data holder se usan para guardar chunks de datos.
 * **Data holder managers (Gestor de depositario de datos)**<br/>
