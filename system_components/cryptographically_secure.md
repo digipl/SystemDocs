@@ -1,5 +1,5 @@
 # Cryptográficamente segura
-En la red SAFE los Vault crean primeramente un par de claves para unirse a la [red] (http://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica).
+En la red SAFE los Vault crean primeramente un [par de claves] (http://es.wikipedia.org/wiki/Criptograf%C3%ADa_asim%C3%A9trica) para unirse a la red.
 
 En cuanto un Vault conecta con otro Vault, usa dicho par de claves para asegurar una conexión.
 
