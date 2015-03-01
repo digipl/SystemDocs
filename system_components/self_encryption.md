@@ -9,9 +9,9 @@ Cada trozo se rompe de nuevo en 32 piezas y un par de valores clave se añaden a
 Este proceso se realiza en el ordenador del cliente por lo que los datos siempre se encuentran encriptados dentro de la red SAFE y solo el usuario con las debidas credenciales puede desencriptar el fichero. Esto hace que el password no puede ser robado desde la red ya que nunca sale del ordenador del usuario.
 Para aumentar la seguridad, el mapa de datos también pasa por su propio proceso de autoencriptación.
 
-La red SAFE usa [deduplicación de datos] ([url]http://en.wikipedia.org/wiki/Data_deduplication[/url]) para asegurar que dicho espacio se usa de manera eficiente evitando guardar múltiples copias de los mismos datos. La red es capaz de saber si dos piezas son idénticas gracias a poseer el mismo Hash. También los diferentes Vault usan un Hash para identificarse a si mismo.
+La red SAFE usa [deduplicación de datos] (http://en.wikipedia.org/wiki/Data_deduplication) para asegurar que dicho espacio se usa de manera eficiente evitando guardar múltiples copias de los mismos datos. La red es capaz de saber si dos piezas son idénticas gracias a poseer el mismo Hash. También los diferentes Vault usan un Hash para identificarse a si mismo.
 
-[Aquí se puede ver un video explicativo de la autoencriptación] http://www.youtube.com/watch?v=Jnvwv4z17b4
+[Aquí se puede ver un video explicativo de la autoencriptación] (http://www.youtube.com/watch?v=Jnvwv4z17b4)
 
 Aquí debajo tenemos una visión de conjunto del proceso.
 
