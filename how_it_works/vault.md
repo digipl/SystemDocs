@@ -10,39 +10,39 @@ Un Vault puede tener diferentes roles (llamados "persona") que realizan diferent
 * **Client managers (Gestor de cliente)**<br/>
 Un Vault Client manager recibe los chunks de datos de los vault de usuarios.
 * **Data managers (Gestor de datos)**<br/>
-Estos Vaults gestionan los chunks de datos de los Gestores de cliente (Client manager Vaults). tambien monitorizan el estatus e la red SAFET.
+Estos Vaults gestionan los chunks de datos de los Gestores de cliente (Client manager Vaults). Tambien monitorizan la situación de la red SAFE.
 * **Data holders (Depositario de datos)**<br/>
 Los Vault Data holder se usan para guardar chunks de datos.
 * **Data holder managers (Gestor de depositario de datos)**<br/>
-Data holder managers monitorizan los Vaults de los Data holder. Informan a los Data Manager si alguno de los chunks está corrompido o ha sido cambiado. Tambien informan si algún Data Holders está fuera de linea.
+Los Data holder managers monitorizan los Vaults de los Data holder. Informan a los Data Manager si alguno de los chunks está corrompido o ha sido cambiado. Tambien informan si algún Data Holders está fuera de linea.
 * **Vault managers (Gestor de Vaults)**<br/>
 Los Vault manager mantiene el software actualizado y el Vault ejecutandose; reiniciandolo en caso de error.
 * **Transaction managers (gestor de tranferencia)**<br/>
 Los Transaction manager ayudan a gestionar las transferencias de safecoin.
 
-## Data on the SAFE Network
+## Datos en la red SAFE
 
-There are 2 mechanisms utilised by the network that authorise an End User to carry out certain actions via the Client. Authority is obtained by group consensus whenever a Client is putting (storing) new data. Alternatively, [cryptographic signatures](http://en.wikipedia.org/wiki/Digital_signature) are used if the Client is amending already stored data (a version) or sending safecoin, for example.
+Hay dos posibles mecanismos que utiliza la red para autorizar a un usuario final llevar a cabo algunas acciones via el programa Cliente. Cuando el usuario guarda datos, la autoridad se obtiene por consenso del grupo donde se guardan dichos datos. Si se desea modificar datos guardados anteriormente o enviar safecoin se requirirá de una [firma digital](http://es.wikipedia.org/wiki/Firma_digital).
 
-** Group Consensus**<br/>
-When an End User attempts to put a new piece of data, the file is encrypted and broken up into chunks as part of the self encryption process, it is passed to a close group of Client managers. This close group are comprised of the closest vault IDs to the users vault ID in terms of [XOR](http://en.wikipedia.org/wiki/Exclusive_or) distance. This is distance measured in the mathematical sense as opposed to the geographical sense. At least twenty eight of the thirty two Client managers much reach consensus before any network operations are carried out.
+** Consenso de grupo**<br/>
+Cuando un usuario final intenta guardar un nuevo dato, el fichero es encriptado y dividido en trozos llamados chunks como parte del proceso de autoencriptado. Posteriormente se traslada al grupo de Gestores Cliente (Client managers) mas cercano. Esta cercania está medida por la distancia entre la ID del Vault cliente y los Vault mas cercanos dentro del espacio [XOR](http://es.wikipedia.org/wiki/Disyunci%C3%B3n_exclusiva). Esta es una distancia medida en terminos matemáticos y no geográficos. Por lo menos veintiocho de los treinta y dos Gestores Cliente (Client manager) deben alcanzar un consenso antes que la operación avance.
 
-The Client managers then pass the chunks to thirty two Data managers, chosen by the network as their IDs are closest to the IDs of the data chunk, so the chunk ID also determines it's location on the network.
+Los Gestores Cliente (Client managers) trasladan los chunks a los treinta y dos Gestores de Datos (Data manager) elegidos por la red por la cercania de su ID con la ID de los diferentes chunks. Por lo tanto la ID de los chunks determina su posición dentro de la red.
 
-The network utilises a Scatter/Gather approach, based on [Rabin’s Information Dispersal Algorithm](http://people.seas.harvard.edu/~salil/rabin2011-slides/rabin2011-mitzenmacher.pdf), enabling small data loss (up to 4 pieces) without the requirement to retransmit data
+La red utiliza un enfoque de dispersión/agrupación basada en el [Algoritmo de información dispersa de Rabin](http://people.seas.harvard.edu/~salil/rabin2011-slides/rabin2011-mitzenmacher.pdf), permitiendo pequeñas perdidas de datos (hasta 4 piezas) que no necesitan ser retrasmitidas
 
-Once consensus is reached, the Data manager passes the chunks to thirty two Data holder managers, who in turn pass the chunks for storage with Data holders. If a Data holder manager reports that a Data holder has gone offline, the Data manager decides, based on rankings assigned to Vaults, into which other Vault to put the chunk of data.
+Una vez que se alcanza el consenso, los Gestores de datos (Data manager) trasladan los chunks a los treinta y dos Gestores Depositarios de Datos (Data holder managers), los cuales a su vez lo trasladan a los Depositarios de datos (Data holder) para su guardado. Si un Gestor Depositario de Datos (Data holder manager) informa que un Depositario de datos (Data holder) está fuera de linea, el Gestor de Datos (Data manager) decide, basado en los rangos asignados a los diferentes Vaults, en que otro Vault pondrá el trozo de dato.
 
-This way the chunks of data from the original file are constantly being monitored and supported to ensure the original data can be accessed and decrypted by the original user.
+De esta manera los chunks de datos del fichero original son constantemente monitorizados para asegurar en todo momento que los datos originales estén siempre accesibles para que puedan ser desencriptados por el usuario.
 
-Any movement of data chunks can only be made if there is a consensus (28 of 32) from the surrounding Vaults. The Vaults cannot act in isolation.
+Cualquier movimiento de los chunk de datos solo será posible si se alcanza el consenso necesario (28 de 32) de los Vault circundantes. Los Vaults no pueden actuar en solitario.
 
-All communications on the SAFE Network are carried out through close groups of 32 nodes. This prevents a rogue node(s) from behaving maliciously. It is not possible for a user to choose their own node ID, or to decide where their data is stored, this is calculated by the network. Every time a node disconnects from the network and reconnects, it is assigned a totally new and random ID.
+Todas las comunicaciones en la red SAFE se llevan a cabo a través de grupos cercanos de 32 nodos. Esto previene que un nodo desobediente se comporte mailiciosamente. No es posible, para un usuario, elegir la Id de su nodo o decidir donde guardar su información, ya que la red se encarga de decidirlo. Cada vez que un nodo se desconecta de la red y se reconecta se le asigna una nueva y aleatoria ID.
 
-[Click here to see a short video on how Vaults work](https://www.youtube.com/watch?v=txvKSeCaEP0)
+[Click para ver un pequeño video de como funcionan los Vaults](https://www.youtube.com/watch?v=txvKSeCaEP0)
 
-** Cryptographic Signatures**<br/>
-When End Users are making changes to existing data, such as changing the content of a file, or sending another End User safecoin, the network does not use group consensus as this layer of complexity and increased network load is not required. 
+** Firma digital**<br/>
+Cuando un usuario final desea realizar cambios de datos existentes, como el contenido de un fichero, o enviar safecoin a otro usuario, la red no utiliza el sistema de consenso ya que no es necesarío este nivel de complejidad y carga de red.
 
-Cryptographic signatures mathematically validate the owner of any piece of data and can prove this beyond any doubt, provided the End User has kept their private key safe. If the End User is the owner of any piece of data and can prove this, by digitally signing their request with their private key, the network permits them access to change the data. 
+Una firma digital valida matemáticamente al titular de cualquier trozo de datos que pueden probar, más allá de cualquier duda, que es su poseedor. Y esto siempre y cuando el usuario haya mantenido su clave privada segura. Si el usuario final es el propietario de cualquier pedazo de datos, y puede probar esto firmando digitalmente su solicitud con su clave privada, la red les permite el acceso para cambiar los datos.
 
