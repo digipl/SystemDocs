@@ -4,11 +4,11 @@ La red SAFE posee self authentication (autentificación propia). Este es un meca
 
 Para lograr esto, los privilegios de autenticación (token de inicio de sesión) tienen que ser almacenados en la red de forma segura como parte del proceso de autenticación propia.
 
-Un usuario crea su propia clave (K) y Password (W). Una serie de bits llamados [sal] http://es.wikipedia.org/wiki/Sal_%28criptograf%C3%ADa%29A son creados (de forma reproducible) de la clave y la contraseña.
+Un usuario crea su propia clave (K) y Password (W). Una serie de bits llamados [sal] (http://es.wikipedia.org/wiki/Sal_%28criptograf%C3%ADa%29A) son creados (de forma reproducible) de la clave y la contraseña.
 
 Entonces se crea un identificador único, un hash de la concatenación de la clave y la sal, H(K + S).
 
-Se realiza una derivación de clave [(PBKDF2)] http://en.wikipedia.org/wiki/PBKDF2 para fortalecer el password. Esto ocurre porque normalmente los usuarios suelen usar password débiles.
+Se realiza una derivación de clave [(PBKDF2)] (http://en.wikipedia.org/wiki/PBKDF2) para fortalecer el password. Esto ocurre porque normalmente los usuarios suelen usar password débiles.
 
 Finalmente el permiso de acceso encriptado se guarda en la red SAFE usando la siguiente estructura:
 
