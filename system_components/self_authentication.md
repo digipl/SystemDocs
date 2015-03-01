@@ -22,7 +22,7 @@ La situación de esta clave inicial se enmascara o, por lo menos, su situación 
 
 ##Adivinando la información de acceso
 
-Un intruso o persona hostil en la red pueden detectar la presencia de un usuario y tratar de descargar el token de inicio de sesión. Esto es similar a la prueba continua de una contraseña en un servidor centralizado. En servidores centralizados esto se trata de evitar restringiendo los intentos de registro.
+Un intruso o persona hostil en la red pueden detectar la presencia de un usuario y tratar de descargar el token de inicio de sesión. Esto es similar a probar continuamente diferentes contraseñas en un servidor centralizado. En servidores centralizados esto se trata de evitar restringiendo los intentos de registro.
 
 En la red SAFE, cuando un usuario solicita un token de inicio se le proporciona uno. En cada intento que realice se le proporcionará un token inválido. Esto hace que un atacante tenga que desencriptar millones de tokens fuertemente cifrados. Este proceso hace que este tipo de ataque sea computacionalmente irrealizable.
 
