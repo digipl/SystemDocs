@@ -14,7 +14,7 @@ c) Las personas, o compañías, que creen aplicaciones para la red SAFE también
 
 d) También será posible comprar safecoin. Se prevee que dichas compras se puedan realizar desde exchanges descentralizados que serán desarrollados por terceros. Estos exchanges servirán como plataformas permitiendo a compradores y vendedores comerciar directamente sin intermediarios.
 
-Las transferencias de safecoin entre usuarios son gestionadas automáticamente por los llamados Transaction managers. Los Transaction managers son tipos de Vault, o "personas", cuya prioridad es asegurar que los safecoin están firmados digitalmente y que nunca son borrados o corrompidos.
+Las transferencias de safecoin entre usuarios son gestionadas automáticamente por los llamados Transaction managers. Los Transaction managers son tipos de Vault, o "personas", cuya prioridad es asegurar que los safecoin están firmados digitalmente y que nunca sean borrados o corrompidos.
 
 Como existen múltiples Transaction managers coordinando diferentes transacciones a la vez, no existen restricciones sobre su número realizándose estas a la velocidad de la red.
 
