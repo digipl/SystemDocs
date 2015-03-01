@@ -3,7 +3,7 @@ La identificación de los Vaults es esencial si estos se van a encargar y respon
 
 Sin identificación, cualquier Vault podría suplantar a cualquier otro. Hay métodos conocidos de identificación digital, como los emitidos por una autoridad de certificación (como Verisign) o, en algunos casos, una web de confianza. En tanto en cuanto la red SAFE no tiene servidores, no hay intervención humana y es completamente no confiable, estas opciones no son adecuadas.
 
-El proceso de identificación de un Vault involucra la creación de un par de claves. Una de ellas es una clave de revocación y será usada solo para crear e invalidar la clave real.
+El proceso de identificación de un Vault involucra la creación de dos claves. Una de ellas es una clave de revocación y será usada solo para crear e invalidar la clave real.
 
 Cuando la clave real se crea, su clave pública se firma con la clave privada de revocación y este paquete (clave pública mas firma) se guarda en la red como clave de identificación de un Vault. Su Hash se usa como identidad de dicho Vault.
 
