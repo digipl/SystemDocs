@@ -2,7 +2,7 @@
 
 La red SAFE posee self authentication (autentificación propia). Este es un mecanismo que permite a los usuarios crear cuentas en la red SAFE e iniciar la sesión sin necesidad o conocimiento de un tercero.
 
-Para lograr esto, los privilegios de autenticación (token de inicio de sesión) tienen que ser almacenados en la red de forma segura como parte del proceso de autenticación propia.
+Para lograr esto, los privilegios de autenticación (token de inicio de sesión) tienen que ser almacenados en la red de forma segura como parte de dicho proceso.
 
 Un usuario crea su propia clave (K) y Password (W). Una serie de bits llamados [sal] (http://es.wikipedia.org/wiki/Sal_%28criptograf%C3%ADa%29A) son creados (de forma reproducible) de la clave y la contraseña.
 
