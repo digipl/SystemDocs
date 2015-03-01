@@ -9,7 +9,7 @@ Los requisitos requeridos para lograr una red resistente son lo siguientes:
 * Asegurarse que los router domésticos son capaces de conectarse en ambos sentidos (NAT trasversal)
 * Un mecanismo donde los usuarios puedan probar que suministran recursos
 * Un mecanismo que mida los recursos y su recompensa
-* Tratar con altos niveles de agitación (ordenadores encendiéndose o apagándose, desapareciendo....)
+* Tratar con altos niveles de cambio (ordenadores encendiéndose o apagándose, desapareciendo....)
 * La eliminación de cualquier necesidad administrativa
 
 Cumpliendo todos estos requisitos, la red SAFE es capaz de adaptarse rápida y automáticamente a un entorno hostil como el de internet.
