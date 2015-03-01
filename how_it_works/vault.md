@@ -24,7 +24,7 @@ Los Transaction manager ayudan a gestionar las transferencias de safecoin.
 
 Hay dos posibles mecanismos que utiliza la red para autorizar a un usuario final llevar a cabo algunas acciones via el programa Cliente. Cuando el usuario guarda datos, la autoridad se obtiene por consenso del grupo donde se guardan dichos datos. Si se desea modificar datos guardados anteriormente o enviar safecoin se requirirá de una [firma digital](http://es.wikipedia.org/wiki/Firma_digital).
 
-* ** Consenso de grupo**<br/>
+** Consenso de grupo**<br/>
 Cuando un usuario final intenta guardar un nuevo dato, el fichero es encriptado y dividido en trozos llamados chunks como parte del proceso de autoencriptado. Posteriormente se traslada al grupo de Gestores Cliente (Client managers) mas cercano. Esta cercania está medida por la distancia entre la ID del Vault cliente y los Vault mas cercanos dentro del espacio [XOR](http://es.wikipedia.org/wiki/Disyunci%C3%B3n_exclusiva). Esta es una distancia medida en terminos matemáticos y no geográficos. Por lo menos veintiocho de los treinta y dos Gestores Cliente (Client manager) deben alcanzar un consenso antes que la operación avance.
 
 Los Gestores Cliente (Client managers) trasladan los chunks a los treinta y dos Gestores de Datos (Data manager) elegidos por la red por la cercania de su ID con la ID de los diferentes chunks. Por lo tanto la ID de los chunks determina su posición dentro de la red.
@@ -41,7 +41,7 @@ Todas las comunicaciones en la red SAFE se llevan a cabo a través de grupos cer
 
 [Click para ver un pequeño video de como funcionan los Vaults](https://www.youtube.com/watch?v=txvKSeCaEP0)
 
-* ** Firma digital**<br/>
+** Firma digital**<br/>
 Cuando un usuario final desea realizar cambios de datos existentes, como el contenido de un fichero, o enviar safecoin a otro usuario, la red no utiliza el sistema de consenso ya que no es necesarío este nivel de complejidad y carga de red.
 
 Una firma digital valida matemáticamente al titular de cualquier trozo de datos que pueden probar, más allá de cualquier duda, que es su poseedor. Y esto siempre y cuando el usuario haya mantenido su clave privada segura. Si el usuario final es el propietario de cualquier pedazo de datos, y puede probar esto firmando digitalmente su solicitud con su clave privada, la red les permite el acceso para cambiar los datos.
