@@ -1,5 +1,5 @@
 # Wallets
-Un Wallet es un lugar de almacenamiento virtual para los safecoin. Cada wallet de usuario contiene un registro digital de los safecoin que posee. En la medida que un usuario proporciona mas recursos a la red o un desarrollador crea mas aplicaciones, el balance de su wallet se incrementará en relación a los recursos cedidos.
+Un Wallet (cartera) es un lugar de almacenamiento virtual para los safecoin. Cada wallet de usuario contiene un registro digital de los safecoin que posee. En la medida que un usuario proporciona mas recursos a la red o un desarrollador crea mas aplicaciones, el balance de su wallet se incrementará en relación a los recursos cedidos.
 
 Un creador de aplicaciones (App Builder) es un usuario de desarrolla aplicaciones para ser usadas en la red SAFE.
 
