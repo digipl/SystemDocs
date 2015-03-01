@@ -17,7 +17,7 @@ Los Vault Data holder se usan para guardar chunks de datos.
 Los Data holder managers monitorizan los Vaults de los Data holder. Informan a los Data Manager si alguno de los chunks está corrompido o ha sido cambiado. Tambien informan si algún Data Holders está fuera de linea.
 * **Vault managers (Gestor de Vaults)**<br/>
 Los Vault manager mantiene el software actualizado y el Vault ejecutandose; reiniciandolo en caso de error.
-* **Transaction managers (gestor de tranferencia)**<br/>
+* **Transaction managers (Gestor de tranferencia)**<br/>
 Los Transaction manager ayudan a gestionar las transferencias de safecoin.
 
 ## Datos en la red SAFE
