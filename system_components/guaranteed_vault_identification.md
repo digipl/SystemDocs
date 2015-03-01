@@ -9,6 +9,6 @@ Cuando la clave real se crea, su clave pública se firma con la clave privada de
 
 La red SAFE puede recuperar este paquete de identificación a petición de cualquier otro Vault. La única manera de alterar este paquete es por un mensaje firmado por la misma identidad (ID) que el anterior paquete.
 
-Este proceso permite a los Vaults a identificarse a si mismo publicitando el Hash del paquete de identificación que él mismo ha creado y guardado.
+Este proceso permite a los Vaults identificarse a si mismo publicitando el Hash del paquete de identificación que él mismo ha creado y guardado.
 
 Como solo el creador posee la clave privada emparejada con la clave pública contenida en el paquete de identificación, podemos asumir que se corresponde con el Vault correcto. Todos los mensajes están encriptados con su ID por lo que los Vault fraudulentos no podrán desencriptar esos mensajes, eso incluye las peticiones de conexión que se requieren para unirse a la red.
