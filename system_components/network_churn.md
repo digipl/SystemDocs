@@ -1,10 +1,10 @@
-# Network churn
-Network churn is a term to describe Vaults going online and offline frequently and without notice. This is a situation that favours a quickly reconfiguring network.
+# Rotación en la red
+La rotación en la red es un termino que describe Vaults encendiendose y apagandose frecuentemente. esto es una situación que favorece una rápida reconfiguración de la red.
 
-A Vault's distance from an address is a measure of that Vaults authority to make decisions on that address in a particular circumstance.
+La distancia de un Vault a una dirección es la medida que permite a otro Vault con autoridad tomar decisiones respecto a esa dirección en concreto.
 
-In terms of data loss, the replicated copies of data are spread across the network in a random and uniform manner. This should also geographically disperse the data copies for increased redundancy.
+En terminos de perdida de datos, las copias replicadas se distribuyen de forma aleatoria y uniforme. Esto permite tambien uns dispersión geográfica de las copias que incrementa la redundancia.
 
-In terms of security, network churn prevents attacks as the point of access is constantly moving.
+En terminos de seguridad, la rotación en la red previene de ataques en tanto en cuanto el posible punto de acceso esta en continuo movimiento.
 
-As the network re-configures quickly on network churn events, the shape of the network alters around any data.
+Como en el caso de la rotación de la red esta se reconfigura rápidamente, tambien altera la forma de la red alrededor de cualquier dato.
