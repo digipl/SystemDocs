@@ -1,19 +1,19 @@
-# Dishonest Vault attack
+# Ataque de un Vault deshonesto
 
-##Attack description
+##Descripción del ataque
 
-In this attack, a Vault falsely claims to offer a higher storage capacity than it actually has available.
+En este ataque, un Vault pretende ofrecer una capacidad de almacenamiento superior a la que en realidad tiene disponible.
 
-##Attack purpose
+##Propósito del ataque
 
-The purpose of this attack is to gain the ability to join particular areas of the SAFE Network and to create fake rules affecting it's behaviour, similar to the "50% attack" often seen in cryptographic currencies.
+El propósito de este ataque es obtener la capacidad de unirse a determinadas zonas de la Red SAFE y crear reglas falsas que afecten su comportamiento. Es similar al "ataque 50%" visto a menudo en criptomonedas.
 
-In large scale attacks of this kind, considerable damage to the SAFE Network would be possible including theft or double spend of safecoins, or the deletion of data.
+En ataques a gran escala de este tipo, sería posible realizar un daño considerable a la Red SAFE incluyendo el robo o doble gasto de safecoins o el borrado de datos.
 
-The goal of this may be simply to destroy user trust in the SAFE Network.
+La meta de este ataque es destruir la confianza en la red SAFE.
 
-##Attack avoidance
+##Evitar el ataque
 
-The SAFE Network requires a quorum level of legitimate Vaults to be instructed in order for a request to be accepted, which mitigates the risk of this attack.
+La red SAFE requiere un nivel de quorum de un conjunto de Vaults legítimos para que la solicitud de una instrucción sea aceptada lo que mitiga el riesgo de este ataque.
 
-A botnet or other group of malicious Vaults would require to make up around 75% of the whole SAFE Network to achieve false quorum over invalid requests, making a successful attack of this type very unlikely.
+Un botnet, o un grupo de Vault maliciosos, requeriría poseer el 75% de toda la red SAFE para lograr un falso quorum que permitiera aceptar peticiones inválidas, haciendo muy improbable la posibilidad de éxito de este ataque.
