@@ -1,25 +1,25 @@
-# An ISP simulates a network
+# Un ISP simula la red SAFE
 
-##Attack description
+##Descripción del ataque
 
-In this attack an ISP creates a simulated or fake network. On this network the ISP gets data that the user has requested, but does not actually store data the user has attempted to store.
+En este ataque un ISP crea o simula una red SAFE falsa. En esta red, el ISP recibe los datos de un usuario pero no guarda los datos que el usuario demanda.
 
-##Attack purpose
+##Propósito del ataque
 
-The purpose of this attack is to force users to lose data that may be important to them or simply discredit the SAFE Network.
+El propósito de este ataque es forzar la perdida de datos de un usuario o desacreditar a la red SAFE.
 
-##Attack avoidance
+##Evitar el ataque
 
-In this case the bootstrapping MaidSafe client or Vault will not be able to connect to the bootstrap Vaults listed in the cache file. This file contains the IP port and public key of bootstrap Vaults.
+En este caso, y durante la conexión de inicio del cliente Maidsafe o Vault, no será posible conectar con la lista de Vault de inicio (bootstrapping) listados en el fichero caché. Este fichero contiene la IP, puerto y clave pública de diferentes Vaults para el inicio de conexión.
 
-As the bootstrap session is encrypted with the public key of any bootstrap Vaults then the connect request will fail. The Maidsafe client then detects this is not a valid network.
+Como la sesión de inicio está encriptada con la clave pública de los bootstrapping Vault, la petición de esta conexión será errónea. El cliente Maidsafe detectará que no estamos en una red válida.
 
-##Improved attack description
+##Descripción de ataque mejorado
 
-An ISP's machine pretends to be the user's machine and asks for the bootstrap information on the users behalf.
+La máquina de un ISP se hace pasar por la máquina del usuario y pide la información de arranque en el lugar del usuario.
 
-##Improved attack avoidance
+##Evitar ataque mejorado
 
-In this case an ISP's machine could request the information and pass it back to the user. That information is encrypted to the user, so an ISP cannot really access it (unless they can break RSA 4096). The user then connects to their closest Vaults. If the closest Vaults are fake they will not be able to process the connect request, which is encrypted to each end. So again this attack fails.
+En este caso la máquina de un ISP puede pedir la información y pasársela al usuario. Pero esta información está encriptada para el usuario por lo que realmente es inaccesible para el ISP (a no ser que rompa la encriptación RSA 4096). Luego, el usuario se conecta a sus Vaults más cercanos. Si los Vaults más cercanos son falsos no serán capaces de procesar la solicitud de conexión, que se cifra en cada extremo. Así que de nuevo este ataque falla.
 
-This is only applicable for MaidSafe clients that have not yet logged in. On receipt of the login packet, the MaidSafe client encrypts a close Vault request to the bootstrap Vault. Again this is returned encrypted, so the attack is circumvented.
+Esto sólo es aplicable para los clientes MaidSafe que aún no han iniciado sesión. Al recibir el paquete de inicio de sesión, el cliente MaidSafe encripta una solicitud a un Vault cercano para el bootstrapping. De nuevo, esto se devuelve cifrado, por lo que el ataque se elude.
