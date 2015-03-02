@@ -1,9 +1,9 @@
 #Safecoins
 
-Los safecoins pueden ser ganados, negociados o comprados. El valor de los safecoin vendrá determinado be earned, traded or purchased. El valor de los safecoins vendrá determinado por el mercado, a través de la presión de la oferta y la demanda. 
+Los safecoins pueden ser ganados, negociados o comprados. El valor de los safecoins vendrá determinado por el mercado, a través de la presión de la oferta y la demanda. 
 
 ## Precio de mercado
-En número de safecoin en circulación aumentará segun el uso de la red.The number of safecoins in circulation will increase based on network use. Casi todos los poseedores iniciales de safecoin serán Farmers (granjeros) que con su suministro de recursos crearán tanto liquidez como distribución de riqueza. Se prevee que casi todos los usuarios poseerán al menos unos safecoins en su wallet.
+En número de safecoin en circulación aumentará segun el uso de la red. Casi todos los poseedores iniciales de safecoin serán Farmers (granjeros) que con su suministro de recursos crearán tanto liquidez como distribución de riqueza. Se prevee que casi todos los usuarios poseerán al menos unos safecoins en su wallet.
 
 Los usuarios pueden negociar sus safecoin por servicios en la red, o por liquidez (u otra moneda digital) usando un exchange. 
 El ratio de los safecoin guardados en los wallet y aquellos gastados por los Farmers generarán un precio. Este precio será el valor de mercado de los safecoin.
@@ -14,28 +14,12 @@ Los safecoin se usan para acceder a servicios dentro de la red SAFE. Esto incent
 
 ![](safecoin resources.png)
 
-## Farming rates 
+## Velocidad de farming 
 
-Farming is a process whereby users provide resource
-(storage space, CPU and bandwidth) to the network.
+Farming es un proceso en el cual los usuarios suministran recursos (espacio almacenamiento, CPU, ancho de banda) a la red.
 
-As figure 1 demonstrates, the safecoin earning algorithm is based on a Sigmoid curve,
-in that all vaults earn, slowly at first and the rate
-increases as the farmer stores up to the network
-average. The earning rate also takes into account
-the rank of the vault, a process whereby the network
-scores the usefulness of each node from 0
-(being the worst) to 1 (the best). The safecoin
-farming rate is ultimately the result of the network
-rate, a balance of the demand and supply
-on the network, multiplied by the vault rank.
-The network rate will start to level at 20% above
-average, thus discouraging massive vaults which
-would bring centralisation to the network’s farming
-process. Safecoin is allocated to them by the
-network and is paid to the successful node as
-data is retrieved from it (GETS), as opposed to
-when it is stored (PUTS).
+Como muestra la figura 1, el algoritmo de ganancia de los safecoin es una curva sigmoide, en la que todos los Vault empiezan a ganar lentamente y donde su tasa aumenta a medida que los farmers alcanzan el promedio de la red. La tasa de ganancia tambien tiene en cuenta el rango de cada Vaul, un proceso en el cual la red puntua la utilidad de cada nodo entre 0 (el peor) y 1 (el mejor). La tasa del farming de safecoin es, en última instancia, el resultado de su media en la red, el balance entre oferta y demanda multiplicado por el rango del Vault. La tasa comenzará a descender para los que se situen en el 20% superior del total de la media. Esto evitará la existencia de grandes Vault que podria llevar a la centralización del proceso de Farming. Los safecoin se asignan por la red y se paga cuando un nodo entrega correctamente un dato (GETS) y no cuando se guarda (PUTS).
+
 
 ![](safecoin farming speed.png)
 
