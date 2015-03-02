@@ -12,7 +12,7 @@ Se realiza una derivación de clave [(PBKDF2)] (http://en.wikipedia.org/wiki/PBK
 
 Finalmente el permiso de acceso encriptado se guarda en la red SAFE usando la siguiente estructura:
 
-**Guardado en la red [H(K+S)] Encriptación simétrica [ PBKDF2[P][S] ] (Cuenta)
+**Guardado en la red [H(K+S)] Encriptación simétrica [PBKDF2[P][S]] (Cuenta)
 
 Self authentication se basa en un sistema donde un Vault puede crear una clave única, para almacenar un valor en la Red SAFE. El valor almacenado con esta clave debe contener un pasaporte cifrado a los datos.
 
