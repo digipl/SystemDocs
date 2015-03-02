@@ -1,21 +1,21 @@
-# Store bad data
+# Guardado de datos ilegales
 
-##Attack description
+##Descripción del ataque
 
-If an attacker was to subvert the self encryption to attempt to create illegal or immoral data of under 1Mb in size, and named with the hash of its content, then potentially the attacker would be able to store this immoral data on the SAFE Network.
+Si un atacante quiere subvertir la autoencriptación para tratar de crear datos ilegales o inmorales de tamaño inferior a 1Mb de tamaño, y nombrarlo con el hash de su contenido, a continuación, potencialmente, el atacante sería capaz de almacenar estos datos inmorales en la Red SAFE.
 
-As self encrypted data is highly obfuscated and nearly impossible to decode, then storing data normally would not yield this attack. There is no mechanism to force the data onto any specific Vault, but the data would simply be on the SAFE Network.
+Como los datos de la autoencriptación están muy ofuscados y son casi imposible de descifrar, el almacenamiento de estos datos no producirían el ataque deseado. Un vault no tiene ninguna manera de impedir que dichos datos se almacenen pero solo serían otros datos encriptados y ofuscados dentro de la red SAFE.
 
-##Attack purpose
+##Propósito del ataque
 
-The purpose of this attack would be purely to discredit the network. It is unlikely any attacker would know where the data was stored and the network does not disclose this information at any rate. In any case an attacker could state they did manage to do this to alarm users.
+El propósito de este ataque es solamente desacreditar la red SAFE. Es poco probable que un atacante pueda saber dónde se almacenan los datos y la red no da a conocer esta información. En cualquier caso, un atacante podría afirmar que se logró hacerlo simplemente para crear alarma.
 
-##Attack avoidance
+##Evitar el ataque
 
-Due to not knowing where the immoral data is stored in the SAFE Network, this attack is already thwarted as the attacker could not retrieve it. In itself this is a form of protection, however the SAFE Network also goes a step further.
+Debido a no saber donde se almacenan los datos inmorales en la Red SAFE, este ataque queda frustrado ya que el atacante no podría recuperarlos. En sí misma, esta es una forma de protección, sin embargo la Red SAFE también va un paso más allá.
 
-As data is stored in the SAFE Network, the key used to store it is also used to encrypt the content. This key is then hashed itself and the content renamed to this key. The original key and content are then deleted. In this manner, the Vault storing the data has no ability to decrypt its stored chunks of data.
+Cuando un dato se guarda en la red SAFE, la clave usada para el guardado también se usa para encriptar su contenido. Se realiza posteriormente un Hash de dicha clave y el contenido se renombra con este resultado. La clave original y el contenido se borran. De esta manera el Vault que guarda el dato es incapaz de desencriptar los chunk que posee.
 
-The SAFE Network can ask for a chunk, and the Vault will hash this request and look in its storage for the hash of the requested chunk. On finding this, the Vault will use the requested key to decode the content in memory and send the data on named with the requesting key. This will then be able to reform as an immutable data chunk, but only for the requesting Vault.
+La red SAFE puede pedir un chunk, entonces el Vault realiza un Hash de esta solicitud y busca si este Hash coincide con alguno de los que guarda. Si lo encuentra, el vault usará la clave pedida para decodificar el contenido en memoria y enviar los datos solicitados junto la clave. Esto permitirá recomponer el dato como chunk inmutable pero solo para el Vault solicitante.
 
-This therefore is similar to an attacker fully encrypting the data themselves and storing on any computer or network.
+Esto es por tanto similar a un atacante que encripta los datos totalmente y los almacena en cualquier ordenado o red.
