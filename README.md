@@ -1,6 +1,6 @@
 # Descripción de la red SAFE
 
-Este libro está escrito para cualquiera que desee conocer más sobre la red **SAFE (Secure Access For Everyone)** de Maidsafe. Este libro exlica los detalles y los beneficios del uso de esta red. Están cubiertas la siguientes areas: 
+Este libro está escrito para cualquiera que desee conocer más sobre la red **SAFE (Secure Access For Everyone)** de Maidsafe. Este libro explica los detalles y beneficios del uso de esta red. Están cubiertas la siguientes areas: 
 
 * **Que es**<br />
 Proporciona una visión general de la red SAFE.
