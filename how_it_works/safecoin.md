@@ -18,36 +18,22 @@ Los safecoin se usan para acceder a servicios dentro de la red SAFE. Esto incent
 
 Farming es un proceso en el cual los usuarios suministran recursos (espacio almacenamiento, CPU, ancho de banda) a la red.
 
-Como muestra la figura 1, el algoritmo de ganancia de los safecoin es una curva sigmoide, en la que todos los Vault empiezan a ganar lentamente y donde su tasa aumenta a medida que los farmers alcanzan el promedio de la red. La tasa de ganancia tambien tiene en cuenta el rango de cada Vaul, un proceso en el cual la red puntua la utilidad de cada nodo entre 0 (el peor) y 1 (el mejor). La tasa del farming de safecoin es, en última instancia, el resultado de su media en la red, el balance entre oferta y demanda multiplicado por el rango del Vault. La tasa comenzará a descender para los que se situen en el 20% superior del total de la media. Esto evitará la existencia de grandes Vault que podria llevar a la centralización del proceso de Farming. Los safecoin se asignan por la red y se paga cuando un nodo entrega correctamente un dato (GETS) y no cuando se guarda (PUTS).
+Como muestra la figura 1, el algoritmo de ganancia de los safecoin es una curva sigmoide, en la que todos los Vault empiezan a ganar lentamente y donde su tasa aumenta a medida que los farmers alcanzan el promedio de la red. La tasa de ganancia tambien tiene en cuenta el rango de cada Vault, un proceso en el cual la red puntua la utilidad de cada nodo entre 0 (el peor) y 1 (el mejor). La tasa del farming de safecoin es, en última instancia, el resultado de su media en la red, el balance entre oferta y demanda multiplicado por el rango del Vault. La tasa comenzará a descender para los que se situen en el 20% superior del total de la media. Esto evitará la existencia de grandes Vault que podria llevar a la centralización del proceso de Farming. Los safecoin se asignan por la red y se paga cuando un nodo entrega correctamente un dato (GETS) y no cuando se guarda (PUTS).
 
 
 ![](safecoin farming speed.png)
 
-The network automatically increases farming
-rewards as space is required and reduces them
-as space becomes abundant. Data is evenly distributed on the network and therefore farmers
-looking to maximise their earnings may do so
-by running several average performance nodes
-rather than one high specification node.
+La red incrementa automáticamente la recompensa cuando aumente la demanda de almacenamiento y la reduce cuando este es abundante. Los datos se distribuyen de manera uniforme en la red y por lo tanto, los farmers
+que buscan maximizar sus ganancias puede hacerlo mediante la ejecución de varios nodos con un rendimiento medio en lugar de disponer un solo nodo de alto rendimiento.
 
-## Safecoin transfer mechanism
-Unlike bitcoin, the SAFE Network does not use
-a blockchain to manage ownership of coins. Conversely,
-the SAFE Network’s Transaction Managers
-are unchained, meaning that only the past
-and current coin owner is known. It is helpful to
-think of safecoin as digital cash in this respect. 
+## Mecanismo de transferencia de safecoin
+Contrariamente al bitcoin, la red SAFE no usa una blockchain para gestiona la propiedad de las monedas. Eso hace que los gestores de transferencia de la red SAFE no encadenen el historial de propietarios por lo que solo se guarda información del actual y el anterior dueño. Eso hace pensar que los safecoin se comportan como un sistema de moneda digital (eCash).
 
-One of the major problems any virtual currency
-or coin must overcome is the ability
-to avoid double spending. Within the SAFE
-Network, transfer of data, safecoin included,
-is atomic, using a cryptographic signature to
-transfer ownership.
+Uno de los mayores problemas de cualquier moneda virtual es evitar el doble gasto. En la red SAFE, la transferencia de datos, safecoin incluido, es [atómica] (http://es.wikipedia.org/wiki/Instrucci%C3%B3n_at%C3%B3mica) usando firmas digitales para trasferir la propiedad. 
 
-Safecoin, the currency of the SAFE network, is generated in response to network use. As data is stored, or as apps are created and used, the network generates safecoins, each with their own  unique ID. As these coins are divisible, each new denomination is allocated a new and completely unique ID.
+Los safecoin, la moneda de la red SAFE, se genera en respuesta al uso de la red. Cuando un dato se guarda, o una aplicación se crea y usa, la red genera safecoin cada uno de ellos con su propia ID. En tanto en cuanto las monedas son divisibles, a cada nueva denominación se le asigna una ID única nunca utilizada.
 
-As the coins are allocated to users by the network, only that specific user can transfer ownership of that coin by cryptographic signature. For illustrative purposes, when Alice pays a coin to Bob via the client, she submits a payment request. The Transaction Managers check that Alice is the current owner of the coin by retrieving her public key and confirming that it has been signed by the correct and corresponding private key. The Transaction Managers will only accept a signed message from the existing owner. This proves beyond doubt that Alice is the owner of the coin and the ownership of that specific coin is then transferred to Bob and now only Bob is able to transfer that coin to another user.This process is highlighted in figure 3.
+Dado que cada moneda se asigna a un usuario de la red, solo dicho usuario específico puede transferir la propiedad de esa moneda a traves de una firma digital. Para fines ilustrativos, cuando Alicia realiza el pago de una moneda a Bob, a traves del programa cliente, está solicitando a la red dicho pago. Los Transaction managers verifican que Alicia es la poseedora actual de la moneda recuperando su clave pública y confirmación que ha sido correctamente firmada con la clave privada. Solo entonces los Transaction manager aceptan esta petición de transferencia. La firma digital prueba, sin ninguna duda, que Alicia es la poseedora de la moneda, posesión que será transferida a Bob el cual pasará a ser el único con poder para volver a transferir esta moneda a otra persona. Este proceso se muestra en la Fig 3.
 
 ![](safecoin transfer mech.png)
 
