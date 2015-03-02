@@ -1,4 +1,4 @@
-# Birthday Paradox/Sybil attack
+# [Paradoja del cumpleaños](http://es.wikipedia.org/wiki/Paradoja_del_cumplea%C3%B1os)/[Sybil attack](http://en.wikipedia.org/wiki/Sybil_attack)
 
 ##Attack description
 In this attack, an attacker ﬂoods the network with Vaults it controls, to surround a single Vault with 3 or more malicious Vaults in order to exert control over that Vault.
