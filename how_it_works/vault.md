@@ -1,16 +1,16 @@
 # Vaults
 Los Vaults se crean en el ordenador del usuario cuando se instala el cliente Maidsafe y se une a la red SAFE.
 
-El vault de un usuario no puede ser visto por este. En lugar de ello, un usuario ve un nuevo disco virtual montado en su ordenador que proporciona acceso a sus datos distribuidos.
+El Vault de un usuario no puede ser visto por este. En lugar de ello, un usuario ve un nuevo disco virtual montado en su ordenador que proporciona acceso a sus datos distribuidos.
 
 Cuando un usuario crea o altera un fichero de su disco virtual, este fichero es sometido a diversos procesos para asegurar su seguridad y hacer el mejor uso de los recursos de la red SAFE.
 
 ## Roles en cada Vault
 Un Vault puede tener diferentes roles (llamados "persona") que realizan diferentes gestiones de los datos dentro de la red SAFE.
 * **Client managers (Gestor de cliente)**<br/>
-Un Vault Client manager recibe los chunks de datos de los vault de usuarios.
+Un Vault Client manager recibe los chunks de datos de los Vault de usuarios.
 * **Data managers (Gestor de datos)**<br/>
-Estos Vaults gestionan los chunks de datos de los vault Client manager. Tambien monitorizan la situación de la red SAFE.
+Estos Vaults gestionan los chunks de datos de los Vault Client manager. Tambien monitorizan la situación de la red SAFE.
 * **Data holders (Depositario de datos)**<br/>
 Los Vault Data holder se usan para guardar chunks de datos.
 * **Data holder managers (Gestor de depositario de datos)**<br/>
