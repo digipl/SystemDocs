@@ -1,17 +1,16 @@
 #Safecoins
 
-Safecoins can be earned, traded or purchased. The value of safecoins will be determined by market, through the combination of supply and demand. 
+Los safecoins pueden ser ganados, negociados o comprados. El valor de los safecoin vendrá determinado be earned, traded or purchased. El valor de los safecoins vendrá determinado por el mercado, a través de la presión de la oferta y la demanda. 
 
-## Market price
-The number of safecoins in circulation will increase based on network use. Almost all early safecoin holders will be farmers with this supply of resource creating both liquidity
-and distribution of wealth. It is anticipated that almost all users will possess at least a few safecoins in their wallet. 
+## Precio de mercado
+En número de safecoin en circulación aumentará segun el uso de la red.The number of safecoins in circulation will increase based on network use. Casi todos los poseedores iniciales de safecoin serán Farmers (granjeros) que con su suministro de recursos crearán tanto liquidez como distribución de riqueza. Se prevee que casi todos los usuarios poseerán al menos unos safecoins en su wallet.
 
-Users may trade their safecoin for services on the network, or for cash (or another digital currency) using an exchange.
-The ratio of safecoin being saved (left in new wallets) versus the ratio being issued to Farmers will produce a price point. This point will be the market value of safecoin
+Los usuarios pueden negociar sus safecoin por servicios en la red, o por liquidez (u otra moneda digital) usando un exchange. 
+El ratio de los safecoin guardados en los wallet y aquellos gastados por los Farmers generarán un precio. Este precio será el valor de mercado de los safecoin.
 
-## Resources and currency
+## Recursos y monedas
 
-Safecoins are used to access services on the SAFE Network. This encourages constant reuse which results in increasing demand for a finite resource. As a result, the value of the safecoins increases over time. While the coins themselves increase in value, the amount of network services (resources) they buy also increases. This is shown in figure 2.
+Los safecoin se usan para acceder a servicios dentro de la red SAFE. Esto incentiva la reutilización constante cuyo resultado es el aumento de la demanda de un recurso finito. Esto hace que el valor de las safecoins aumente con el tiempo. Mientras que las monedas aumentan de valor, la cantidad de servicios en la red (recursos) que cada safecoin pueda comprar también aumenta. Esto se muestra en la fig. 2.
 
 ![](safecoin resources.png)
 
