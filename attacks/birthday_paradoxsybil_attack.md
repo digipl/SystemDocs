@@ -1,20 +1,20 @@
 # [Paradoja del cumpleaños](http://es.wikipedia.org/wiki/Paradoja_del_cumplea%C3%B1os)/[Sybil attack](http://en.wikipedia.org/wiki/Sybil_attack)
 
-##Attack description
-In this attack, an attacker ﬂoods the network with Vaults it controls, to surround a single Vault with 3 or more malicious Vaults in order to exert control over that Vault.
+##Descripción del ataque
+En este ataque, el atacante llena la red de Vaults que controla a fin de rodear a un Vault en concreto con tres o más Vault maliciosos que le permitirá tomar el control de dicho Vault.
 
-##Attack purpose
+##Propósito del ataque
 
-Using this case, an attacker could request deletion of data chunks by acting as Data managers with the controlled Vaults. This could cause the Data holders to delete the chunks in response to a seemingly legitimate request, and prevent access to that data for legitimate users.
+Utilizando este proceso, un atacante podria actuar como un Data manager pidiendo el borrado de los chunk de datos de los Vault controlados. Esto podría hacer que los Data holders eliminaran los trozos en respuesta a una solicitud aparentemente correcta, e impidiendo el acceso a los datos para los usuarios legítimos.
 
-While it is not possible to deliberately position the malicious Vaults around a desired point in the SAFE Network, with around 0.8% of the network’s Vaults under the (temporary) control of an attacker, it is likely the attacker will have at least one Vault surrounded on the SAFE Network, allowing it to exert control over that Vault and reach quorum on such false actions.
+Si bien no es posible colocar deliberadamente Vaults maliciosos en torno a un punto deseado en la red SAFE, con alrededor de 0,8% de los Vaults de la red bajo el control (temporal) de un atacante, es probable que el atacante tendría al menos uno de los Vault rodeado, lo que le permitiria ejercer el control sobre ese Vault y alcanzar el quórum necesario para realizar este tipo de acciones falsas.
 
-##Attack avoidance
+##Evitar el ataque
 
-The SAFE Network requires all requests be processed by at least two groups of Vaults.
+la red SAFE requiere que todas las peticiones sean procesadas al menos por dos grupos de Vaults.
 
-A MaidSafe client passes a request to its 4 Data managers, who verify the request based on the client’s signature. The request is then passed to a deterministically selected group of 4 other Vaults which also verify the request based on its signature.
+Un cliente Maidsafe envía una petición a sus 4 Data managers, que verifican la petición basandose en la clave del cliente. La solicitud se pasa entonces a un grupo seleccionado de forma determinista de otras cuatro Vaults que también verifican la solicitud basándose en su firma.
 
-By deterministically selecting the second group of Data managers, this attack no longer holds true for the SAFE Network, since it is not possible for the attacker to gain control over a Vault by simply surrounding it.
+Al seleccionar determinísticamente el segundo grupo de Data managers, este ataque ya no es válido para la red SAFE, ya que no es le es posible al atacante obtener el control de un Vault simplemente rodeandolo.
 
-To circumvent this, the attacker would require the ability to surround speciﬁc Vaults in the SAFE Network. This cannot be achieved, as it would require being able to effectively generate different values which, when hashed with SHA-512, result in close hashes around one particular point.
+Para evitar esto, el atacante requeriría la capacidad de rodear Vaults específicos en la Red SAFE. Esto no se puede lograr, ya que requeriría ser capaz de generar efectivamente diferentes valores que, cuando se realice su hash con SHA-512, resulten en hashes alrededor de un punto particular.
