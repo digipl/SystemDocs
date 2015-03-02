@@ -27,7 +27,7 @@
        * [Simulación de red por un ISP](attacks/isp_simulates_network.md)
        * [Ataque de un Vault deshonesto](attacks/dishonest_vault_attack.md)
        * [Paradoja del cumpleaños/Ataque Sybil](attacks/birthday_paradoxsybil_attack.md)
-       * [Guardado de datos corruptos](attacks/store_bad_data.md)
+       * [Guardado de datos ilegales](attacks/store_bad_data.md)
 * [Como usarlo](how_to_use_it/README.md)
    * [Un Farmer](how_to_use_it/farmers.md)
    * [Un usuario final](how_to_use_it/an_end_user.md)
