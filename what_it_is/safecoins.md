@@ -16,7 +16,7 @@ d) También será posible comprar safecoin. Se prevee que dichas compras se pued
 
 Las transferencias de safecoin entre usuarios son gestionadas automáticamente por los llamados Transaction managers. Los Transaction managers son tipos de Vault, o "personas", cuya prioridad es asegurar que los safecoin están firmados digitalmente y que nunca sean borrados o corrompidos.
 
-Como existen múltiples Transaction managers coordinando diferentes transacciones a la vez, no existen restricciones sobre su número realizándose estas a la velocidad de la red.
+Como existen múltiples Transaction managers coordinando diferentes transacciones a la vez, no existen restricciones sobre su número, realizándose estas a la velocidad de la red.
 
 Un safecoin es un trozo de información digital. El único historial que posee son detalles sobre el poseedor actual y el anterior y dichos detalles son utilizados solo como verificación. Esto hace que los safecoin funcionen como efectivo (cash digital) sin dejar rastro de uso.
 
