@@ -1,10 +1,10 @@
 # Wallet
-The SAFE Network wallet is a place that holds the credits and the credit change history for an account.
+El wallet (cartera) de la red SAFE es el lugar que guarda el crédito, y su historial correspondiente, de una cuenta.
 
-When a user joins the SAFE Network, they automatically have a wallet. As a reward for providing resources for the SAFE Network, they receive safecoins. These safecoins are stored in the user's wallet.
+Cuando un usuario se une por primera vez a la red SAFE se le asigna automáticamente un wallet. Como recompensa por dar recursos a la red recibe safecoin y estos safecoin se guardan en su wallet.
 
-These safecoins can then be used to buy more resources, applications, or traded for other digital currencies or cash through an exchange service.
+Estos safecoin se pueden usar para comprar mas recursos, aplicaciones o negociar por otras monedas, digitales o no, a traves de servicios de exchanges.
 
-A user can view the contents of their wallet through the MaidSafe client.
+Un usuario puede ver el contenido de su wallet a traves del programa cliente Maidsafe.
 
-When safecoins are transferred from one wallet to another, the transfer is a process of signing over ownership (with the private key) to the other user. The SAFE Network confirms the transfer via the Transaction managers and coin holders, who all require collaboration and agreement that the transaction is valid.
+Los safecoin pueden ser transferidos de un wallet a otro. La transferencia es un proceso de firma sobre la propiedad (con la clave privada) para otro usuario. La Red SAFE confirma la transferencia a través de los Transaction managers y los Coin Holder. Se requieren la colaboración y el acuerdo para que la transacción sea válida.
