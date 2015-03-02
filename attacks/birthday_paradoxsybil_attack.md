@@ -13,7 +13,7 @@ Si bien no es posible colocar deliberadamente Vaults maliciosos en torno a un pu
 
 La red SAFE requiere que todas las peticiones sean procesadas al menos por dos grupos de Vaults.
 
-Un cliente Maidsafe envía una petición a sus cuatro Data managers, que verifican la petición basándose en la clave del cliente. La solicitud se pasa entonces a un grupo seleccionado de forma determinista de otras cuatro Vaults que también verifican la solicitud basándose en su firma.
+Un cliente Maidsafe envía una petición a sus cuatro Data managers, que verifican la petición basándose en la clave del cliente. La solicitud se pasa entonces a un grupo seleccionado de forma determinista de otros cuatro Vaults que también verifican la solicitud basándose en su firma.
 
 Al seleccionar determinísticamente el segundo grupo de Data managers, este ataque ya no es válido para la red SAFE, ya que, para el atacante, no le es posible obtener el control de un Vault simplemente rodeándolo.
 
