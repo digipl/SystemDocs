@@ -1,17 +1,16 @@
-# An App Builder
+# Desarrollador de aplicaciones
 
-As an App Builder, developers create apps which run on the SAFE Network using the open source MaidSafe API, making use of the resources provided by Farmers on the network.  In doing so, they are rewarded with safecoins in proportion to how much the application is used.
+Un desarrollador de aplicaciones crea aplicaciones que funcionan dentro de la red SAFE usando el API de código abierto de Maidsafe y haciendo uso de los recursos que los Farmers proporcionan a la red. Haciendo esto, se le recompensa con safecoin en proporción al uso que se hace de su aplicación.
 
-An example app is available [here](http://blog.maidsafe.net/2014/04/21/safe-network-sample-app-features/).
+Tenemos un ejemplo de aplicación [aquí]([url]http://blog.maidsafe.net/2014/04/21/safe-network-sample-app-features/[/url]).
 
-Due to the open source libraries provided in the API, developing an app is low cost and supported by the development community. The nature of the SAFE Network ensures anonymity, crytographic security and privacy to all users of the app by design, and also provides decentralised resources which react in real-time to the demand from the app users.
+Debido a las librerías de código abierto proporcionadas en el API, desarrollar una aplicación tiene bajos costos y el apoyo de la comunidad de desarrolladores. La naturaleza de la Red SAFE garantiza, desde su base, el anonimato, seguridad criptográfica y privacidad a todos los usuarios de las aplicaciones, asimismo también proporciona recursos descentralizados que reaccionan en tiempo real a la demanda de los usuarios de la aplicación.
 
-The provision of safecoin rewards based on usage allows the App Builder to focus on creating apps which users seek to use, knowing that the revenue stream is already built in by the SAFE Network.
+La provisión de recompensas en safecoin en función del uso, permite a los desarrolladores centrarse en la creación de aplicaciones que los usuarios necesiten, a sabiendas que el flujo de ingresos ya está integrado en la Red SAFE.
 
+[Click aquí para más información sobre el API Maidsafe](https://github.com/maidsafe/MaidSafe-API/wiki)
 
-[Click here for more information about the MaidSafe API](https://github.com/maidsafe/MaidSafe-API/wiki)
-
-[Click here for examples of apps which use the MaidSafe API](http://maidsafe.net/maidsafe-examples/)
+[Click aquí para ejemplos de aplicaciones que usan el API Maidsafe](http://maidsafe.net/maidsafe-examples/)
 
 
 
