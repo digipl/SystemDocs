@@ -33,7 +33,7 @@
    * [Usuario final](how_to_use_it/an_end_user.md)
    * [Desarrollador de aplicaciones](how_to_use_it/app_devs.md)
    * [Desarrollador del núcleo](how_to_use_it/a_core_developer.md)
-* [Como involucrarse](get_involved/README.md)
+* [Como participar](get_involved/README.md)
    * [Librerias](detail/README.md)
        * [Common](detail/Common.md)
        * [Passport](detail/Passport.md)
