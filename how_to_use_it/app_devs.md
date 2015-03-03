@@ -2,7 +2,7 @@
 
 Un desarrollador de aplicaciones crea aplicaciones que funcionan dentro de la red SAFE usando el API de código abierto de Maidsafe y haciendo uso de los recursos que los Farmers proporcionan a la red. Haciendo esto, se le recompensa con safecoin en proporción al uso que se hace de su aplicación.
 
-Tenemos un ejemplo de aplicación [aquí]([url]http://blog.maidsafe.net/2014/04/21/safe-network-sample-app-features/[/url]).
+Tenemos un ejemplo de aplicación [aquí]([http://blog.maidsafe.net/2014/04/21/safe-network-sample-app-features/).
 
 Debido a las librerías de código abierto proporcionadas en el API, desarrollar una aplicación tiene bajos costos y el apoyo de la comunidad de desarrolladores. La naturaleza de la Red SAFE garantiza, desde su base, el anonimato, seguridad criptográfica y privacidad a todos los usuarios de las aplicaciones, asimismo también proporciona recursos descentralizados que reaccionan en tiempo real a la demanda de los usuarios de la aplicación.
 
