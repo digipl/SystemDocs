@@ -1,13 +1,13 @@
-# A Farmer
+# Farmer
 
-As a user of the SAFE Network, a Farmer installs the MaidSafe client and provides unused computer resources to the network such as storage, CPU processing, and bandwidth.
+Como usuario de la Red SAFE, un Farmer instala el cliente MaidSafe y proporciona recursos de su ordenador a la red, tales como almacenamiento, procesamiento de la CPU y ancho de banda.
 
-These resources are used to securely and anonymously comprise the SAFE Network, replacing data centres that constitute the current centralised Internet. This is done using the local Vault on the Farmer's computer, which is installed as part of the download process and configured using the MaidSafe client.
+Estos recursos, que se utilizan de forma segura y anónima, constituyen la Red SAFE, en sustitución de los centros de datos que conforman el Internet centralizado actual. Esto se realiza usando un vault en el ordenador del Farmer, que se instala como parte del proceso de descarga y configuración del cliente Maidsafe.
 
-When the resources provided exceed the network average the Farmer earns safecoins in exchange for providing these resources. This is indicated to the Farmer by a notification from the Maidsafe client.
+Cuando los recursos proporcionados exceden los gastados, el Framer gana safecoin a cambio de dichos recursos. Para ello se le envía una notificación desde el cliente Maidsafe.
 
-The safecoins earned are credited to the Farmers account and can then be used by the Farmer, for example, by exchanging them for additional storage.
+Los safecoin ganados se guardan el su cuenta y pueden ser usados, por ejemplo, intercambiándolos por almacenamiento adicional.
 
-The Farmer can also run apps and programs which have been designed for use on the SAFE Network.
+Los Farmer pueden también ejecutar aplicaciones y programa diseñados para su funcionamiento dentro de la red SAFE.
 
-[Click here for more information about how a Farmer earns safecoins ](https://www.youtube.com/watch?v=qpyT6VpdBMQ)
+[Click aquí para saber más de como un Farmer gana safecoin ](https://www.youtube.com/watch?v=qpyT6VpdBMQ)
