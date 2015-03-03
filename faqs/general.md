@@ -1,18 +1,18 @@
 # General
 
-### Why the name MaidSafe?
+### Porqué el nombre MaidSafe?
 
-It’s an acronym: Massive Array of Internet Disks, Secure Access For Everyone.
+Es un acrónimo: Massive Array of Internet Disks, Secure Access For Everyone.
 
 
-### Who owns the SAFE Network?
+### ¿A quien perteneca la red SAFE?
 
-We all do! The SAFE Network is an Open Source resource there for all users of the Internet. The network is completely anonymous, secure and aims to repel human intervention of any kind; it cannot be controlled or 'owned'. We feel very strongly about this and have written a [blog post](http://blog.maidsafe.net/2014/02/07/owning-the-network/) on the subject.
+¡A todos! La red SAFE es un recurso de código abierto para todos los usuarios de internet. La red es completamente anónima , segura, y pretende evitar la intervención humana de todo tipo; no puede ser controlada o "poseida". Esto es algo my importante para nosotros y hemos escrito un post en el [blog](http://blog.maidsafe.net/2014/02/07/owning-the-network/) sobre este tema.
 
-###A truly autonomous distributed network shouldn't need patents to protect it, right?
+###Una red distribuida verdaderamente autónoma no debería necesitar patentes para protegerla, ¿verdad?
 
-Our patents exist in a purely defensive capacity, to protect MaidSafe and the developers that use the platform. MaidSafe do not own the patents, they only have the rights to use them, royalty free and in perpetuity. The MaidSafe Foundation, a registered charity, actually own the patents.
+Nuestras patentes existen a título puramente defensivo, para proteger MaidSafe y los desarrolladores que utilizan la plataforma. MaidSafe no es propietaria de las patentes, sólo tienen derechos de uso de ellos, los cuales son gratuitos y a perpetuidad. La Fundación MaidSafe, una organización benéfica registrada, en en realidad la que posee las patentes..
 
-###MaidSafe technology is nothing new; are you just throwing up marketing hype around it then mentioning Bitcoin?
+###La tecnología MaidSafe no es nada nuevo. ¿Estas simplemente generando autobombo, para su comercialización, subiendo al carro del Bitcoin?
 
-Our papers, patents and design documents describe crypto currencies being crucial to a distributed network (otherwise identity leaks are inevitable). They're all available online with early design specifications (such as Perpetual Coin) and were published in 2006, as were many of our initial patents.
+Nuestros papers, patentes y documentos de diseño describen monedas criptograficas que son cruciales para una red distribuida (de lo contrario las fugas de identidad son inevitables). Todas están disponibles en la red, con las especificaciones iniciales de diseño (como Perpetual Coin) y se publicaron en 2006, al igual que muchas de nuestras patentes iniciales.
