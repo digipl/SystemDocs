@@ -1,12 +1,8 @@
-# An End User
+# Usuario final
 
-An End User is a participant on the network who utilises the client side software to use applications created by App Builders. While they may only be 
-End Users, they may also belong to any, or all of the other user groups.
+Un usuario final es un participante de la red que utiliza la parte del software cliente para usar aplicaciones creadas por desarrolladores. El ser usuario final, no implica que no pueda pertenezca también, y a la vez, a alguno o todos de los diferentes grupos de usuarios.
 
-An End User may decide not to become a Farmer, for example, as they have no additional resource to offer the network (they maybe running their own 
-computer near capacity), or they use a mobile device, such as a phone or a tablet, as their primary method of network access. While it is planned that 
-mobile devices will be able to earn safecoin, some manufacturers force disconnection of data after the screen has switched off, making them suboptimal 
-farming devices. 
+Un usuario final puede decidir no ser un Farmer, por ejemplo porque no tiene recursos que ofrecer a la red (puede que su ordenador este en el límite de su capacidad), o porque está accediendo a red desde un terminal móvil como un Smartphone o una tablet. Aunque está previsto que terminales móviles sean capaces de ganar safecoin, algunos fabricantes fuerzan la desconexión de datos al apagado de pantalla haciendo estos terminales poco aptos como dispositivos de Farming. 
 
-Creating accounts and consuming data, such as a publicly shared pages, are free on the SAFE Network, however, using applications will require safecoin. 
-End Users who are not Farmers, Core Developers or App Builders will need to acquire safecoin from decentralised exchanges. 
+Crear cuentas y consumir datos, como páginas públicas compartidas, es gratuito en la red SAFE. No obstante usar aplicaciones requerirán safecoin.
+Los usuarios finales que no sean Farmers, desarrolladores del núcleo o de aplicaciones necesitarán adquirir safecoin de algún exchange descentralizado.
