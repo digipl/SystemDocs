@@ -1,7 +1,7 @@
 # FAQs
 
-This section contains questions and answers gathered from and discussed by the community. These can be found on [maidsafe.org](https://www.maidsafe.org) in the [FAQ](https://maidsafe.org/c/faq) section. These answers will be updated as further research and analysis is carried out.
+Esta sección contiene preguntas y respuestas recogidas y discutidas por la comunidad. Estos se pueden encontrar en [maidsafe.org] (https://www.maidsafe.org) en la sección (https://maidsafe.org/c/faq). Estas respuestas se actualizarán según nuevas investigaciones y análisis se lleva a cabo.
 
-Please use [maidsafe.org](https://www.maidsafe.org)  as a place to meet, discuss and question the community in general, as this forum is actively monitored.
+Por favor, usar [maidsafe.org](https://www.maidsafe.org)  como lugar para encontrarse, discutir y preguntar a la comunidad, ya que este foro se supervisa activamente.
 
-The list is not exhaustive, so if there is anything you want to know write to us at [info@maidsafe.net](mailto:info@maidsafe.net).
+Esta lista no es exhaustiva, si desea saber algo más escribanos a [info@maidsafe.net](mailto:info@maidsafe.net).
