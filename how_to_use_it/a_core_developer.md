@@ -1,7 +1,7 @@
-# A Core Developer
+# Desarrollador del núcleo
 
-As a Core Developer, a C++ developer contributes to the SAFE Network codebase and is directly rewarded with safecoins.
+Como desarrollador del núcleo, un programador de C++ contribuye al código base de la red SAFE y es premiado directamente con safecoin.
 
-Developers work on the SAFE network core libraries, which are written exclusively in C++, according to a coding standard and with the support of mailing lists and community resources. In addition to the core team, there are decentralized Core Developer pods world-wide which exist to disseminate project knowledge and aid development.
+Los desarrolladores trabajan en las librerias de núcleo, que están escritas exclusivamente en C++, de acuerdo con un estándar de código y con el apoyo de las listas de distribución y recursos comunitarios. Además del equipo básico, hay varios Pods descentralizados (desarrolladores), que a nivel mundial sirven para difundir el conocimiento y ayudar al desarrollo de proyectos.
 
-The amount of safecoins awarded to a Core Developer is determined by their contribution, and payments are allocated from the MaidSafe Foundation from a reserve of 5% of all safecoins set aside for this purpose.
+La cantidad de safecoins, que premia a un desarrollador del núcleo, se determina por su contribución, y los pagos son asignados por la Fundación MaidSafe. Existe una reserva del 5%, del total de safecoins, guardados para este propósito.
