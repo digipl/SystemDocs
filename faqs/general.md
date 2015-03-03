@@ -5,7 +5,7 @@
 Es un acrónimo: Massive Array of Internet Disks, Secure Access For Everyone.
 
 
-### ¿A quien perteneca la red SAFE?
+### ¿A quien pertenece la red SAFE?
 
 ¡A todos! La red SAFE es un recurso de código abierto para todos los usuarios de internet. La red es completamente anónima , segura, y pretende evitar la intervención humana de todo tipo; no puede ser controlada o "poseida". Esto es algo my importante para nosotros y hemos escrito un post en el [blog](http://blog.maidsafe.net/2014/02/07/owning-the-network/) sobre este tema.
 
