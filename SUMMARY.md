@@ -46,7 +46,7 @@
        * [Vault](detail/Vault.md)
 * [FAQs](faqs/README.md)
    * [General](faqs/general.md)
-       * [Infraestructuras](faqs/infrastructure.md)
+       * [Infraestructura](faqs/infrastructure.md)
        * [La red SAFE](faqs/the_safe_network.md)
    * [Desarrolladores](faqs/developers.md)
    * [Safecoins](faqs/safecoin.md)
