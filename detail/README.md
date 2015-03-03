@@ -10,7 +10,7 @@ El código de cada librería está disponible en el [repositorio GitHub de MaidS
 4.  Routing - Routing es una librería de una tabla Hash distribuida (DHT) basada en una tabla de ruta similar a Kademlia
 5.  Encrypt - MaidSafe Encrypt implementa las funciones relativas a la "autoencripción" de ficheros y directorios
 6.  Drive - MaidSafe-Drive es una unidad virtual que ofrece servicios para almacenar y recuperar información de cualquier medio de almacenamiento incluyendo los sistemas de archivos de redes
-7.  Network FileSystem - Trata la red SAFE como un sistema de ficheros. Expone una interfaz pseudo RestFul (GET PUT POST DELETE)
+7.  Network FileSystem - Trata la red SAFE como un sistema de ficheros. Expone una interfaz pseudo RESTful (GET PUT POST DELETE)
 8.  Vault Manager - Almacenamiento de datos, Tipos de datos y el gestor LifeStuff.
 9.  Vault - Autoreparación, auto gestión y red completamente distribuida
 
