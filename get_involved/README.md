@@ -1,35 +1,35 @@
-# Get involved
+# Como participar
 
-The following links provide information on where to go if you want to get involved.
+Los siguientes enlaces proporcionan información sobre dónde ir si quieres participar.
 
 * [MaidSafe.net](http://maidsafe.net)<br/>
-The company coordinating the development and launch of the SAFE Network.
+La Compañia que coordina el desarrollo y lanzamiento de la red SAFE.
 
-* [Contacting MaidSafe](http://maidsafe.net/contact)<br />
-Get in touch with MaidSafe.
+* [Contactar con MaidSafe](http://maidsafe.net/contact)<br />
+Estar en contacto con MaidSafe.
 
-* [The MaidSafe YouTube Channel](https://www.youtube.com/channel/UChDck5R_C9i6XTrS66tbwOw)<br/>
-A large selection of videos about the SAFE Network and how it works.
+* [Canal Youtube de Maidsafe](https://www.youtube.com/channel/UChDck5R_C9i6XTrS66tbwOw)<br/>
+Una amplia seleción de videos sobre la red SAFE y como funciona.
 
 
-### Core Developer and App Builder
+### Desarrollo del núcleo y de aplicaciones
 
-The following links provide more information if you are a Core Developer or an App Builder.
+Los siguientes enlaces proporcionan más información si eres un desarrollador del núcleo o de aplicaciones.
 
 * [GitHub](https://github.com/orgs/maidsafe)<br/>
-All the GitHub repositories for the SAFE Network.
+Todos los repositorios GitHub de la red SAFE.
 
-* [Developer wiki](https://github.com/maidsafe/MaidSafe/wiki)<br/>
-The GitHub repository that provides details of the open source libraries.
+* [Wiki desarrollador](https://github.com/maidsafe/MaidSafe/wiki)<br/>
+Repositorios GitHub que proporcionan detalles de las librerías de código abierto.
 
-* [Developer task list](https://maidsafe.atlassian.net/secure/Dashboard.jspa)<br />
-The current list of bugs and tasks that are part of the SAFE Network development.
+* [Lista de tareas desarrollo](https://maidsafe.atlassian.net/secure/Dashboard.jspa)<br />
+La lista actualizada de bugs y tareas que forman parte del desarrollo de la red SAFE.
 
 * [maidsafe.org](https://www.maidsafe.org/)<br />
-A community run resource for questions, debate and research into all aspects of the SAFE Network.
+La comunidad para preguntas, el debate y la investigación sobre todos los aspectos de la Red SAFE.
 
 ###White papers
-Here are some technical white papers explaining various parts of the SAFE Network.
+Aquí encontraras algunas publicaciones técnicas que explican partes de la red SAFE.
 
 * [AutonomousNetwork](https://github.com/maidsafe/MaidSafe/wiki/unpublished_papers/AutonomousNetwork.pdf?raw=true)
 * [Distributed File System ](https://github.com/maidsafe/MaidSafe/wiki/unpublished_papers/MaidSafeDistributedFileSystem.pdf?raw=true)
