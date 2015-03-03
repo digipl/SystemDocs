@@ -7,7 +7,7 @@ Es un acrónimo: Massive Array of Internet Disks, Secure Access For Everyone.
 
 ### ¿A quien pertenece la red SAFE?
 
-¡A todos! La red SAFE es un recurso de código abierto para todos los usuarios de internet. La red es completamente anónima , segura, y pretende evitar la intervención humana de todo tipo; no puede ser controlada o "poseida". Esto es algo my importante para nosotros y hemos escrito un post en el [blog](http://blog.maidsafe.net/2014/02/07/owning-the-network/) sobre este tema.
+¡A todos! La red SAFE es un recurso de código abierto para todos los usuarios de internet. La red es completamente anónima , segura, y pretende evitar la intervención humana de todo tipo; no puede ser controlada o "poseída". Esto es algo muy importante para nosotros y hemos escrito un post en el [blog](http://blog.maidsafe.net/2014/02/07/owning-the-network/) sobre este tema.
 
 ###Una red distribuida verdaderamente autónoma no debería necesitar patentes para protegerla, ¿verdad?
 
@@ -15,4 +15,4 @@ Nuestras patentes existen a título puramente defensivo, para proteger MaidSafe 
 
 ###La tecnología MaidSafe no es nada nuevo. ¿Estas simplemente generando autobombo, para su comercialización, subiendo al carro del Bitcoin?
 
-Nuestros papers, patentes y documentos de diseño describen monedas criptograficas que son cruciales para una red distribuida (de lo contrario las fugas de identidad son inevitables). Todas están disponibles en la red, con las especificaciones iniciales de diseño (como Perpetual Coin) y se publicaron en 2006, al igual que muchas de nuestras patentes iniciales.
+Nuestros papers, patentes y documentos de diseño describen monedas criptográficas que son cruciales para una red distribuida (de lo contrario las fugas de identidad son inevitables). Todas están disponibles en la red, con las especificaciones iniciales de diseño (como Perpetual Coin) y se publicaron en 2006, al igual que muchas de nuestras patentes iniciales.
