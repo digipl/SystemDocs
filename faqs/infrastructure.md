@@ -50,13 +50,13 @@ Sí, se puede descentralizar cualquier aplicación o servicio web que existe act
 La Red SAFE requiere que todas las solicitudes serán procesadas por al menos dos grupos de Vaults.
 El cliente MaidSafe aprueba una solicitud a sus cuatro Data managers, que verifican la solicitud basándose en la firma del cliente. La solicitud se pasa entonces a un grupo seleccionado de forma determinista de otros cuatro Vault que también verifican la solicitud basándose en su firma.
 
-Al seleccionar el segundo grupo de Data managres de manera determinista, este ataque ya no es válido para la red SAFE, ya que no le es posible, a un atacante, obtener el control de un Vault simplemente rodeandolo.
+Al seleccionar el segundo grupo de Data managres de manera determinista, este ataque ya no es válido para la red SAFE, ya que no le es posible, a un atacante, obtener el control de un Vault simplemente rodeándolo.
 
 Para evitar esto, el atacante requeriría la capacidad de rodear Vaults específicos en la Red SAFE. Esto no se puede lograr, ya que requeriría ser capaz de generar de forma efectiva diferentes valores que, cuando se generara su hash con SHA-512, diera valores cercanos a un punto particular.
 
 ###¿De qué manera trata la red SAFE la redundancia de datos para asegurar que todos los datos que se comparte se encuentren accesibles?
 
-Cada archivo se encripta y dividide en trozos durante nuestro proceso de autoencriptación (Self Encryption). La red guarda y conserva cuatro copias de cada trozo encriptado y copia estos fragmentos por la red cuando los nodos dejan de estar disponibles, ya sea a través de un error o un apagado. Con el fin de hacer frente a esta rotación, la red es capaz de reconfigurase a nivel mundial de forma extremadamente rápida (20 milisegundos). Los trozos se distribuyen a nivel mundial para una mayor robustez.
+Cada archivo se encripta y divide en trozos durante nuestro proceso de autoencriptación (Self Encryption). La red guarda y conserva cuatro copias de cada trozo encriptado y copia estos fragmentos por la red cuando los nodos dejan de estar disponibles, ya sea a través de un error o un apagado. Con el fin de hacer frente a esta rotación, la red es capaz de reconfigurase a nivel mundial de forma extremadamente rápida (20 milisegundos). Los trozos se distribuyen a nivel mundial para una mayor robustez.
 
 La Red SAFE es completamente autónoma y todas estas operaciones son gestionadas y completadas por el sistema sin nuestro conocimiento.
 
