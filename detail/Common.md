@@ -1,17 +1,17 @@
-#Common Overview
+#Descripción general libreria Common
 
-Maidsafe-Common library provides many components that are widely used by other MaidSafe libraries. Use of these components is strongly encouraged as they are well tested and will evolve over time to increase efficiency and effectiveness.
+La librería Maidsafe-Common proporciona muchos componentes que son ampliamente utilizados por otras bibliotecas MaidSafe. Se recomienda encarecidamente el uso de estos componentes se recomienda ya que están bien probados y evolucionarán con el tiempo para aumentar la eficiencia y eficacia.
 
-Generally, the components it presents can be divided into the following groups :
+Generalmente, los componentes pueden dividirse en los siguientes grupos:
 
-_**Concurrency Helpers**_
-* [Active-Object](https://github.com/maidsafe/MaidSafe-Common/wiki/Active-Object) - An implementation of [Active Object Design Pattern](http://en.wikipedia.org/wiki/Active_object). Useful for running operations in a thread safe manner.
-* [Asio-Service](https://github.com/maidsafe/MaidSafe-Common/wiki/Asio-Service) - Asynchronous helpers for asynchronous operations and timers based on [Boost ASIO](http://www.boost.org/doc/libs/release/doc/html/boost_asio.html).
-* [Safe-Queue](https://github.com/maidsafe/MaidSafe-Common/wiki/Safe-Queue) - An internally synchronised (not lock free) queue based on a [deque](http://en.cppreference.com/w/cpp/container/deque). Please consider [boost lock free](http://www.boost.org/doc/libs/release/doc/html/lockfree.html) structures instead. This container is likely to be deprecated.
+_**Ayudas a la concurrencia**_
+* [Active-Object](https://github.com/maidsafe/MaidSafe-Common/wiki/Active-Object) - Una implementación del [Active Object Design Pattern](http://en.wikipedia.org/wiki/Active_object). Utíl para correr operaciones en un hilo seguro..
+* [Asio-Service](https://github.com/maidsafe/MaidSafe-Common/wiki/Asio-Service) - Ayudantes asíncrono para operaciones asíncronas y temporizadores basado en [Boost ASIO](http://www.boost.org/doc/libs/release/doc/html/boost_asio.html).
+* [Safe-Queue](https://github.com/maidsafe/MaidSafe-Common/wiki/Safe-Queue) - Cola interna sincronizada (con cerradura) basada en [deque](http://en.cppreference.com/w/cpp/container/deque). Por favor, considere mejor la estructura [boost lock free](http://www.boost.org/doc/libs/release/doc/html/lockfree.html). Este contenedor esta considerado obsoleto.
 
-_**Type Safety**_
-* [Bounded-String](https://github.com/maidsafe/MaidSafe-Common/wiki/Bounded-String) - Create string types with upper and lower 'bounds'
-* [Tagged-Value](https://github.com/maidsafe/MaidSafe-Common/wiki/Tagged-Value) - An implementation of [the whole value idiom](http://martin-moene.blogspot.co.uk/2012/07/light-on-whole-value.html)
+_**Tipos seguros**_
+* [Bounded-String](https://github.com/maidsafe/MaidSafe-Common/wiki/Bounded-String) - Crear tipos de string con "límites" superior e inferior
+* [Tagged-Value](https://github.com/maidsafe/MaidSafe-Common/wiki/Tagged-Value) - Una implementación de [the whole value idiom](http://martin-moene.blogspot.co.uk/2012/07/light-on-whole-value.html)
 
 _**Exception Safety**_
 * [Errors-Exceptions](https://github.com/maidsafe/MaidSafe-Common/wiki/Errors-Exceptions) - Error handling system extending ```std::error_code``` and ```std::exception```
