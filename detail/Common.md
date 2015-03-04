@@ -1,6 +1,6 @@
 #Descripción general libreria Common
 
-La librería Maidsafe-Common proporciona muchos componentes que son ampliamente utilizados por otras bibliotecas MaidSafe. Se recomienda encarecidamente el uso de estos componentes se recomienda ya que están bien probados y evolucionarán con el tiempo para aumentar la eficiencia y eficacia.
+La librería Maidsafe-Common proporciona muchos componentes que son ampliamente utilizados por otras bibliotecas MaidSafe. Se recomienda encarecidamente el uso de estos componentes ya que están bien probados y evolucionarán con el tiempo para aumentar su eficiencia y eficacia.
 
 Generalmente, los componentes pueden dividirse en los siguientes grupos:
 
