@@ -13,49 +13,49 @@ _**Tipos seguros**_
 * [Bounded-String](https://github.com/maidsafe/MaidSafe-Common/wiki/Bounded-String) - Crear tipos de string con "límites" superior e inferior
 * [Tagged-Value](https://github.com/maidsafe/MaidSafe-Common/wiki/Tagged-Value) - Una implementación de [the whole value idiom](http://martin-moene.blogspot.co.uk/2012/07/light-on-whole-value.html)
 
-_**Exception Safety**_
-* [Errors-Exceptions](https://github.com/maidsafe/MaidSafe-Common/wiki/Errors-Exceptions) - Error handling system extending ```std::error_code``` and ```std::exception```
-* [On-Scope-Exit](https://github.com/maidsafe/MaidSafe-Common/wiki/On-Scope-Exit) - A very handy utility to revert values or perform functions on the event of an exception being thrown.
+_**Seguros de excepciones**_
+* [Errors-Exceptions](https://github.com/maidsafe/MaidSafe-Common/wiki/Errors-Exceptions) - Extensiones del sistema de manejo de errores ```std::error_code``` y ```std::exception```
+* [On-Scope-Exit](https://github.com/maidsafe/MaidSafe-Common/wiki/On-Scope-Exit) - Una utilidad muy práctica para revertir valores o realizar funciones en caso de lanzar una excepción.
 
-_**Data Storage**_
+_**Almacenamiento de datos**_
 
-The data storage section implements classes which satisfy some of the requirements of the network's RESTful interface; mainly Put, Get and Delete.  They are essentially <key,value> stores, not databases.
+La sección de almacenamiento de datos implementa clases que satisfacen algunos de los requerimientos de red de la interface RESTful; principalmente Put, Get and Delete. Son esencialmente almacenamiento <key,value>, no bases de datos.
 
-Its interface is provided in the following files:
+Su interfaz está disponible en los siguientes archivos:
 
-* [permanent_store.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/permanent_store.h) - A persistent storage class using the filesystem as the storage medium.
-* [data_buffer.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/data_buffer.h) - A FIFO buffer which uses a combination of disk-based storage and memory-based storage.  It is designed to allow fast read/write to the in-memory portion while a background thread copies the data to the on-disk portion.
-* [data_store.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/data_store.h) - A policy-based storage class.  This is currently used in conjunction with the [DataBuffer](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/data_buffer.h) as the policy.
-* [memory_buffer.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/memory_buffer.h) - An in-memory storage class internally using a [`boost::circular_buffer`][boost_circular_buffer] to provide fast, small FIFO storage for non-persistent data.
+* [permanent_store.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/permanent_store.h) - Una clase de almacenamiento persistente usando el sistema de ficheros como medio de almacenaje.
+* [data_buffer.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/data_buffer.h) - Un buffer FIFO que utiliza una combinación de almacenamiento basado en disco y de almacenamiento basado en memoria. Está diseñado para permitir lectura/escritura rápida en memoria mientras un subproceso de fondo copia los datos en la parte del disco.
+* [data_store.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/data_store.h) - Una clase de almacenamiento basado en directivas.  Se suele usar concurrentemente junto a [DataBuffer](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/data_buffer.h) como directiva.
+* [memory_buffer.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/memory_buffer.h) - Una clase de almacenamiento de memoria interna usando [`boost::circular_buffer`][boost_circular_buffer] para proporcionar un pequeño y rápido almacenamiento FIFO para los datos no persistentes.
 
-_**Data Types**_
+_**Tipos de datos**_
 
-The data types section is used to pull together the various types of data which the network can handle.  Some types are defined here, others simply are enumerated.  Enumerations of the types are unfortunately required when serialising the data in order to send it to peer nodes on the network.
+La sección de los tipos de datos se utiliza para reunir los distintos tipos de datos que puede manejar la red. Algunos tipos se definen aquí, otros simplemente se enumeran. Las enumeraciones de los tipos se requiere, desafortunadamente, cuando se serializa los datos a fin de enviarlos a nodos similares en la red.
 
-The interface is provided in the following files:
+Su interfaz está disponible en los siguientes archivos:
 
-* [data_type_values.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_types/data_type_values.h) - An enumeration of all data types which can be handled by the MaidSafe Network.
-* [immutable_data.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_types/immutable_data.h) - A data type whose content cannot be changed.  Its name is defined as the SHA512 hash of its value.  This is the primary type of data resulting from self-encrypting a file.
-* [structured_data_versions.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_types/structured_data_versions.h) - A data type not itself directly put to the network, but rather a means of managing versions of mutable data put to the network.  The versions represent pointers to ImmutableData chunks.
-* [mutable_data.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_types/mutable_data.h) - Data types representing serialised versions.  These are used in the context of storing updates to directories; each update becomes a new version.  When a user's directory changes, it is serialised, encrypted if required, and the contents put to the network as ImmutableData.  The name of that piece of ImmutableData is the value of a version (along with a reference to the previous version).  This version is then serialised into a MutableData chunk and stored.  The name of the Directory is a random string and persists for the duration of the directory's lifetime.
-* [data_name_variant.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_types/data_name_variant.h) - A [`boost::variant`][boost_variant] of the names of the various types which the network handles.  This is primarily used in the Data Stores, where there is a requirement to hold various types of similarly-structured data, but with different actual name types.
+* [data_type_values.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_types/data_type_values.h) - Una enumeración de todos los tipos de datos que pueden ser manejadas por la Red MaidSafe.
+* [immutable_data.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_types/immutable_data.h) - Un tipo de datos cuyo contenido no puede modificarse. Su nombre se define como el hash SHA512 de su valor. Este es el principal tipo de datos como resultado de la autoencriptación de un archivo.
+* [structured_data_versions.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_types/structured_data_versions.h) - Un tipo de datos, no puesto por si mismo directamente a la red, sino más bien como medio para manejar versiones de los datos mutables de la red. Las versiones representan punteros a trozos ImmutableData.
+* [mutable_data.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_types/mutable_data.h) - Los tipos de datos que representan versiones seriadas. Estos se utilizan en el contexto de almacenar cambios a directorios; cada actualización se convierte en una nueva versión. Cuando los cambios de directorio de un usuario, es serializado, y encriptado en caso necesario, y los contenidos puestos a la red como ImmutableData. El nombre de ese trozo de ImmutableData es el valor de una versión (junto con una referencia a la versión anterior). Esta versión se serializa luego en un trozo MutableData y se almacena. El nombre del directorio es una cadena aleatoria y persiste durante la duración de la vida del directorio.
+* [data_name_variant.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_types/data_name_variant.h) - Una [`boost::variant`][boost_variant] variante de los nombres de los diferentes tipos que maneja la red. Esto se utiliza principalmente en los almacenes de datos, donde hay el requisito de poseer varios tipos de datos de estructura similar, pero con diferentes nombres.
 
-_**General Utilities**_
-* [Utils](https://github.com/maidsafe/MaidSafe-Common/wiki/Utils) - A varied mix of utilities, such as hex conversions, random number generators etc.
-* [Key Value Buffer](https://github.com/maidsafe/MaidSafe-Common/wiki/Key-Value-Buffer) - A buffered disk writing system with caching ability.
-* [Node Id](https://github.com/maidsafe/MaidSafe-Common/wiki/Node-Id) - Utilities to handle 512 bit addresses as used throughout MaidSafe libraries.
+_**Utilidades generales**_
+* [Utils](https://github.com/maidsafe/MaidSafe-Common/wiki/Utils) - Una mezcla variada de servicios públicos, tales como las conversiones hexadecimales, generadores de números aleatorios, etc.
+* [Key Value Buffer](https://github.com/maidsafe/MaidSafe-Common/wiki/Key-Value-Buffer) - Un sistema de escritura en disco con buffer y capacidad de almacenamiento en caché.
+* [Node Id](https://github.com/maidsafe/MaidSafe-Common/wiki/Node-Id) - Utilidades para manejar direcciones de 512 bit como se utiliza en las bibliotecas MaidSafe.
 
-_**Cryptographic Helpers**_
-* [Crypto Utils](https://github.com/maidsafe/MaidSafe-Common/wiki/Crypto-Utils) - Symmetric encryption, Hash wrappers, secure password wrapper, N+P key sharing (based on Shamir's algorithm)
-* [Asymmetric Encryption](https://github.com/maidsafe/MaidSafe-Common/wiki/Asymmetric-Encryption) - Wrapper for asymmetric encryption methods (including safe encrypt), currently supporting RSA.
+_**Ayudas criptográficas**_
+* [Crypto Utils](https://github.com/maidsafe/MaidSafe-Common/wiki/Crypto-Utils) - Cifrado simétrico, empaquetado Hash, empaquetado de contraseña segura, clave compartida N+P (basado en el algoritmo de Shamir)
+* [Asymmetric Encryption](https://github.com/maidsafe/MaidSafe-Common/wiki/Asymmetric-Encryption) - Empaquetado para métodos asimétricos de cifrado (incluyendo encripción safe), actualmente soporta RSA.
 
-_**Debug helpers**_
+_**Ayudas a la depuración**_
 * [Test Runner](https://github.com/maidsafe/MaidSafe/wiki/Running-Tests)
 * [Logging](https://github.com/maidsafe/MaidSafe/wiki/Logging-Options)
 
-## NetWork_Viewer
+## Visor de red
 
-[NetWork Viewer](http://visualiser.maidsafe.net:8080/auth) is a UI tool presented by MaidSafe to visualize the MaidSafe-Routing network. It can help you understanding how the network works and debugging routing algorithms.
+[NetWork Viewer](http://visualiser.maidsafe.net:8080/auth) es una herramienta de interfaz de usuario presentada por MaidSafe para visualizar la ruta dela red MaidSafe. Le puede ayudar a entender cómo funciona la red y depurar algoritmos de enrutamiento.
 
 
 
