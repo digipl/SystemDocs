@@ -11,7 +11,7 @@ Es un acrónimo: Massive Array of Internet Disks, Secure Access For Everyone.
 
 ###Una red distribuida verdaderamente autónoma no debería necesitar patentes para protegerla, ¿verdad?
 
-Nuestras patentes existen a título puramente defensivo, para proteger MaidSafe y los desarrolladores que utilizan la plataforma. MaidSafe no es propietaria de las patentes, sólo tienen derechos de uso de ellos, los cuales son gratuitos y a perpetuidad. La Fundación MaidSafe, una organización benéfica registrada, en en realidad la que posee las patentes..
+Nuestras patentes existen a título puramente defensivo, para proteger MaidSafe y los desarrolladores que utilizan la plataforma. MaidSafe no es propietaria de las patentes, sólo tienen derechos de uso de ellos, los cuales son gratuitos y a perpetuidad. La Fundación MaidSafe, una organización benéfica registrada, es, en realidad, la que posee las patentes..
 
 ###La tecnología MaidSafe no es nada nuevo. ¿Estas simplemente generando autobombo, para su comercialización, subiendo al carro del Bitcoin?
 
