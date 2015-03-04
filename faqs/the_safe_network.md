@@ -1,57 +1,57 @@
-# The SAFE Network
+# la red SFE
 
-These FAQs relate to additional details about the SAFE Network.
-
-
-### What kind of research and validation has been carried out to affirm the SAFE Network will live up to the claims?
-
-With such a radical solution, validation is extremely important. MaidSafe's technology has been peer reviewed with papers published and presented at the Wireless World Research Forum and the IEEE Computer Society. During development, MaidSafe has engaged with Scotland's leading technical Universities; Stirling, Strathclyde, St Andrews and the University of Abertay.
-
-Furthermore, MaidSafe's founder, David Irvine, has showcased the company's technology at the Google Scalability conference and at the British Computer Society's (Scotland) 50th Anniversary Christmas lecture.
-
-A fully decentralised test network is now up and running, with 200 nodes spread across three continents.
-
-###The web as it is needs no gatekeeper, shouldn't your system be designed this way as well?
-
-We agree that the Internet should never have a gatekeeper and we don't intend to start, that is why all our code is Open Source and we have transferred ownership to all the people of the world. The SAFE Network is also completely free from human intervention (the weakest and most corruptible part of any system), relying totally on maths and logic.
+Este FAQ trata sobre detalles adicionales de la red SAFE.
 
 
-###What are the benefits of using the Safe Network?
+### ¿Que tipo de investigación y validación se ha llevado a cabo para afirmar que la red SAFE cumple lo prometido?
 
-The benefits of using the SAFE Network are numerous and for end users these are as follows:
-* Private and secure communications
-* Secure storage of all data
-* Being control of your own data and personal information
-* Websites that go faster the more popular they get
+Con una solución tan radical, la validación es extremadamente importante. La tecnología de MaidSafe ha sido revisada por técnicos con los trabajos publicados y presentados en el Wireless World Research Forum y la IEEE Computer Society. Durante el desarrollo, MaidSafe ha colaborado con universidades líderes en Escocia; Stirling, Strathclyde, St Andrews y la Universidad de Abertay.
 
+Por otra parte, el fundador de MaidSafe, David Irvine, ha mostrado la tecnología de la compañía en la Google Scalability conference y en la lectura de Navidad del 50 Aniversario de la British Computer Society (Escocia).
 
-###Where can I download the SAFE Network software?
+Una red de prueba, totalmente descentralizada, ya está en marcha y funcionando, con 200 nodos repartidos por tres continentes.
 
-We plan beta launch at the end of this year/early 2015, at which point users will be able to start providing resource (earning safecoins) to the network and start using SAFE applications.
+###La web no necesita portero, ¿No debiera su sistema ser diseñado también de esta manera?
 
-When the network is launched a simple software download is all you require and we will inform users where to go nearer the time using our forum, blog and social media channels.
+Estamos de acuerdo en que Internet nunca debe tener un portero y no tenemos la intención de empezar, es por eso que todo nuestro código es Open Source y hemos transferido la propiedad a toda la humanidad. La Red SAFE es completamente libre, libre también de la intervención humana (la parte más débil y corruptible de cualquier sistema), confiando solamente en las matemáticas y la lógica.
 
 
-###Where is the information of who has which chunks of a given file stored?
+###¿Cuales son los beneficios de usar la red SAFE?
 
-As a user saves their data, or interacts with applications, their data is broken up, encrypted and then distributed randomly throughout the network to other vaults. This process is irreversible and therefore during the chunking and encryption process a data map is created for each file recording the identity of each of the files chunks that enable the file to be reconstituted.
-
-This data map is treated as any file on the network and is also run through the chunking and encryption process and then stored as encrypted chunks, spread randomly throughout the network. Only the correct combination of PIN, username and password will enable a file(s) to become readable.
-
-###What language are the SAFE Network apps written in?
-
-The API / libraries are written in C++, however, application developers will not be restricted as it is MaidSafe’s intention to make the network as accessible as possible.
-
-Anyone will be able to write their own wrappers to add support for a new language.
+Los beneficios de usar la red SAFE son numerosos y , para el usuario final, estos son algunos de ellos:
+* Comunicaciones privadas y seguras
+* Almacenamiento seguro de cualquier dato
+* Control de los datos y de la información personal
+* Sitios WEB más rápidos cuanto más populares
 
 
-###Can MaidSafe clients host on different operating systems access the same vaults?
+###¿Donde puedo descargar el programa de red SAFE?
 
-Yes, the SAFE Network and client are completely supported cross-platform.
+Tenemos planeado el lanzamiento de una beta durante este año 2015, en el que, usuarios puntuales, podrán comenzar a proporcionar recursos a la red (que les permitirá ganar safecoin) y comenzar a utilizar aplicaciones SAFE.
+
+Cuando la red se ponga en marcha una simple descarga de software es todo lo que necesita. Informaremos a los usuarios dónde hacerlo utilizando nuestro foro, blog y canales de medios sociales.
 
 
-###What kind of equipment will be required for dedicated farming?
+###¿Dónde se almacena la información de quién tiene que trozo de un archivo dado?
 
-At this point we don’t know what type of equipment will offer the most efficient farming and only through testing of the live network will we know definitively. The farming algorithms within the network are designed to favour small commodity devices to avoid some of the centralising aspects experienced within the Bitcoin mining community.
+Cuando un usuario guarda sus datos, o interactúa con las aplicaciones, sus datos se dividen, encriptan y se distribuyen aleatoriamente a través de la red a otros Vault. Este proceso es irreversible, por lo que durante el proceso de división y encriptación, se crea, por cada archivo, un mapa de datos guardando la identidad de cada uno de los trozos que permitirá que el archivo sea reconstituido.
 
-Farming is discussed quite frequently on our forum [www.maidsafe.org](http://www.maidsafe.org) and many of the community members are experimenting with single board computers that are powerful, yet have very low power consumption, well suited to being left on 24/7.
+Este mapa de datos se trata como cualquier archivo en la red y también se procede, a través del proceso de división y encriptación, a almacenarlo como trozos cifrados, que se distribuyen al azar por toda la red. Sólo la combinación correcta de PIN, nombre de usuario y contraseña permitirá que un archivo sea legible.
+
+###¿En que lenguaje de programación están escritas las aplicaciones SAFE?W
+
+La API y las librerias están escritas en C++. No obstante, los desarrolladores de aplicaciones no estarán limitados, ya que es intención de MaidSafe que la red sea lo más accesible posible.
+
+Cualquier persona podrá escribir sus propios wrappers para añadir soporte a nuevo lenguaje de programación.
+
+
+###¿Pueden los clientes MaidSafe, de distintos sistemas operativos, acceder a los mismas Vaults?
+
+Si, la red SAFE y el cliente son completamente multiplataforma.
+
+
+###¿Que tipo de equipo se requerirá para dedicarse al Farming?
+
+En este momento no sabemos qué tipo de equipo ofrecerá el Farming más eficiente y sólo a través de pruebas de la red en vivo lo sabremos definitivamente. Los algoritmos de Farming, dentro de la red, están diseñados para favorecer a los pequeños dispositivos a fin de evitar algunos de los aspectos centralizadores experimentados dentro de la comunidad minera Bitcoin.
+
+El Farming se discute con bastante frecuencia en nuestros foros [www.maidsafe.org] (http://www.maidsafe.org) y muchos de los miembros de la comunidad están experimentando con nanoordenadores, lo suficientemente poderosos pero con muy bajo consumo de energía, adecuado para ser usado 24/7.
