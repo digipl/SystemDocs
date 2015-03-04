@@ -6,7 +6,7 @@ En este ataque, un Vault pretende ofrecer una capacidad de almacenamiento superi
 
 ##Propósito del ataque
 
-El propósito de este ataque es obtener la capacidad de unirse a determinadas zonas de la Red SAFE y crear reglas falsas que afecten su comportamiento. Es similar al "ataque 50%" visto a menudo en criptomonedas.
+El propósito de este ataque es obtener la capacidad de unirse a determinadas zonas de la Red SAFE y crear reglas falsas que afecten su comportamiento. Es similar al "ataque del 50%" visto a menudo en criptomonedas.
 
 En ataques a gran escala de este tipo, sería posible realizar un daño considerable a la Red SAFE incluyendo el robo o doble gasto de safecoins o el borrado de datos.
 
