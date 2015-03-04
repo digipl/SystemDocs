@@ -1,37 +1,37 @@
-# Safecoins
+# Safecoin
 
-### What gives safecoin value?
+### ¿Que da valor a los safecoin?
 
-Safecoin has value because it has utility. Users can earn safecoin by [farming](http://www.maidsafe.net/SystemDocs/how_to_use_it/farmers.html) safecoin and use it to buy more storage, and access applications and services on the network. It will also be possible to purchase safecoin via exchanges, as the network launches, and this will also provide safecoin with a direct fiat valuation.
+Los safecoin tienen valor porque tiene utilidad. Los usuarios pueden ganar safecoin con el [farming](http://www.maidsafe.net/SystemDocs/how_to_use_it/farmers.html) y usarlos para comprar mas almacenaje o acceder a aplicaciones y servicios en la red. También será posible, cuando la red se estrene, comprar safecoin via exchanges, lo cual proporcionará que los safecoin tengan una valoración fiat directa.
 
-The underlying network also provides safecoin with additional value in a less obvious way, via the transaction mechanism within the network (the SAFE Network’s version of the block chain). Capable of processing millions of transactions per second and able to confirm transactions at network speed, the currency is instantly redeemable, secure and anonymous on wallets that are easy to use and built in to the network. These features are well suited to buying not only network services, but also products being sold on the network by merchants.
+La red subyacente también proporciona a los safecoin un valor adicional de una manera menos obvia, a través del mecanismo de transacciones dentro de la red (la versión de la Red SAFE de la cadena de bloque). Al ser capaz de procesar millones de transacciones por segundo y de confirmar las transacciones a la velocidad de la red, la moneda es instantáneamente canjeable, segura y anónima con wallets fáciles de usar y accesibles desde la red. Estas características la hacen muy adecuada, no solo para comprar servicios de red, sino para cualquier otro productos o servicio vendido en la red por cualquier comerciante.
 
-For more information about this FAQ, refer to the full answer on [maidsafe.org](https://www.maidsafe.org/t/what-gives-safecoin-value-and-differentiates-it-from-altcoins/411).
+Para más información sobre estas características ir a [maidsafe.org](https://www.maidsafe.org/t/what-gives-safecoin-value-and-differentiates-it-from-altcoins/411).
 
-### How is safecoin valued?
+### ¿Como esta el safecoin valorado?
 
-While the number of users on the SAFE Network is increasing there is a virtuous circle:
+Mientras el número de usuarios de la Red SAFE aumente existe un círculo virtuoso:
 
-* More safecoin will be held in new wallets, as most users will be Farmers by default.
-* This will increase liquidity and distribute wealth, providing almost all users with at least a few safecoin in their wallet.
-* Users may exchange their safecoin for network services, or for cash (or another digital currency) using an exchange.
+* Más safecoin se guardarán en las nuevas wallet, ya que la mayoría los usuarios serán farmers de forma predeterminada.
+* Esto aumentará la liquidez y la distribución de riqueza, proporcionando, a prácticamente todos los usuarios, algunos safecoin en su wallet.
+* Los usuarios pueden cambiar sus safecoin por servicios de red, o por liquidez (o alguna otra moneda digital) usando un exchange.
+* 
+La relación de safecoin guardados (dejados en las nuevas carteras) frente a los concedidos a los farmers producirán un punto de valor.
 
-The ratio of safecoin being saved (left in new wallets) versus the ratio being issued to Farmers will produce a value point.
+El volumen de oferta y demanda crecerá con la red, que tenderá a crear una moneda cada vez más estable y que aumenta de valor con el tiempo. Su valor crece porque está ligada a su utilidad (que incentiva su posesión ya que aumenta con el tiempo), y por el creciente número de usuarios de la red (aumento de personas usándola).
 
-The volume of supply and demand will grow with the network, which tends to create an increasingly stable currency that increases in value over time. Value grows because it is linked to its usefulness (incentive to hold, which also increases over time), and the increasing number of users of the network (people wanting to hold it).
+Con el tiempo este círculo virtuoso se hace más fuerte (y su volumen aumenta) debido a que el número de usuarios está creciendo. El incentivo para poseer y utilizar safecoin también aumentará debido a la existencia de nuevas aplicaciones y servicios. La especulación actuará, por supuesto, pero la red proporciona un anclaje de valor real que ayudará a amortiguar este impacto.
 
-Over time this virtuous circle becomes stronger (as the volume increases) because the number of users is growing. The incentive to hold and use safecoin will also increase due to the addition of applications and services. Speculation will disrupt this of course, but the network provides a real value anchor that will help to dampen this impact.
+Para más información sobre estas características ir a [maidsafe.org](https://www.maidsafe.org/t/what-gives-safecoin-value-and-differentiates-it-from-altcoins/411).
 
-For more information about this FAQ, refer to the full answer on [maidsafe.org](https://www.maidsafe.org/t/what-gives-safecoin-value-and-differentiates-it-from-altcoins/411).
+###¿Dónde puedo negociar mi monedas MaidSafe?
 
-###Where do I trade my MaidSafe coins?
-
-It is possible to buy MaidSafeCoins from the following third party exchanges.
+Es posible comprar MaidSafeCoins a través de los siguientes exchanges externos.
 
 * [https://masterxchange.com/mark...](https://masterxchange.com/market.php?currency=maid)
 * [https://poloniex.com/exchange/....](https://poloniex.com/exchange/btc_maid)
 
-###Is the entire amount of safecoins going to be released when the SAFE Network goes live?
+###¿La cantidad total de safecoins se liberará cuando la Red SAFE comience?
 
-No. The remaining safecoins will be generated by the network gradually and at a speed that is determined by how much the network is used.
+No. Los safecoins restantes serán generados por la red de forma gradual y con una velocidad que viene determinada por el uso que se haga de la red.
 
