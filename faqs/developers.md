@@ -1,9 +1,9 @@
-# Developers
+# Desarrolladores
 
-### As a developer looking to build applications on the SAFE Network, where do I start?
+### Como desarrollador que desea realizar aplicaciones para la red SAFE, ¿Donde comienzo?
 
-You can get started right now by going to the [GitHub Wiki](https://github.com/maidsafe/MaidSafe/wiki) and following the instructions to set up the build environment and get the sub-modules built.
+Puede empezar ahora mismo yendo a la [GitHub Wiki] (https://github.com/maidsafe/MaidSafe/wiki) y siguiendo las instrucciones para configurar el entorno de programación y obtener los sub-módulos ya generados.
 
-The [SAFE examples](http://maidsafe.net/maidsafe-examples/) focus on how to use the API project to build apps and explore the different parts of the system. Please note that this work is on-going so be ready for more updates to the examples project.
+Los [ejemplos SAFE](http://maidsafe.net/maidsafe-examples/) se centran en como usar la API para construir aplicaciones y explorar las diferentes partes el sistema. Por favor, tener en cuenta que este es un proceso en marcha por lo que hay que estar preparado para más actualizaciones en el proyecto de ejemplos.
 
-For support, please go to our [dev mailing list](https://groups.google.com/forum/#!forum/maidsafe-development) or to the community run [forum](https://www.maidsafe.org/).
+Para soporte, por favor, ir a [dev mailing list](https://groups.google.com/forum/#!forum/maidsafe-development) o a los foros de la [comunidad](https://www.maidsafe.org/).
