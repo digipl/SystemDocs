@@ -5,8 +5,8 @@ La librería Maidsafe-Common proporciona muchos componentes que son ampliamente 
 Generalmente, los componentes pueden dividirse en los siguientes grupos:
 
 _**Ayudas a la concurrencia**_
-* [Active-Object](https://github.com/maidsafe/MaidSafe-Common/wiki/Active-Object) - Una implementación del [Active Object Design Pattern](http://en.wikipedia.org/wiki/Active_object). Utíl para correr operaciones en un hilo seguro..
-* [Asio-Service](https://github.com/maidsafe/MaidSafe-Common/wiki/Asio-Service) - Ayudantes asíncrono para operaciones asíncronas y temporizadores basado en [Boost ASIO](http://www.boost.org/doc/libs/release/doc/html/boost_asio.html).
+* [Active-Object](https://github.com/maidsafe/MaidSafe-Common/wiki/Active-Object) - Una implementación del [Active Object Design Pattern](http://en.wikipedia.org/wiki/Active_object). Utíl para correr operaciones en un hilo seguro.
+* [Asio-Service](https://github.com/maidsafe/MaidSafe-Common/wiki/Asio-Service) - Ayudantes para operaciones asíncronas y temporizadores basado en [Boost ASIO](http://www.boost.org/doc/libs/release/doc/html/boost_asio.html).
 * [Safe-Queue](https://github.com/maidsafe/MaidSafe-Common/wiki/Safe-Queue) - Cola interna sincronizada (con cerradura) basada en [deque](http://en.cppreference.com/w/cpp/container/deque). Por favor, considere mejor la estructura [boost lock free](http://www.boost.org/doc/libs/release/doc/html/lockfree.html). Este contenedor esta considerado obsoleto.
 
 _**Tipos seguros**_
