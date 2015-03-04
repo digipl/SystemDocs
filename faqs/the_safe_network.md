@@ -1,4 +1,4 @@
-# la red SFE
+# La red SAFE
 
 Este FAQ trata sobre detalles adicionales de la red SAFE.
 
@@ -40,7 +40,7 @@ Este mapa de datos se trata como cualquier archivo en la red y también se proce
 
 ###¿En que lenguaje de programación están escritas las aplicaciones SAFE?W
 
-La API y las librerias están escritas en C++. No obstante, los desarrolladores de aplicaciones no estarán limitados, ya que es intención de MaidSafe que la red sea lo más accesible posible.
+La API y las librerías están escritas en C++. No obstante, los desarrolladores de aplicaciones no estarán limitados, ya que es intención de MaidSafe que la red sea lo más accesible posible.
 
 Cualquier persona podrá escribir sus propios wrappers para añadir soporte a nuevo lenguaje de programación.
 
