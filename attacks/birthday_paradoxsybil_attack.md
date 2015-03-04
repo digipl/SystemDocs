@@ -17,4 +17,4 @@ Un cliente Maidsafe envía una petición a sus cuatro Data managers, que verific
 
 Al seleccionar determinísticamente el segundo grupo de Data managers, este ataque ya no es válido para la red SAFE, ya que, para el atacante, no le es posible obtener el control de un Vault simplemente rodeándolo.
 
-Para evitar esto, el atacante requeriría la capacidad de rodear Vaults específicos en la Red SAFE. Esto no se puede lograr, ya que requeriría ser capaz de generar efectivamente diferentes valores que, cuando se realice su hash con SHA-512, resulten en hashes alrededor de un punto particular.
+Para evitar esto, el atacante requeriría la capacidad de rodear Vaults específicos en la Red SAFE. Esto no se puede lograr, ya que requeriría ser capaz de generar, de forma efectiva, diferentes valores que, cuando se realice su hash con SHA-512, den como resultado hashes alrededor de un punto en particular.
