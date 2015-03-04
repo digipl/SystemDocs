@@ -19,7 +19,7 @@ _**Seguros de excepciones**_
 
 _**Almacenamiento de datos**_
 
-La sección de almacenamiento de datos implementa clases que satisfacen algunos de los requerimientos de red de la interface RESTful; principalmente Put, Get and Delete. Son esencialmente almacenamiento <key,value>, no bases de datos.
+La sección de almacenamiento de datos implementa clases que satisfacen algunos de los requerimientos de la interface de red RESTful; principalmente Put, Get and Delete. Son esencialmente almacenamiento <key,value>, no bases de datos.
 
 Su interfaz está disponible en los siguientes archivos:
 
