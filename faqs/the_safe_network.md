@@ -38,7 +38,7 @@ Cuando un usuario guarda sus datos, o interactúa con las aplicaciones, sus dato
 
 Este mapa de datos se trata como cualquier archivo en la red y también se procede, a través del proceso de división y encriptación, a almacenarlo como trozos cifrados, que se distribuyen al azar por toda la red. Sólo la combinación correcta de PIN, nombre de usuario y contraseña permitirá que un archivo sea legible.
 
-###¿En que lenguaje de programación están escritas las aplicaciones SAFE?W
+###¿En que lenguaje de programación están escritas las aplicaciones SAFE?
 
 La API y las librerías están escritas en C++. No obstante, los desarrolladores de aplicaciones no estarán limitados, ya que es intención de MaidSafe que la red sea lo más accesible posible.
 
