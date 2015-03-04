@@ -10,7 +10,7 @@ El propósito de este ataque es forzar la perdida de datos de un usuario o desac
 
 ##Evitar el ataque
 
-En este caso, y durante la conexión de inicio del cliente Maidsafe o Vault, no será posible conectar con la lista de Vault de inicio (bootstrapping) listados en el fichero caché. Este fichero contiene la IP, puerto y clave pública de diferentes Vaults para el inicio de conexión.
+En este caso, y durante la conexión de inicio del cliente Maidsafe o Vault, no será posible conectar con la lista de Vaults de inicio (bootstrapping) listados en el fichero caché. Este fichero contiene la IP, puerto y clave pública de diferentes Vaults para el inicio de conexión.
 
 Como la sesión de inicio está encriptada con la clave pública de los diferentes Vaults de bootstrapping, la petición de esta conexión será errónea. El cliente Maidsafe detectará que no estamos en una red válida.
 
