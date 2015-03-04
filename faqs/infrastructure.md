@@ -18,7 +18,7 @@ La red SAFE, y en particular el enfoque que MaidSafe hace de la descentralizaci�
 3. Sin conexión a ninguna red basada en servidores
 4. Sin estructuras de datos centralizadas en los nodos
 5. Sin grupo (o grupos) controlando
-6. Cero control por humanos en la administración del acceso a los datos
+6. Cero control humano en la administración del acceso a los datos
 6. Totalmente inclusivo (sin posibilidad de prohibir a nadie o aplicar barreras de acceso a la red básica)
 7. Red sin fronteras; no hay fronteras ni controles sobre su alcance
 
