@@ -55,7 +55,7 @@ _**Ayudas a la depuración**_
 
 ## Visor de red
 
-[NetWork Viewer](http://visualiser.maidsafe.net:8080/auth) es una herramienta de interfaz de usuario presentada por MaidSafe para visualizar la ruta dela red MaidSafe. Le puede ayudar a entender cómo funciona la red y depurar algoritmos de enrutamiento.
+[NetWork Viewer](http://visualiser.maidsafe.net:8080/auth) es una herramienta de interfaz de usuario presentada por MaidSafe para visualizar la ruta de la red MaidSafe. Le puede ayudar a entender cómo funciona la red y depurar algoritmos de enrutamiento.
 
 
 
