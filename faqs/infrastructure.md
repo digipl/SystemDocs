@@ -47,7 +47,7 @@ Sí, se puede descentralizar cualquier aplicación o servicio web que existe act
 
 ###¿Cómo se defiende la Red SAFE contra ataques Sybil?
 
-La Red SAFE requiere que todas las solicitudes serán procesadas por al menos dos grupos de Vaults.
+La Red SAFE requiere que todas las solicitudes sean procesadas por al menos dos grupos de Vaults.
 El cliente MaidSafe aprueba una solicitud a sus cuatro Data managers, que verifican la solicitud basándose en la firma del cliente. La solicitud se pasa entonces a un grupo seleccionado, de forma determinista, de otros cuatro Vault que también verifican la solicitud basándose en su firma.
 
 Al seleccionar el segundo grupo de Data managres de manera determinista, este ataque ya no es válido para la red SAFE, ya que no le es posible, a un atacante, obtener el control de un Vault simplemente rodeándolo.
