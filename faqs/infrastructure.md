@@ -30,7 +30,7 @@ Estos safecoins se pueden ganar al proporcionar recursos, o comprarlos. La Red S
 
 ###¿Quién paga por el almacenamiento?
 
-Los usuarios (farmers) proporcionan sus recurso informáticos sobrantes a la red y es este recurso en el que se usa para guardar los datos. Los usuarios que aporten espacio de disco para la Red SAFE son recompensados con safecoins por la red.
+Los usuarios (farmers) proporcionan sus recurso informáticos sobrantes a la red y es este recurso el que se usa para guardar los datos. Los usuarios que aporten espacio de disco para la Red SAFE son recompensados con safecoins por la red.
 
 ###¿Por cuánto tiempo se almacenan mis datos?
 
