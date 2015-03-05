@@ -9,7 +9,7 @@ La interfaz de la librería está disponible en los siguientes archivos:
 * [return_codes.h](https://github.com/maidsafe/MaidSafe-RUDP/blob/master/include/maidsafe/rudp/return_codes.h) - En el futuro, el uso de códigos de retorno será reemplazado por los mecanismos de control de errores previstos en el [MaidSafe-Common](https://github.com/maidsafe/MaidSafe-Common/wiki).
 * [nat_type.h](https://github.com/maidsafe/MaidSafe-RUDP/blob/master/include/maidsafe/rudp/nat_type.h) - Una enumeración de tipos relevantes [NAT](https://en.wikipedia.org/wiki/Network_address_translation) que la librería necesita identificar
 
-La librería hace un uso intensivo de [Boost.Asio](http://www.boost.org/doc/libs/1_55_0/doc/html/boost_asio.html), tanto para las operaciones relacionadas con la red como para las operaciones asincrónas. También depende de las librerías MaidSafe [Common](https://github.com/maidsafe/MaidSafe-Common/wiki), [Private](https://github.com/maidsafe/MaidSafe-Vault-Manager/wiki), y [Passport](https://github.com/maidsafe/MaidSafe-Passport/wiki).
+La librería hace un uso intensivo de [Boost.Asio](http://www.boost.org/doc/libs/1_55_0/doc/html/boost_asio.html), tanto para las operaciones relacionadas con la red como para las operaciones asíncronas. También depende de las librerías MaidSafe [Common](https://github.com/maidsafe/MaidSafe-Common/wiki), [Private](https://github.com/maidsafe/MaidSafe-Vault-Manager/wiki), y [Passport](https://github.com/maidsafe/MaidSafe-Passport/wiki).
 
 
 ### Antecedentes
