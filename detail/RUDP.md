@@ -33,7 +33,7 @@ Bootstrapping un objeto `ManagedConnections` puede ser un proceso lento, ya que 
 
 `ManagedConnections::kResiliencePort()` proporciona un puerto de red, ampliamente conocido, que se puede utilizar en una situación de recuperación de desastres.  Cada instancia `ManagedConnections` intenta abrir este puerto local. Después de la segmentación de red, por ejemplo, los nodos pueden tratar de volver a reunirse intentando conectarse a otros nodos locales, o, para los nodos de conexión directa, utilizando este puerto conocido.
 
-Más detalles de las funciones individuales se pueden encontrar en el [managed_connections.h](https://github.com/maidsafe/MaidSafe-RUDP/blob/master/include/maidsafe/rudp/managed_connections.h) propio fichero.
+Más detalles de las funciones individuales se pueden encontrar en el propio fichero [managed_connections.h](https://github.com/maidsafe/MaidSafe-RUDP/blob/master/include/maidsafe/rudp/managed_connections.h).
 
 
 
