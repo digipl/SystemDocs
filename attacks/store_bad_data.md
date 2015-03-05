@@ -12,7 +12,7 @@ El propósito de este ataque es solamente desacreditar la red SAFE. Es poco prob
 
 ##Evitar el ataque
 
-Debido a no saber donde se almacenan los datos inmorales en la Red SAFE, este ataque queda frustrado ya que el atacante no podría recuperarlos. En sí misma, esta es una forma de protección, sin embargo la Red SAFE también va un paso más allá.
+Debido a no saber donde se almacenan los datos inmorales en la Red SAFE, este ataque queda frustrado ya que el atacante no podría recuperarlos. En sí misma, esta es una forma de protección, sin embargo, la Red SAFE también va un paso más allá.
 
 Cuando un dato se guarda en la red SAFE, la clave usada para el guardado también se usa para encriptar su contenido. Se realiza posteriormente un Hash de dicha clave y el contenido se renombra con este resultado. La clave original y el contenido se borran. De esta manera el Vault que guarda el dato es incapaz de desencriptar los chunk que posee.
 
