@@ -18,4 +18,4 @@ Cuando un dato se guarda en la red SAFE, la clave usada para el guardado tambié
 
 La red SAFE puede pedir un chunk, entonces el Vault realiza un Hash de esta solicitud y busca si este Hash coincide con alguno de los que guarda. Si lo encuentra, el vault usará la clave pedida para decodificar el contenido en memoria y enviar los datos solicitados junto la clave. Esto permitirá recomponer el dato como chunk inmutable pero solo para el Vault solicitante.
 
-Esto es por tanto similar a un atacante que encripta los datos totalmente y los almacena en cualquier ordenado o red.
+Esto es por tanto similar a un atacante que encripta los datos totalmente y los almacena en cualquier ordenador o red.
