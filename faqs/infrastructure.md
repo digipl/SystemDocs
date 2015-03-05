@@ -50,7 +50,7 @@ Sí, se puede descentralizar cualquier aplicación o servicio web que existe act
 La Red SAFE requiere que todas las solicitudes sean procesadas por al menos dos grupos de Vaults.
 El cliente MaidSafe aprueba una solicitud a sus cuatro Data managers, que verifican la solicitud basándose en la firma del cliente. La solicitud se pasa entonces a un grupo seleccionado, de forma determinista, de otros cuatro Vault que también verifican la solicitud basándose en su firma.
 
-Al seleccionar el segundo grupo de Data managres de manera determinista, este ataque ya no es válido para la red SAFE, ya que no le es posible, a un atacante, obtener el control de un Vault simplemente rodeándolo.
+Al seleccionar el segundo grupo de Data managers de manera determinista, este ataque ya no es válido para la red SAFE, ya que no le es posible, a un atacante, obtener el control de un Vault simplemente rodeándolo.
 
 Para evitar esto, el atacante requeriría la capacidad de rodear Vaults específicos en la Red SAFE. Esto no se puede lograr, ya que requeriría ser capaz de generar de forma efectiva diferentes valores que, cuando se generara su hash con SHA-512, diera valores cercanos a un punto particular.
 
