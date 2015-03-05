@@ -63,7 +63,7 @@ La Red SAFE es completamente autónoma y todas estas operaciones son gestionadas
 
 ###¿Cómo se almacenan y recuperan los datos?
 
-Los datos se almacenan y se recuperan mediante el proceso de autoencriptación. La autoencriptación se utiliza para mezclar y codificar los datos antes de que se envíe a la Red SAFE. Este proceso es automático y ocurre instantáneamente. En cuanto los datos se guardan en disco duro virtual de un usuario, se dividen en al menos tres trozos. Se crea un mapa de datos y para cada trozo se crea un hash, (una huella dactilar digital) y se escribe en el mapa de datos. Para mayor seguridad el mapa de datos también pasa por este proceso de autoencriptación.
+Los datos se almacenan y se recuperan mediante el proceso de autoencriptación. La autoencriptación se utiliza para mezclar y codificar los datos antes de que se envíen a la Red SAFE. Este proceso es automático y ocurre instantáneamente. En cuanto los datos se guardan en disco duro virtual de un usuario, se dividen en al menos tres trozos. Se crea un mapa de datos y para cada trozo se crea un hash, (una huella dactilar digital) y se escribe en el mapa de datos. Para mayor seguridad el mapa de datos también pasa por este proceso de autoencriptación.
 
 Cada fragmento se cifra para crear datos aleatorios, no repetidos. Por último, y en combinación con los hashes originales, los trozos son vueltos a encriptar. La salida de cada trozo se añade entonces al mapa de datos.
 
