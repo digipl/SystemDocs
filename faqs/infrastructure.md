@@ -5,7 +5,7 @@ Estas FAQs se relacionan con preguntas sobre los componentes y procesos que hace
 
 ### ¿La red SAFE requiere de una conexión continua a Internet de todos los participantes?
 
-No, la Red SAFE clasificará cada tipo de conexión y ajustará los recursos que ofrece, con el fin de dar cuenta de su indisponibilidad (a través apagando o fallo en el dispositivo).
+No, la Red SAFE clasificará cada tipo de conexión y ajustará los recursos que ofrece, con el fin de dar cuenta de su indisponibilidad (ya sea por apagando o fallo en el dispositivo).
 
 No es un problema estar desconectado por períodos cortos de tiempo. Sin embargo, si su nodo no está disponible por períodos más largos, impactará negativamente sobre el servicio que recibe de la red.
 
