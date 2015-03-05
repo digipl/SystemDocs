@@ -6,7 +6,7 @@ Hay diferentes tipo de solicitud para los safecoin.
 
 Los safecoin son otro tipo de datos y disponen de peticiones PUT y GET definidas para ellos en la red SAFE. Sin embargo, a diferencia de los datos normales, no hay petición de borrado (DELETE) disponible.
 
-La solicitud PUT para los safecoins tiene una propiedad de "no permite duplicación". Esto significa que si ya hay una safecoin con el mismo nombre (primeros 32 bits), la petición PUT es rechazada. Esta comprobación es manejado por el Administrador de datos que recibe la solicitud.
+La solicitud PUT para los safecoins tiene una propiedad de "no permite duplicación". Esto significa que si ya hay una safecoin con el mismo nombre (primeros 32 bits), la petición PUT es rechazada. Esta comprobación es gestionada por el Data manager que recibe la solicitud.
 
 Un orden EXCHANGE permite a un solicitante actualizar los detalles del safecoin pero sólo si sigue las normas necesarias.
 
