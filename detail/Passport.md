@@ -1,13 +1,12 @@
-## Passport Overview
+## Descripción general librería Passport
 
-The Passport API provides a self-certifying Public Key Infrastructure, PKI, independent of the requirement for any central directory. A variety of key types are available for performing different tasks, while public keys, like any other piece of data, are stored at random locations on the SAFE network. Authorised entities can retrieve public keys from the network in order to validate any other entity or perform various other operations both securely and autonomously. The API relies on a cryptographic component that forms part of the [common](https://github.com/maidsafe/MaidSafe-Common/wiki) project.
+El API Passport API proporciona una infraestructura de auto-certificación de clave pública, PKI, que no requiere de ningún directorio central. Una variedad de tipos de clave están disponibles para la realización de diferentes tareas, mientras que las claves públicas, como cualquier otro dato, se almacenan en lugares al azar en la red SAFE. Entidades autorizadas pueden recuperar las claves públicas de la red con el fin de validar cualquier otra entidad o realizar otras operaciones con seguridad y de forma autónoma. El API se basa en un componente criptográfico que forma parte del proyecto [common](https://github.com/maidsafe/MaidSafe-Common/wiki).
 
-## Description
+## Descricción
 
-The following files comprise Passport's public API.
+Los siguientes archivos contienen la API pública de Passport.
 
-* [passport.h](https://github.com/maidsafe/MaidSafe-Passport/blob/master/include/maidsafe/passport/passport.h) includes the Passport class definition and various free functions which together satisfy the requirements for completely secure and anonymous transactions/communication on the network. The Passport class members are identities defined in the header [types.h](https://github.com/maidsafe/MaidSafe-Passport/blob/master/include/maidsafe/passport/types.h).
-* [types.h](https://github.com/maidsafe/MaidSafe-Passport/blob/master/include/maidsafe/passport/types.h) defines network identities for authentication, data storage/retrieval and secure communication.
-
+* [passport.h](https://github.com/maidsafe/MaidSafe-Passport/blob/master/include/maidsafe/passport/passport.h) incluye la definición de clase de passport y varias funciones libres que juntas satisfacen las exigencias para las operaciones de transacción/comunicación de la red que sean seguras y anónimas. Los miembros de clase de Passport son identidades definidas en la cabecera [types.h](https://github.com/maidsafe/MaidSafe-Passport/blob/master/include/maidsafe/passport/types.h).
+* [types.h](https://github.com/maidsafe/MaidSafe-Passport/blob/master/include/maidsafe/passport/types.h) define identidades de red para la autenticación, almacenamiento/ recuperación de datos y comunicación segura.
 
 
