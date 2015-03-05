@@ -71,11 +71,11 @@ El mapa de datos, con hashes antes y después del cifrado, se utiliza para recup
 
 ###Cuando los archivos se dividen en trozos, la red recibe un hash (una huella digital) de cada uno. ¿Puede el hash original, llevar hasta un usuario?
 
-En resumen, no. Los trozos no están vinculados a un usuario específico en la red y el anonimato (y la seguridad, podría decirse que son la misma cosa) está en el corazón de la red. En la red SAFE existen una serie de características, de muy alto nivel, que proporcionan total anonimato.
+En resumen, no. Los trozos no están vinculados a un usuario específico en la red y el anonimato (y la seguridad que podría decirse que son la misma cosa) está en el corazón de la red. En la red SAFE existen una serie de características, de muy alto nivel, que proporcionan total anonimato.
 
 * RUDP (Reliable UDP) encripta cada salto del mensaje a medida que atraviesan la red
 * La capa de enrutamiento borra las direcciones IP tras el primer salto
-* El almacenamiento y recuperación de datos se lleva a cabo usando un identificador conocido sólo a la red que no está vinculada a una persona o nombre público
+* El almacenamiento y recuperación de datos se lleva a cabo usando un identificador conocido sólo a la red que no está vinculado a una persona o nombre público
 * No hay conexión al servidor y por lo tanto no hay un punto central de reconocimiento o ataque
 * Las contraseñas no se almacenan o transmiten por la red
 * Todos los mensajes se encriptan y el identificador del emisor/receptor no es el inicio de sesión del usuario, el identificador se almacena dentro de un paquete encriptado
