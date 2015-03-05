@@ -21,19 +21,19 @@ Para cada conexión, un nodo tiene un `EndpointPair` asociado a sí mismo y otr 
 No puede establecerse una comunicación entre dos pares si ambos están detras de routers que proporcionan [NAT simétrico](https://en.wikipedia.org/wiki/Network_address_translation#Methods_of_port_translation). La librería [Routing](https://github.com/maidsafe/MaidSafe-Routing/wiki) Maidsafe gestiona este caso proporcionando un nodo proxy para cada uno de esos nodos "ocultos", y, como tal, la biblioteca RUDP no trata de resolver este problema.
 
 
-### Details
+### Detalles
 
-[managed_connections.h](https://github.com/maidsafe/MaidSafe-RUDP/blob/master/include/maidsafe/rudp/managed_connections.h) defines three functors; `MessageReceivedFunctor`, `ConnectionLostFunctor`, and `MessageSentFunctor`.  The first two must be provided in the `ManagedConnections::Bootstrap` function, can be called many times by RUDP and are self-explanatory.
+[managed_connections.h](https://github.com/maidsafe/MaidSafe-RUDP/blob/master/include/maidsafe/rudp/managed_connections.h) define tres funtores; `MessageReceivedFunctor`, `ConnectionLostFunctor`, and `MessageSentFunctor`.  Los primeros dos deben ser propoporcionados por el funtor `ManagedConnections::Bootstrap`, pueden ser llamados varias veces por el RUDP y es autoexplicativo.
 
-The `MessageSentFunctor` will be invoked exactly once per call to `ManagedConnections::Send`.  It indicates that the associated message has been received by the target peer, (not just enqueued for sending, but actually received), or else has failed.  It is anticipated (but not required) that a separate instance of `MessageSentFunctor` will be passed in each call to `Send`.
+El `MessageSentFunctor` será invocado exactamente una vez por llamada a `ManagedConnections::Send`. Indica que el mensaje asociado ha sido recibido por el par de destino, (no sólo indica que está en cola para el envío, sino recibido realmente), o bien ha fracasado.  Se prevee (aunque no se requiere) que una instancia separada del `MessageSentFunctor` se enviará en cada llamada a `Send`.
 
-Internally, a `ManagedConnections` class maintains several (up to `Parameters::max_transports`) transport objects, each with its own actual network socket.  This socket is used to maintain several, (currently up to 50) (see [transport.h](https://github.com/maidsafe/MaidSafe-RUDP/blob/master/src/maidsafe/rudp/transport.h)), `Transport::kMaxConnections`) psuedo-connections.  Therefore, it is likely that having very few `ManagedConnections` objects will provide optimal performance.
+Internamente, una clase `ManagedConnections` mantiene varios (hasta `Parameters::max_transports`) objeto transporte, cada uno con su propio socket de red.  Esta socket se utiliza para mantener varios, (actualmente hasta 50) (ver [transport.h](https://github.com/maidsafe/MaidSafe-RUDP/blob/master/src/maidsafe/rudp/transport.h)), `Transport::kMaxConnections`) psuedo-conexiones.  Por tanto, es probable que tener muy pocos objetos `ManagedConnections` proporcionará un rendimiento óptimo.
 
-Bootstrapping a `ManagedConnections` object can be a slow process, as connections are attempted to the various candidate endpoints until one succeeds.
+Bootstrapping un objeto `ManagedConnections` puede ser un proceso lento, ya que las conexiones se intentan con diversos candidatos a punto final hasta que uno tiene éxito.
 
-`ManagedConnections::kResiliencePort()` provides a network-wide known port which can be used in a disaster-recovery situation.  Every `ManagedConnections` instance attempts to open this port locally.  After network segmentation for example, nodes can try to rejoin by attempting to connect to other local nodes, or to direct-connected nodes using this known port.
+`ManagedConnections::kResiliencePort()` proporciona un puerto de red, ampliamente conocido, que se puede utilizar en una situación de recuperación de desastres.  Cada instancia `ManagedConnections` intenta abrir este puerto local. Después de la segmentación de red, por ejemplo, los nodos pueden tratar de volver a reunirse intentando conectarse a otros nodos locales, o, para los nodos de conexión directa, utilizando este puerto conocido.
 
-Further details of the individual functions can be found in the [managed_connections.h](https://github.com/maidsafe/MaidSafe-RUDP/blob/master/include/maidsafe/rudp/managed_connections.h) file itself.
+Más detalles de las funciones individuales se pueden encontrar en el [managed_connections.h](https://github.com/maidsafe/MaidSafe-RUDP/blob/master/include/maidsafe/rudp/managed_connections.h) propio fichero.
 
 
 
