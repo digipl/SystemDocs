@@ -2,7 +2,7 @@
 
 El API Passport API proporciona una infraestructura de auto-certificación de clave pública, PKI, que no requiere de ningún directorio central. Una variedad de tipos de clave están disponibles para la realización de diferentes tareas, mientras que las claves públicas, como cualquier otro dato, se almacenan en lugares al azar en la red SAFE. Entidades autorizadas pueden recuperar las claves públicas de la red con el fin de validar cualquier otra entidad o realizar otras operaciones con seguridad y de forma autónoma. El API se basa en un componente criptográfico que forma parte del proyecto [common](https://github.com/maidsafe/MaidSafe-Common/wiki).
 
-## Descricción
+## Descripción
 
 Los siguientes archivos contienen la API pública de Passport.
 
