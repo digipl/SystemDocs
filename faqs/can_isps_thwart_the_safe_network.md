@@ -10,7 +10,7 @@ El número de ordenadores tendría que superar masivamente el de los nodos de la
 
 Cada archivo está cifrado y dividido en trozos durante nuestro proceso de autoencriptación (Self Encryption). La red controla y mantiene 4 copias de cada trozo encriptado y mueve estos fragmentos por la red cuando los nodos dejan de estar disponibles, ya sea a través de un fallo o de un apagado. Con el fin de hacer frente a esta rotación, la red es capaz de reconfigurarse globalmente de forma extremadamente rápida (tan rápido como 20 milisegundos). Estos pasos aseguran que los datos están siempre disponible mientras, el usuario que desee recuperar los datos, tenga una conexión a Internet y las credenciales correctas.
 
-###¿Cómo trata con la latencia inherente a una red distribuida como SAFE?
+###¿Cómo se gestiona con la latencia inherente a una red distribuida como SAFE?
 
 Varias cosas facilitan aquí la solución. En primer lugar, no solo una persona almacena un fragmento de datos ya que, en cada momento, se mantienen múltiples copias del trozo con un mínimo de 4. Además, la red también clasifica los nodos, por ejemplo, si un nodo Vault falla a la hora de recuperar un trozo de datos, a continuación, un nuevo nodo lo reemplaza como titular y el nodo original baja de rango. Si el problema persiste, este nodo será clasificado a un punto en el que no se le pedirá almacenar más datos. Así la red determinar qué nodo es eficaz para el almacenamiento de datos. Por último, si un trozo de información que se solicita es muy popular y se recupera a menudo, se almacena en caché por los nodos, por lo que los tiempos de recuperación disminuyen. Todo esto asegurará que los datos populares se recuperarán más rápidamente.
 
