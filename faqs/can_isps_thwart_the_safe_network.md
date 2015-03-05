@@ -8,7 +8,7 @@ El número de ordenadores tendría que superar masivamente el de los nodos de la
 
 ###¿Cómo trata la red, con la redundancia de datos, para asegurar que todos los datos que se comparte permanecen accesibles?
 
-Cada archivo está cifrado y dividido en trozos durante nuestro proceso de autoencriptación (Self Encryption). La red controla y mantiene 4 copias de cada trozo encriptado y mueve estos fragmentos por la red cuando los nodos dejan de estar disponibles, ya sea a través de un fallo o de un apagado. Con el fin de hacer frente a esta rotación, la red es capaz de reconfigurarse globalmente de forma extremadamente rápida (tan rápido como 20 milisegundos). Estos pasos aseguran que los datos están siempre disponible, evidentemente cuando el usuario, que desee recuperar los datos, tenga una conexión a Internet y las credenciales correctas.
+Cada archivo está cifrado y dividido en trozos durante nuestro proceso de autoencriptación (Self Encryption). La red controla y mantiene 4 copias de cada trozo encriptado y mueve estos fragmentos por la red cuando los nodos dejan de estar disponibles, ya sea a través de un fallo o de un apagado. Con el fin de hacer frente a esta rotación, la red es capaz de reconfigurarse globalmente de forma extremadamente rápida (tan rápido como 20 milisegundos). Estos pasos aseguran que los datos están siempre disponible, mientras el usuario, que desee recuperar los datos, tenga una conexión a Internet y las credenciales correctas.
 
 ###¿Cómo trata con la latencia inherente a una red distribuida como SAFE?
 
