@@ -78,6 +78,6 @@ En resumen, no. Los trozos no están vinculados a un usuario específico en la r
 * El almacenamiento y recuperación de datos se lleva a cabo usando un identificador conocido sólo a la red que no está vinculado a una persona o nombre público
 * No hay conexión al servidor y por lo tanto no hay un punto central de reconocimiento o ataque
 * Las contraseñas no se almacenan o transmiten por la red
-* Todos los mensajes se encriptan y el identificador del emisor/receptor no es el inicio de sesión del usuario, el identificador se almacena dentro de un paquete encriptado
+* Todos los mensajes se encriptan y el identificador del emisor/receptor no es el de inicio de sesión del usuario, el identificador se almacena dentro de un paquete encriptado
 
 
