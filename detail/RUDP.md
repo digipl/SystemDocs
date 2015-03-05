@@ -1,6 +1,6 @@
 ## Descripción general librería RUDP
 
-RUDP (Reliable UDP) implementa pseudo-conexiones que utilizan UDP para lograr muchos de los beneficios de un protocolo de conexión como TCP, pero permitiendo algo crucial como permitir [NAT traversal](https://en.wikipedia.org/wiki/Network_address_translation#Type_of_NAT_and_NAT_traversal.2C_role_of_port_preservation_for_TCP) algo que TCP no puede hacer. Además, todos los datos se cifran punto a punto utilizando un mecanismo seguro y verificable de intercambio de clave pública RSA. Esto forma parte del [PKI](http://en.wikipedia.org/wiki/Public-key_infrastructure) proporcionado por la red SAFE.
+RUDP (Reliable UDP) implementa pseudo-conexiones que utilizan UDP para lograr muchos de los beneficios de un protocolo de conexión como TCP, pero permitiendo algo crucial como permitir [NAT traversal](https://en.wikipedia.org/wiki/Network_address_translation#Type_of_NAT_and_NAT_traversal.2C_role_of_port_preservation_for_TCP), algo que TCP no puede hacer. Además, todos los datos se cifran punto a punto utilizando un mecanismo seguro y verificable de intercambio de clave pública RSA. Esto forma parte del [PKI](http://en.wikipedia.org/wiki/Public-key_infrastructure) proporcionado por la red SAFE.
 
 La interfaz de la librería está disponible en los siguientes archivos:
 
