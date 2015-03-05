@@ -29,7 +29,7 @@ Cuando un usuario final intenta guardar un nuevo dato, el fichero es encriptado 
 
 Los Client managers trasladan los chunks a los treinta y dos Data manager elegidos por la red por la cercania de su ID con la ID de los diferentes chunks. Por lo tanto la ID de los chunks determina su posición dentro de la red.
 
-La red utiliza un enfoque de dispersión/agrupación basada en el [Algoritmo de información dispersa de Rabin](http://people.seas.harvard.edu/~salil/rabin2011-slides/rabin2011-mitzenmacher.pdf), permitiendo pequeñas perdidas de datos (hasta 4 piezas) que no necesitan ser retrasmitidas
+La red utiliza un enfoque de scatter/gather basada en el [Algoritmo de información dispersa de Rabin](http://people.seas.harvard.edu/~salil/rabin2011-slides/rabin2011-mitzenmacher.pdf), permitiendo pequeñas perdidas de datos (hasta 4 piezas) que no necesitan ser retrasmitidas
 
 Una vez que se alcanza el consenso, los Data manager trasladan los chunks a los treinta y dos Data holder managers, los cuales a su vez lo trasladan a los Data holder para su guardado. Si un Data holder manager informa que un Data holder está fuera de linea, el Data manager decide, basado en los rangos asignados a los diferentes Vaults, en que otro Vault pondrá el trozo de dato.
 
