@@ -2,7 +2,7 @@
 
 ##Descripción del ataque
 
-Si un atacante quiere subvertir la autoencriptación para tratar de crear datos ilegales o inmorales de tamaño inferior a 1Mb de tamaño, y nombrarlo con el hash de su contenido, a continuación, potencialmente, el atacante sería capaz de almacenar estos datos inmorales en la Red SAFE.
+Si un atacante quiere subvertir la autoencriptación para tratar de crear datos ilegales o inmorales de tamaño inferior a 1Mb, y nombrarlo con el hash de su contenido, a continuación, potencialmente, el atacante sería capaz de almacenar estos datos inmorales en la Red SAFE.
 
 Como los datos de la autoencriptación están muy ofuscados y son casi imposible de descifrar, el almacenamiento de estos datos no producirían el ataque deseado. Un vault no tiene ninguna manera de impedir que dichos datos se almacenen pero solo serían otros datos encriptados y ofuscados dentro de la red SAFE.
 
