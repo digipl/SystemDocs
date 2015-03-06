@@ -14,8 +14,8 @@ El Routing ofrece las siguientes características:
 * Evaluación de proximidad
 * Identificación de nodo a través de PKI proporcionada por MaidSafe-Passport
 * Mecanismo de almacenamiento en caché
-* Manejo Churn
-* Tabla de enrutamiento y el grupo matriz
+* Gestión de la rotación
+* Tabla de enrutamiento y grupo matriz
 
 La interfaz de la librería está disponible en los siguientes archivos:
 * [routing_api.h](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/routing_api.h) - esta es la API principal y se discute en más detalle más adelante
