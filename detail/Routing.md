@@ -1,84 +1,84 @@
-## Routing Overview
+## Descripcióngeneral librería Routing
 
-Routing is a Distributed Hash Table library based on [Kademlia](http://en.wikipedia.org/wiki/Kademlia)-like routing tables. Routing specifies the network structure and determines the path between pair of nodes in the network by using the local information at each intermediate node.
-Each routing node locally stores routing information about the nodes it is directly connected to. Moreover, every node has partial knowledge of the local information of its close nodes (neighbouring ID space).
-The information stored at every node, contributes to message passing infrastructure of routing. Exchanging information in routing typically involves traversing a number of intermediate nodes.  The communication between each pair of nodes is performed by employing [MaidSafe-RUDP](https://github.com/maidsafe/MaidSafe-RUDP/wiki). An acknowledgement/retransmission  mechanism is also provided to ensure reliable message delivery.
-Ability to offer an efficient platform for message exchange between peers, makes routing an ideal overlay network component of any P2P system.
+El Routing es una librería de Tabla de Hash Distribuida basada en tablas de enrutamiento similares a [Kademlia] (http://es.wikipedia.org/wiki/Kademlia). El Routing especifica la estructura de la red y determina el camino entre el par de nodos en la red mediante el uso de la información local en cada nodo intermedio.
+Cada nodo de enrutamiento local almacena información acerca de los nodos a los que está directamente conectado. Por otra parte, cada nodo tiene un conocimiento parcial de la información local de sus nodos cercanos (ID de espacio vecino).
+La información guardada en cada nodo, contribuye a la infraestructura de envío de mensajes de enrutamiento. Intercambiar información de ruta supone, habitualmente, atravesar un número indeterminado de nodos. La comunicación, entre cada par de nodos, se logra empleando [MaidSafe-RUDP](https://github.com/maidsafe/MaidSafe-RUDP/wiki). Un mecanismo de reconocimiento/retransmisión se proporciona, tambien, para asegurar la entrega fiable de mensajes.
+Su capacidad para ofrecer una plataforma eficiente, para el intercambio de mensajes entre pares, lo hace ideal como componente de enrutamiento de cualquier sistema P2P.
 
 
-Routing offers the following features:
-* Joining network
-* NAT traversal
-* Modes of operation
-* Reliable direct and group messaging
-* Proximity evaluation
-* Node identification via PKI provided by MaidSafe-Passport
-* Caching mechanism
-* Churn handling
-* Routing table and group matrix
+El Routing ofrece las siguientes características:
+* Unión a la red
+* NAT transversal
+* Modos de operación
+* Mensajería fiable directa y de grupo
+* Evaluación de proximidad
+* Identificación de nodo a través de PKI proporcionada por MaidSafe-Passport
+* Mecanismo de almacenamiento en caché
+* Manejo Churn
+* Tabla de enrutamiento y el grupo matriz
 
-The library's interface is provided in the following files:
-* [routing_api.h](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/routing_api.h) - this is the main API and is discussed in more detail below
-* [api_config.h](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/api_config.h) - provides declaration of types which may be used to utilise the library
-* [node_info.h](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/node_info.h) - provides information about a node
-* [parameters.h](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/parameters.h) - provides library configuration variables
+La interfaz de la librería está disponible en los siguientes archivos:
+* [routing_api.h](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/routing_api.h) - esta es la API principal y se discute en más detalle más adelante
+* [api_config.h](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/api_config.h) - 
+proporciona declaración de tipos que se puede usarse al utilizar la librería
+* [node_info.h](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/node_info.h) - proporciona información acerca de un nodo
+* [parameters.h](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/parameters.h) - proporciona las variables de configuración de la librería
 * [return_codes.h](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/return_codes.h)
 
-### Synopsis
+### Sinopsis
 
-### Joining the Network
-A node may join the network as
-1. a normal node when a network already exists,
-2. as a zero state node, where the node is one of the first two nodes creating the network.
+### Unirse a la red
+Un nodo puede unirse a la red como
+1. un nodo normal cuando la red ya exista,
+2. como un nodo de Estado Cero, cuando el nodo es uno de los dos primeros nodos que crean la red.
 
-####Joining as a Normal Node
+####Unirse como un nodo normal
 
-To join an existing network, a node must be provided with a list of end-points of a number of nodes which are already part of the network. The node attempts to connect to any end-point from the list. Once a connect attempt succeeds, the joining node locates and connects to its [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) closest nodes.  Connecting to the [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) closest nodes is vital to reliable operation of a node. The rest of the routing table is mainly populated by random nodes in the network to allow uniform access to different parts of the network.
+Para unirse a una red existente, un nodo debe estar provisto de una lista de puntos de conexión que son una serie de nodos que ya forman parte de la red. El nodo intenta conectarse a cualquier punto de conexión de la lista. Una vez que un intento de conexión tiene éxito, el nodo que se une localiza y se conecta a su nodo más cercano [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc). Conectarse a su nodo más cercano [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) es vital para el funcionamiento fiable de un nodo. El resto de la tabla de enrutamiento está poblado principalmente por nodos al azar para permitir el acceso uniforme a diferentes partes de la red.
 
-####Joining as a Zero State Node
+####Unirse como un nodo de Estado Cero
 
-The initial setting up of the network, which is called zero state, involves two nodes. These two nodes are provided with the end-points of each other and by connecting to each other form the network. The zero state nodes are identical to any other nodes in the network and may leave/join the network similar to other nodes.
+El ajuste inicial de la red, que se denomina Estado Cero, implica dos nodos. Estos dos nodos se ofrecen con los puntos finales de cada uno y conectándose uno a otro forma la red. Los nodos de Estado Cero son idénticos a otros nodos de la red y pueden abandonar/unirse a la red de forma similar al resto de los nodos.
 
 ###NAT Traversal
 
-An objective of Routing has been enabling communication between each pair of nodes in the network, regardless of their network configuration settings. Routing in combination with [MaidSafe-RUDP](https://github.com/maidsafe/MaidSafe-RUDP/wiki) performs [hole punching](http://www.brynosaurus.com/pub/net/p2pnat/) to enable direct connection between each pair of nodes.
-Hole punching is achievable as long as both nodes are not behind symmetric routers. If both nodes are behind symmetric routers, routing enables communication between two nodes by choosing a third node acting as proxy between the two nodes behind symmetric routers.
+Un objetivo del Routing ha sido permitir la comunicación entre cada par de nodos en la red, independientemente de sus ajustes de configuración de red. El Routing en combinación con [MaidSafe-RUDP](https://github.com/maidsafe/MaidSafe-RUDP/wiki) ejecuta [hole punching](http://www.brynosaurus.com/pub/net/p2pnat/) para permitir la comunicación directa entre cada par de nodos.
+El hole punching se puede conseguir siempre y cuando los dos nodos no estén detrás de routers simétricos. Si ambos nodos están detrás de routers simétricos, el Routing logra la comunicación entre los dos nodos gracias a la selección de un tercer nodo que actúa como proxy entre ambos nodos situados detrás de routers simétricos.
 
 
-###Modes of Operation
-####Non-Client
+###Modos de Operación
+####No-cliente
 
-A non-client node is a full routing node that contributes to the operation and maintenance of the network. Non-client nodes are part of DHT and are active in routing decision making.
-Non-client nodes can :
-* Send requests to any non-client nodes
-* Send requests to only connected client nodes
-* Receive incoming requests from any node in network
+Un nodo no-cliente es un nodo de enrutamiento completo que contribuye a la operación y mantenimiento de la red. Los nodos no-clientes son parte del DHT y son parte activa en la toma de decisiones de enrutamiento.
+Un nodo no-cliente puede :
+* Enviar solicitudes a cualquier los nodos que no son clientes
+* Enviar solicitudes a nodos cliente conectados
+* Recibir las solicitudes entrantes desde cualquier nodo de la red
 
-####Client
+####Cliente
 
-In contrast to non-client nodes, a client node does not contribute to the routing network infrastructure.
-Client nodes are light weight routing nodes using minimal network resources.
-These nodes gain access to the entire network by establishing connection to [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) nodes closest to its own ID.
-A client node can :
-* Send requests to any non-client nodes
-* Send requests to clients with same ID
-* Receive incoming requests only from connected non-client nodes
+En contraste con los nodos que son no-clientes, un nodo cliente no contribuye a la infraestructura de enrutamiento de red.
+Los nodos cliente son nodos de enrutamiento ligeros que usan los mínimos recursos de la red.
+Estos nodos tendrán acceso a toda la red mediante el establecimiento de la conexión  [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) con los nodos cercanos a su propia ID.
+Un nodo cliente puede :
+* Enviar solicitudes a cualquier nodo no-cliente
+* Enviar solicitudes a los clientes con la misma ID
+* Recibir las solicitudes entrantes sólo de nodos no-clientes conectados
 
-###Reliable Direct and Group Messaging
+###Mensajería fiable directa y de grupo
 
-Routing offers two types of communication; direct and group.
+Routing ofrece dos tipos de comunicación; directa y de grupo.
 
-####Direct Messaging
+####Mensajería directa
 
-In direct messaging the destination is a known node in the network and is the final recipient of the message.
+En la mensajería directa el destino es un nodo conocido en la red y es el destinatario final del mensaje.
 
-####Group Messaging
+####Messajería de grupo
 
-A group is comprised of a number of nodes which are closest to a given ID. The number of group
-members is defined by [Parameters::node_group_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc).
+Un grupo se compone de un número de nodos que están próximos a una cierta ID. El número de miembros del grupo
+se define por [Parameters::node_group_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc).
 
-In group communication, the destination of a message is a group of nodes which are closest to the destination. A node having destination as its ID will not be part of a group communication.
-
+En la comunicación de grupo, el destino del mensaje, es el grupo de nodos que más cerca está del destino. Un nodo que comparta ID con el destino no será parte de una comunicación en grupo.
 
 ###Routing Table and Group Matrix
 Routing table is the main component of the routing library. Routing table stores information about a number of nodes in the network in order to perform routing decisions to deliver messages. Each entry of the routing table corresponds to a direct connection from the routing node to that node.
