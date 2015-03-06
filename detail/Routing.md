@@ -1,4 +1,4 @@
-## Descripcióngeneral librería Routing
+## Descripción general librería Routing
 
 El Routing es una librería de Tabla de Hash Distribuida basada en tablas de enrutamiento similares a [Kademlia] (http://es.wikipedia.org/wiki/Kademlia). El Routing especifica la estructura de la red y determina el camino entre el par de nodos en la red mediante el uso de la información local en cada nodo intermedio.
 Cada nodo de enrutamiento local almacena información acerca de los nodos a los que está directamente conectado. Por otra parte, cada nodo tiene un conocimiento parcial de la información local de sus nodos cercanos (ID de espacio vecino).
