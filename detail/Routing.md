@@ -80,59 +80,58 @@ se define por [Parameters::node_group_size](https://github.com/maidsafe/MaidSafe
 
 En la comunicación de grupo, el destino del mensaje, es el grupo de nodos que más cerca está del destino. Un nodo que comparta ID con el destino no será parte de una comunicación en grupo.
 
-###Routing Table and Group Matrix
-Routing table is the main component of the routing library. Routing table stores information about a number of nodes in the network in order to perform routing decisions to deliver messages. Each entry of the routing table corresponds to a direct connection from the routing node to that node.
-Each node in the network has an ID of 512 bits. The distance between each pair of nodes in the network is calculated by XORing the pair.
-A reliable and efficient routing operation in the network requires that each node i) to be aware of the nodes in its close proximity and, ii) to have access to different parts of the network. Routing table stores information about:
-* [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) closest nodes
-* Randomly chosen nodes in the network
-* Any other node which finds the current node as one of its [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) closest nodes
+###Tabla de enrutamiento y Matriz de Grupo
+La tabla de enrutamiento es el componente principal de la biblioteca de enrutamiento. La tabla de enrutamiento almacena información sobre un número de nodos en la red con el fin de realizar decisiones de enrutamiento para entregar mensajes. Cada entrada de la tabla de enrutamiento corresponde a una conexión directa desde el nodo de enrutamiento para ese nodo.
+Cada nodo de la red tiene una ID de 512 bits. La distancia entre cada par de nodos de la red se calcula calculando el XOR del par.
+Un funcionamiento fiable y eficiente del enrutamiento de red requiere que cada nodo i) sea consciente de los nodos próximos y, ii) tener acceso a las diferentes partes de la red. La tabla de enrutamiento almacena información sobre los nodos más cercanos*[Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc):
+* Escogiendo al azar nodos en la red
+* Cualquier otro nodo que encuentre el nodo actual como uno de sus [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc). nodos más cercanos
 
-The above information stored in routing table is enough in the majority of cases to enable correct decision makings. However, it might be found insufficient to make accurate decisions when two nodes are having different views regarding closeness to each other or another node. To handle these situations, the routing table is equipped with a group matrix.
-The idea behind group matrix is to provide nodes with more knowledge of the area of the network and where they reside. This is realised by making each node partially aware of nodes in the routing table of its closest neighbours. A group matrix of a node contains:
-* (i) The node’s [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) closest nodes
-* (ii) Other nodes considering the node as one of their [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) closest
-* (iii) Closest nodes of each entry in (i) & (ii)
+La información anterior almacenada en la tabla de enrutamiento es suficiente, en la mayoría de los casos, para permitir las tomas de decisiones correctas. Sin embargo, podría ser insuficiente, para tomar decisiones precisas, cuando dos nodos tienen diferentes puntos de vista con respecto a la cercanía entre sí o de otro nodo. Para manejar estas situaciones, la tabla de enrutamiento está equipado con una matriz de grupo.
+La idea detrás de la matriz del grupo es proporcionar a los nodos más conocimiento de la zona de la red en la que residen. Esto se realiza haciendo que cada nodo sea parcialmente consciente de los nodos en la tabla de enrutamiento de sus vecinos más cercanos. Una matriz de grupo de un nodo contiene:
+* (i) Los nodos más cercanos de un nodo [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc)
+* (ii) Otros nodos que se consideren próximos [Parameters::closest_nodes_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc)
+* (iii) Los nodos más cercanos de cada entrada en (i) y (ii)
 
-Up to date information in the routing table and group matrix are necessary to make correct decisions. Therefore, routing offers some services; to quickly reflect any updates in the routing table of a node, and  the routing table or group matrix of any nodes which should be made aware of the updates.
-
-
-###Proximity Evaluation
-
-Most operations in the network are performed on the group of nodes which are in closest proximity of a given ID. Routing table along with group matrix, facilitates nodes with sufficient knowledge of the part of network (where they belong) to accurately identify other peer nodes who share the same group IDs.
-The node which is part of a group will always be aware of other nodes in the group. Based on this knowledge, routing api provides methods to work out:
-* If a node is closest to a given ID
-* If a node is part of a given group
-* New and old group members nodes after a churn event
-
-Based on average network distance/population, it also provides methods to estimate if a node is close enough to a given ID.
-
-###Churn Handling
-
-In a P2P network, joining and leaving are common events. Peer turnover, often referred to as churn rate, is efficiently handled by the routing library. For example, a node joining or leaving the network is reflected in the routing tables of its close nodes within a few seconds.
-
-###Matrix Change (Churn Event)
-
-In the routing network, data is usually stored at a logical group ID. This means that data is stored at the nodes which are among the first [Parameters::node_group_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) closest to a given group ID.
-Any churn in the network may result in moving a node near or far from a group ID in that segment of the network. This means that many of the logical groups reconfigure by having new members in the group and losing some old members of the group.
-
-In event of:
-
-1. Node(s) disappearing from a logical group : New node(s) will become closer to the group ID and will become among [Parameters::node_group_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) closest to the group ID. After this, all group messages sent to the group ID, will be received by new node(s) as well. It is the responsibility of other remaining nodes of that group to quickly replicate data to the new node(s).
-2. Node(s) appearing in the logical group : Some of the group member nodes will move far from the group ID and will not remain under [Parameters::node_group_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) closest to the group ID. Further to this, these Node(s) will not receive any group message destined to the group ID. These Node(s) should delete data which they are no longer responsible for.
+Se necesita información actualizada, en la tabla de enrutamiento y la matriz del grupo, para poder tomar decisiones correctas. Por lo tanto, el enrutamiento ofrece algunos servicios; para reflejar rápidamente las actualizaciones en la tabla de enrutamiento de un nodo, y la tabla de enrutamiento o grupo matriz de todos los nodos que deban estar al tanto de las actualizaciones.
 
 
-To reliably keep data alive and accessible in this dynamic group, all responsible nodes should replicate data as soon as they become aware of the network churn. Routing provides MatrixChange class to detect such churn quickly and to reliably workout if data replication is required for any new node appearing in the group. Nodes close to a segment of network will notice churn event by observing a change in their group matrix. If group matrix changes on any churn, routing creates MatrixChange object, containing a list of new and old group matrix nodes. This class provides helper function to evaluate any given group ID to work out if node receiving the churn event:
+###Evaluación de proximidad
 
-* Is still part of the group and responsible for data stored at the group.
-* Is not part of the group any more and needs to delete stored data related to the group.
-* Needs to replicate data to a new node.
+La mayoría de las operaciones en la red se realizan en el grupo de nodos que están próximos a una ID dada. La tabla de enrutamiento, junto con la matriz del grupo, facilita nodos con un conocimiento suficiente de la parte de la red (al que pertenecen) para identificar con precisión otros nodos que comparten la misma ID de grupo.
+El nodo que es parte de un grupo siempre será consciente de otros nodos en el grupo. Basándose en este conocimiento, el api de enrutamiento proporciona métodos para trabajar:
+* Si un nodo está cerca de una determinada ID
+* Si un nodo es parte de un grupo dado
+* Los nuevos y antiguos miembros del grupo despues de una rotación de red
+
+Basadose en la media distancia/población de la red, proporciona, tambien, un método para estimar si un nodo está lo suficientemente cerca de una ID dada.
+
+###Gestión de las Rotaciones
+
+En una red P2P, la unión y el abandono, son eventos comunes. El cambio de par, a menudo referido como rotación, se gestiona de manera eficiente por la biblioteca de enrutamiento. Por ejemplo, el alta o baja de un nodo en la red se refleja en las tablas de enrutamiento de sus nodos más próximos en unos pocos segundos.
+
+###Cambio de Matriz (Evento de Rotación)
+
+En la red de encaminamiento, los datos normalmente se almacena en un ID de grupo lógico. Esto significa que los datos se almacenan en los nodos que , primeramente, se encuentran  primera[Parameters::node_group_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) más cerca a una ID de grupo dado.
+Cualquier rotación de red puede dar lugar al movimiento de un nodo acercándose o alejándose de una ID de grupo en ese segmento de la red. Esto significa que muchos de los grupos lógicos son obligados a reconfigurarse con nuevos miembros en el grupo y la pérdida de algunos de los antiguos miembros del grupo.
+
+En el caso que:
+
+1. Uno o varios nodos desaparecen de un grupo lógico: Nuevos nodos estarán cerca del grupo ID y se convertirán en los más cercanos a la ID de grupo [Parameters::node_group_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc). Después de esto, todos los mensajes de grupo enviados al grupo ID, serán recibidos, también, por los nuevos nodos. Es responsabilidad de los demás nodos restantes de ese grupo el replicar datos rápidamente en los nuevos nodos.
+2. Nuevos nodos aparecen en un grupo lógico : Alguno de los nodos miembros del grupo se moverá lejos de la ID de grupo y no permanecerán en [Parameters::node_group_size](https://github.com/maidsafe/MaidSafe-Routing/blob/master/src/maidsafe/routing/parameters.cc) cercanos a la ID de grupo. Además de esto, estos nodos no recibirá ningún mensaje de grupo destinado a la identificación de dicho grupo. En estos nodos se debe suprimir los datos sobre los que ya no son responsables.
+
+
+Para mantener de forma fiable los datos con vida y accesibles en esta dinámica de grupo, todos los nodos responsables deben replicar los datos tan pronto como tengan conocimiento de la rotación de red. El Routing ofrece la clase MatrixChange para detectar tal rotación de forma rápida y realizar, de forma fiable, el trabajo requerido para replicar los datos en cualquier nuevo nodo que aparece en el grupo. Los nodos cerca de un segmento de red notarán evento de rotación observando un cambio en su matriz de grupo. Cuando la matriz de grupo cambia en cualquier rotación, el enrutamiento crea un objeto MatrixChange, que contiene la lista de nodos de la matriz del grupo nuevos y viejos. Esta clase proporciona una función que ayuda a evaluar a cualquier ID de grupo dado en el caso que un nodo reciba un evento de rotación:
+
+* Todavía es parte del grupo y responsable de los datos almacenados en el grupo.
+* Ya no es parte del grupo y hay que borrar los datos almacenados en relación con el grupo.
+* Necesidad de replicar los datos en un nuevo nodo.
 
 ```C++
   CheckHoldersResult CheckHolders(const NodeId& target) const;
 ```
 
-CheckHoldersResult provides list of the new and old holders of the group and proximity_status of the node receiving the churn event wrt the given group ID.
+CheckHoldersResult proporciona la lista de los nuevos y antiguos titulares del grupo y proximity_status del nodo que recibe el evento de rotación del grupo que recibió ID.
 
 
 ```C++
@@ -146,26 +145,26 @@ struct CheckHoldersResult {
 
 
 
-###Caching Mechanism
+###Mecanismo de caché
 
-To enable fast access to popular contents, routing offers some services to allow caching data on intermediate nodes or to read cached data from intermediate nodes if data is available. The functionality is simply achievable by setting a flag in the routing message. If the type of message is a request, the cache in each intermediate node to the final destination is checked for data. If data is available in cache, the intermediate node will serve the request and a reply is sent to the sender. If the type of message is a response, data is stored at each intermediate node from destination to source.
+Para permitir el acceso rápido a los contenidos populares, Routing ofrece algunos servicios que permiten que los datos se almacenen en el caché de los nodos intermedios o para poder leer los datos almacenados en caché de los nodos intermedios si hay datos disponibles. La funcionalidad se logra mediante el establecimiento de una bandera en el mensaje de enrutamiento. Si el tipo de mensaje es una solicitud, la memoria caché, en cada nodo intermedio hasta el destino final, está marcada por los datos. Si se dispone de datos en caché, el nodo intermedio servirá la solicitud y se envía una respuesta al remitente. Si el tipo de mensaje es una respuesta, los datos se almacenan en cada nodo intermedio desde el destino a la fuente.
 
 
-###Callbacks
+###Devolucion de llamada
 
-Offering an efficient platform to exchange messages between peers makes routing an ideal communication component of any P2P system. To allow simple and loosely coupled utilisation of the routing components, routing provides a number of callback functions to the host components. Some of these callbacks are mandatory and be provided by the host application. Other callbacks are additional features and are optional for host application.
+El ofrecer una plataforma eficiente para el intercambio de mensajes entre pares hace del routing un componente de comunicación ideal de cualquier sistema P2P. Para permitir la utilización fléxible y sencilla de los componentes de enrutamiento, el enrutamiento proporciona una serie de funciones de devolución de llamada a los componentes del sistema principal. Algunas de estas devoluciones de llamada son obligatorias y deben figurar en la aplicación host. Otras devoluciones de llamada podeen características adicionales y son opcionales para la aplicación host.
 
-Routing's callback functions:
+Funciones de devolución de llamadas de Routing:
 
-* **MessageReceivedFunctor** : Is called when a a node-level request message is received. Node-level request message is an incoming message destined for the application layer using the routing node.
+* **MessageReceivedFunctor** : Se llama cuando se recibe un mensaje a nivel de nodo. Un mensaje de petición de nivel de nodo es un mensaje entrante destinado a la capa de aplicación usando un nodo como enrutamiento.
 
-* **NetworkStatusFunctor** : Is called when a new connection is established or a connection drop happens. It show the percentage health in terms of node's connection to other valid peer nodes in the network or alternatively can be referred to as routing table health.
+* **NetworkStatusFunctor** : Se llama cuando se establece una nueva conexión o sucede una caída de conexión. Se muestra el porcentaje de salud en términos de conexión del nodo a otros pares de nodos válidos en la red o, alternativamente, puede hacer referencia a la salud de la tabla de enrutamiento.
 
-* **MatrixChangedFunctor** : Any churn event, resulting in change to nodes's group matrix triggers a call to this functor.
+* **MatrixChangedFunctor** : Cualquier evento de rotación, que resulte en el cambio de matriz de un grupo de nodos, desencadena una llamada a este funtor.
 
-* **RequestPublicKeyFunctor** : As a part of the connection process to a non-client peer, routing needs to be provided with the public key of the peer. This is achieved by PKI infrastructure. The callback provides another callback (GivePublicKeyFunctor) which should be called with the valid public key of the connecting non-client peer
+* **RequestPublicKeyFunctor** : Como parte del proceso de conexión a un compañero no cliente, el enrutamiento debe ser proporcionado con la clave pública del par. Esto se logra por la infraestructura de PKI. La devolución de llamada proporciona otra devolución de llamada (GivePublicKeyFunctor) que debe ser llamado con la clave pública válida de la conexión entre los pares no cliente
 
-* **HaveCacheDataFunctor** & **StoreCacheDataFunctor** : Are called to look for cached data or store data in cache of an intermediate node
+* **HaveCacheDataFunctor** & **StoreCacheDataFunctor** : Se llaman para buscar datos en el caché o almacenar datos en la memoría caché de un nodo intermedio
 
-* **NewBootstrapEndpointFunctor** : Is called whenever a routing node connects to a peer whose endpoints are capable of bootstrapping a node. Since the network is very dynamic, this is important information for reconnecting to the routing network. A list of these endpoints must be supplied to routing to reconnect to the network.
+* **NewBootstrapEndpointFunctor** : Es llamada cuando un nodo de enrutamiento se conecta a un compañero cuyos puntos finales son nodos capaces de bootstrapping. Dado que la red es muy dinámica, esta información es importante para volver a reconectarse a la red. Una lista de estos puntos finales se debe suministrar al enrutamiento para volver a conectarse a la red.
 
