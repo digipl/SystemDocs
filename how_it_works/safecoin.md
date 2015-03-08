@@ -23,7 +23,7 @@ Como muestra la figura 1, el algoritmo de ganancia de los safecoin es una curva 
 
 ![](safecoin farming speed.png)
 
-La red incrementa automáticamente la recompensa cuando aumente la demanda de almacenamiento y la reduce cuando este es abundante. Los datos se distribuyen de manera uniforme en la red y por lo tanto, los farmers
+La red incrementa automáticamente la recompensa cuando aumenta la demanda de almacenamiento y la reduce cuando esta es abundante. Los datos se distribuyen de manera uniforme en la red y por lo tanto, los farmers
 que buscan maximizar sus ganancias puede hacerlo mediante la ejecución de varios nodos con un rendimiento medio en lugar de disponer un solo nodo de alto rendimiento.
 
 ## Mecanismo de transferencia de safecoin
