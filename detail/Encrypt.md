@@ -1,34 +1,34 @@
-### Overview
+### Descripción general librería Encrypt
 
-MaidSafe-Encrypt implements functions related to 'self-encryption' of files and folders.
+MaidSafe-Encrypt implementa la función relacionada con la autoencriptación de ficheros y carpetas.
 
-The library's interface is provided in the following files:
+La interface de la librería proporciona los siguientes ficheros:
 
-* [self_encryptor.h](https://github.com/maidsafe/MaidSafe-Encrypt/blob/master/include/maidsafe/encrypt/self_encryptor.h) - this is the main API and is discussed in more detail below
-* [data_map.h](https://github.com/maidsafe/MaidSafe-Encrypt/blob/master/include/maidsafe/encrypt/data_map.h) - a struct which holds the encryption details of a single file
-* [config.h](https://github.com/maidsafe/MaidSafe-Encrypt/blob/master/src/maidsafe/encrypt/config.h) - provides const library configuration variables and return codes.  In the future, the use of return codes will be replaced with the error-handling mechanisms provided in the [MaidSafe Common library](https://github.com/maidsafe/MaidSafe-Common/wiki).
+* [self_encryptor.h](https://github.com/maidsafe/MaidSafe-Encrypt/blob/master/include/maidsafe/encrypt/self_encryptor.h) - Esta es el API principal y se comenta con detalle más abajo
+* [data_map.h](https://github.com/maidsafe/MaidSafe-Encrypt/blob/master/include/maidsafe/encrypt/data_map.h) - una estructura que mantiene los detalles de encripción de un fichero único
+* [config.h](https://github.com/maidsafe/MaidSafe-Encrypt/blob/master/src/maidsafe/encrypt/config.h) - proporciona variables de configuración de librería const y códigos de retorno. En el futuro los codigos de retorno se cambiarán por un mecanismo de gestión de errores proporcionado por [MaidSafe Common library](https://github.com/maidsafe/MaidSafe-Common/wiki).
 
-The library makes use of [OpenMP](http://en.wikipedia.org/wiki/OpenMP) where available for parallelisation of tasks.  It also depends on the MaidSafe libraries [Common](https://github.com/maidsafe/MaidSafe-Common/wiki), [Private](https://github.com/maidsafe/MaidSafe-Vault-Manager/wiki), [Passport](https://github.com/maidsafe/MaidSafe-Passport/wiki), [RUDP](https://github.com/maidsafe/MaidSafe-RUDP/wiki), [Routing](https://github.com/maidsafe/MaidSafe-Routing/wiki) and [Network-Filesystem](https://github.com/maidsafe/MaidSafe-Network-Filesystem/wiki).
-
-
-### Background
-[Self-encrypting] (http://maidsafe.net/images/opportunistic-caching.png)
-a file needs no other input than the file itself. It results in several encrypted chunks of data which need to be put to a persistent key-value store (e.g. the MaidSafe Network's vault) and a 'DataMap'.
-
-The DataMap is primarily two lists; one containing the pre-encryption [SHA512 hashes](https://en.wikipedia.org/wiki/SHA-2) of the chunks of the file and the other containing the post-encryption hashes. The pre-encryption hashes of two other chunks from the file are used in the encryption/decryption of a single chunk.  The post-encryption hashes are the names of the encrypted chunks, i.e. the key under which they are stored in the DHT.  The result is that given a DataMap, any user can retrieve the encrypted chunks and decrypt them into the original file.
-
-In the case of directories, the assumption is that the contents (a collection of DataMap and meta information) can be serialised to a single file.  This file, if self-encrypted, yields its own DataMap which also needs to be put to the key-value store.  However, the DataMap cannot be stored unencrypted if the contents are to remain secret.  These directory DataMaps are encrypted/decrypted using two pieces of additional information.  In the case of the MaidSafe Network, the first piece is normally a random ID which is attributed to that folder.  The second is the ID of the parent folder.  The ID's are suitable for use as keys in the key-value store, i.e. they are strings of the same size as a SHA512 hash.  The ID for a given directory becomes the key under which it's encrypted DataMap is stored.
+La librería hace uso de [OpenMP](http://en.wikipedia.org/wiki/OpenMP) donde sea posible para paralelizar las tareas.  También depende de la librería [Common](https://github.com/maidsafe/MaidSafe-Common/wiki), [Private](https://github.com/maidsafe/MaidSafe-Vault-Manager/wiki), [Passport](https://github.com/maidsafe/MaidSafe-Passport/wiki), [RUDP](https://github.com/maidsafe/MaidSafe-RUDP/wiki), [Routing](https://github.com/maidsafe/MaidSafe-Routing/wiki) and [Network-Filesystem](https://github.com/maidsafe/MaidSafe-Network-Filesystem/wiki).
 
 
-### Details
+### Antecedentes
+[Auto-encriptación] (http://maidsafe.net/images/opportunistic-caching.png)
+un archivo no necesita ninguna otra entrada que el propio archivo. Da como resultado varios trozos cifrados de datos que hay que poner a un almacén persistente de clave-valor (por ejemplo, un Vault de la Red MaidSafe) y un Mapa de datos.
 
-[self_encryptor.h](https://github.com/maidsafe/MaidSafe-Encrypt/blob/master/include/maidsafe/encrypt/self_encryptor.h) provides free functions for the encryption and decryption of `DataMap`s.  It also declares the `SelfEncryptor` class which is used in the encryption/decryption of files.
+El Mapa de datos contiene dos listas; una que contiene la codificación previa [hashes SHA512] (https://es.wikipedia.org/wiki/SHA-2) de los trozos del archivo y la otra que contienen los hashes post-cifrado. Los hashes pre-cifrado de otros dos trozos del archivo se utilizan en el cifrado/descifrado de un solo trozo. Los hashes post-cifrado son los nombres de los trozos cifrados, es decir, la clave en las que se almacenan en la DHT. El resultado es que con un mapa de datos, cualquier usuario puede recuperar los trozos cifrados y descifrar el archivo original.
 
-The `SelfEncryptor` class is designed to be compatible with the types of calls expected when using Encrypt under a virtual filesystem (VFS) like [FUSE](http://fuse.sourceforge.net/).  It is designed to be a throwaway class; a new instance will be constructed when a file handle is opened in the VFS and will be destructed when the handle is released.  As such, the class is [conditionally thread safe](http://en.wikipedia.org/wiki/Thread_safety#Levels_of_thread_safety).
+En el caso de los directorios, el supuesto es que el contenido (una colección de Mapa de datos y meta-información) pueden ser serializado en un solo archivo. Este archivo, si está autoencriptado, da su propio Mapa de datos que también necesita ser puesto en el almacén de claves-valor. Sin embargo, el mapa de datos no se puede almacenar sin cifrar ya que el contenido debe ser secreto. Estos mapas de datos de directorio son encriptados/desencriptados utilizando dos piezas de información adicional. En el caso de la Red MaidSafe, la primera pieza es normalmente un ID aleatorio que se atribuye a esa carpeta. El segundo es la ID de la carpeta principal. Las identificaciones son adecuados para su uso como claves en el almacén de claves y valores, es decir, son hilos del mismo tamaño que un hash SHA512. La ID de un directorio dado se convierte en la clave en la que el Mapa de datos cifrada se almacena.
 
-The constructor requires a pointer to a `DataMap`, access to the DHT via a non-const ref to a `nfs::ClientMaidNfs` and access to a buffer for temporary chunks via a non-const ref to a `data_store::PermanentStore`.  Furthermore, the number of threads to be used when encrypting/decrypting can be provided.
 
-Further details of the individual functions can be found in the [self_encryptor.h](https://github.com/maidsafe/MaidSafe-Encrypt/blob/master/include/maidsafe/encrypt/self_encryptor.h) file itself.
+### Detalles
+
+[self_encryptor.h](https://github.com/maidsafe/MaidSafe-Encrypt/blob/master/include/maidsafe/encrypt/self_encryptor.h) Proporciona functores libres para la encriptación y desencriptación de los Mapas de datos. Tambien declara la clase `SelfEncryptor` que se usa en la encriptación/desencriptación de un fichero.
+
+La clase `SelfEncryptor` está diseñada para ser compatible con los tipos de llamada que se esperan bajo un sistema de ficheros virtual (VFS) como [FUSE](http://fuse.sourceforge.net/).  Está diseñada para ser una clase de usar y tirar; Se construirá una nueva instancia cuando un identificador de archivo se abre en la VFS y será destruido cuando se cierre. Como tal, la clase es [segura en hilos](http://es.wikipedia.org/wiki/Thread_safety#Levels_of_thread_safety).
+
+El constructor requiere un puntero a un mapa de datos, el acceso de la DHT a través de una ref no const a una` NFS :: ClientMaidNfs` y el acceso a una memoria intermedia, para trozos temporales, a través de una ref no const a un `data_store :: PermanentStore `. Por otra parte, el número de hilos que se utiliza en la encriptación/desencriptación puede ser proporcional.
+
+Mas detalles de las funciones individuales se pueden encontrar en el fichero [self_encryptor.h](https://github.com/maidsafe/MaidSafe-Encrypt/blob/master/include/maidsafe/encrypt/self_encryptor.h).
 
 
 [se]: https://github.com/maidsafe/MaidSafe-Encrypt/blob/master/include/maidsafe/encrypt/self_encryptor.h "#include "maidsafe/encrypt/self_encryptor.h""
