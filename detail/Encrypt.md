@@ -12,7 +12,7 @@ La librería hace uso de [OpenMP](http://en.wikipedia.org/wiki/OpenMP) donde sea
 
 
 ### Antecedentes
-[Auto-encriptación] (http://maidsafe.net/images/opportunistic-caching.png)
+En la [Auto-encriptación] (http://maidsafe.net/images/opportunistic-caching.png)
 un archivo no necesita ninguna otra entrada que el propio archivo. Da como resultado varios trozos cifrados de datos que hay que poner a un almacén persistente de clave-valor (por ejemplo, un Vault de la Red MaidSafe) y un Mapa de datos.
 
 El Mapa de datos contiene dos listas; una que contiene la codificación previa [hashes SHA512] (https://es.wikipedia.org/wiki/SHA-2) de los trozos del archivo y la otra que contienen los hashes post-cifrado. Los hashes pre-cifrado de otros dos trozos del archivo se utilizan en el cifrado/descifrado de un solo trozo. Los hashes post-cifrado son los nombres de los trozos cifrados, es decir, la clave en las que se almacenan en la DHT. El resultado es que con un mapa de datos, cualquier usuario puede recuperar los trozos cifrados y descifrar el archivo original.
