@@ -1,35 +1,35 @@
 ## Descripción general libreria Vault
 
-The MaidSafe Network consists of software processes (nodes), referred to as vaults. These vaults perform many functions on the network and these functional components are referred to as personas. The underlying network, when linked with [MaidSafe-Routing](https://github.com/maidsafe/MaidSafe-Routing/wiki), is an XOR network and as such a node may express closeness or responsibility to any other node or element on the network, if the node is in relative close proximity to the target. In this summary the phrase **NAE** (Network Addressable Element) is used to refer to anything with a network address including data.
+La Red MaidSafe consiste en procesadores de software (nodos), conocidos como Vaults. Estas Vaults realizan muchas funciones en la red y estos sus componentes funcionales se conocen como "personas". La red subyacente, cuando se une con [MaidSafe-Routing] (https://github.com/maidsafe/MaidSafe-Routing/wiki), es una red XOR y como un tal, un nodo puede expresar la cercanía o responsabilidad repecto a cualquier otro nodo o elemento en la red, si este nodo se encuentra lo suficientemente próximo. En este resumen, la frase ** ** NAE (Red direccionable Element) se utiliza para referenciar a cualquier cosa con una dirección de red incluyendo datos.
 
-The vaults rely on [MaidSafe-Routing](https://github.com/maidsafe/MaidSafe-Routing/wiki) to calculate responsibilities for NAE via the relevant [API calls](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/routing_api.h) such as
+Los vaults cuentan con el [MaidSafe-Routing](https://github.com/maidsafe/MaidSafe-Routing/wiki) para calcular las responsabilidades sobre los NAE a través de [llamdas API](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/routing_api.h) como por ejemplo
 ```C++
 GroupRangeStatus IsNodeIdInGroupRange(const NodeId& group_id, const NodeId& node_id) const;
 GroupRangeStatus IsNodeIdInGroupRange(const NodeId& group_id) const;
 bool EstimateInGroup(const NodeId& sender_id, const NodeId& info_id) const;
 ```
-These calls allow us to calculate the network from the perspective of any NAE we may be responsible for. It cannot be stressed enough that the ONLY way to determine responsibility for an NAE is to see the network from the perspective on the NAE. If we sort the vector of nodes we know about and their close nodes (referred to as the group matrix) and we do not appear in the first K (replication count) nodes then we are not responsible for the NAE. This is a fundamental issue and the importance of this cannot be emphasised enough.
+Estas llamadas nos permiten calcular la red desde el punto de vista de cualquier NAE del que podemos ser responsables. Hay que insistir en que la única manera de determinar la responsabilidad sobre un NAE es ver a la red desde el punto de vista del propio NAE. Si clasificamos el vector de nodos que conocemos y sus nodos cercanos (referido como la matriz del grupo) y no aparecemos en los primeros K nodos (contando la replicación) entonces no somos responsables del NAE. Este es un tema fundamental y la importancia de esto no puede enfatizarse lo suficiente.
 
-As the network is very fluid in terms of churn and vault capabilities the vault network must measure and report on individual vaults and importantly ensure all the personas of any vault are performing their tasks for the NAE they are responsible for. To facilitate this, Routing’s [Matrix change (Churn Event)](https://github.com/maidsafe/MaidSafe-Routing/wiki/Documentation#matrix-change-churn-event) feature is used. In the event of any churn around a given network segment, a Matrix change object is created by Routing and passed on to Vault. This object contains list of old and new nodes in group matrix. Based on this information, it provides helper function to derive certain information related to any given NAE.
-If the node getting churn event is among first k nodes closest to provided NAE. If yes, which new node(s) need information related to the provided NAE. If not, delete any information stored related to the given NAE.
+En tanto en cuanto la red es muy fluida en términos de rotación, Los Vaults deben ser capaces de medir e informar sobre cada Vault individual y esto es importante para asegurarse que todos las "persona" de cualquier Vault están realizando sus tareas para el NAE del que son responsables. Para facilitar esto, usamos la característica de Routing [Matrix change (Churn Event)](https://github.com/maidsafe/MaidSafe-Routing/wiki/Documentation#matrix-change-churn-event). En el caso de una rotación, alrededor de un segmento de red determinado, se crea un objeto de cambio de matriz por el Routing y se transmite al Vault. Este objeto contiene la lista de los nodos viejos y nuevos de la matriz del grupo. Basándose en esta información, esto proporciona una función de ayuda para obtener cierta información relacionada con cualquier NAE dado.
+Si el nodo que recibe el evento churn está entre los k nodos más cercanos al proporcionado por el NAE. En caso afirmativo, el nuevo nodo(s) necesitará información relacionada con el NAE proporcionado. Si no es así, se eliminará cualquier información almacenada relacionada con el NAE dado.
 
-Churn, duplication of data and ensuring all members of a group agree is handled by a combination of synchronisation, the accumulator and group messages. This is a complex set of rules that requires significant attention to edge cases.
+La rotación, la duplicación de datos y garantizar que todos los miembros de un grupo están de acuerdo es gestionado por una combinación de sincronización, el acumulador y los mensajes del grupo. Se trata de un complejo conjunto de normas que requiere considerable atención en los casos difíciles.
 
-# Terms and Conventions Used
-**_Please be aware that these terms are extensively used and this document is rendered unreadable without these being completely understood._**
+# Terminos y convenciones usados
+**_Por favor, tener en cuenta que estos términos se usan ampliamente en este documento y su lectura será muy dificil sin que sean totalemente comprendidos._**
 
-* Sy - [Sync](#sync), this function synchronises data between nodes in the same group (closely connected).
-* Sr - [Sync](#sync), this function synchronises result of message between nodes in the same group (closely connected).
-* So - Send On, this function send the message on to the next persona.
-* Ac - Accumulate, This function accumulates messages from previous personas (the personas sending the message to the current persona).
-* Fw - Firewall, this function ensures duplicate messages are prevented from progressing and answers such messages with the calculated response (such as success:error:synchronising etc. and may include a message containing data)
-* Uf - Update Firewall, this function will update the firewall with the newly calculated return code and optional message.
-* **Bold** represents Indirect Network Addressable Entities INAE
-* _Italic_ represents Direct Network Addressable Entities DNAE
-* ->>>> represents a group message (no callback)
-* -> represents a direct message (no callback)
-* =>>>> represents a group message (with callback)
-* => represents a direct message (with callback)
+* Sy - [Sync](#sync), esta función sincroniza datos entre nodos del mismo grupo (conectados por proximidad).
+* Sr - [Sync](#sync), esta función sincroniza los resultados de los mensajes entre nodos del mismo grupo (conectados por porximidad).
+* So - Enviar On, esta función envía el mensaje a la siguiente persona.
+* Ac - Accumulate, esta función acumula mensajes de personas previas (las personas que mandan el mensaje a las personas actuales).
+* Fw - Firewall, esta función asegura que a los mensajes duplicados se les impida progresar y conteste a dichos mensajes con la una respuesta calculada (como success:error:synchronising etc. puede incluir un mensaje que contienen datos)
+* Uf - Update Firewall, esta función actualizará el firewall con el código de retorno recién calculado y un mensaje opcional.
+* **Bold** representa Indirect Network Addressable Entities INAE
+* _Italic_ representa Direct Network Addressable Entities DNAE
+* ->>>> representa un mensaje de grupo (sin retorno)
+* -> representa un mensaje directo (sin retorno)
+* =>>>> representa un mensaje de grupo (con retorno)
+* => representa un mensaje directo (con retorno)
 
 ### Maidsafe Identities
 The MaidSafe Network consists of many data types as well as many identity types. These identities are described in [MaidSafe-Passport](https://github.com/maidsafe/MaidSafe-Passport/wiki). The personas are particularly focussed on 4 of these identities and ensures the appropriate entities satisfy the requirements enforced by these identities.
@@ -39,18 +39,18 @@ The MaidSafe Network consists of many data types as well as many identity types.
 * MPID (Maidsafe Public ID)- The client identity to allow public id's (public network names, such as a persons name or nickname) to communicate securely. A client can have many of these.
 * MSID (Maidsafe Share ID) - The client identity to manager groups of MPID's to privately share data (structured and non structured). A client can have many of these. This type of identity has no NAE holder for security purposes.
 
-### Vault Personas
-The personas employed by MaidSafe vaults fall into two distinct categories, namely Data Management and Node Management. These categories define the actions and grouping of the nodes and their knowledge of the surroundings and messages.
-* Data Management nodes are responsible for NAE specifically data, usually pointers to data.
-* Node Management personas are responsible for an entity persona (node) and manages the actions and requests by that entity persona.
+### Vault "Personas"
+Las "personas" empleadas por un Vault de MaidSafe entran en dos categorias distintas, a saber, Data Management y Node Management. Estas categorias define las acciones, la agrupación de los nodos y su conocimiento de los alrededores y mensajes.
+* Data Management nodes son responsables de datos NAE específicos, por lo general punteros a los datos.
+* Node Management personas son responsables por una entidad "persona" (nodo) y gestiona las acciones y peticiones de dicha entidad.
 
-Incoming messages are [demultiplexed](https://github.com/maidsafe/MaidSafe-Vault/blob/master/src/maidsafe/vault/demultiplexer.h) to identify the persona and data type they are destined for. The message is then directed to that persona.
+Los mensajes entrantes son [demultiplexed](https://github.com/maidsafe/MaidSafe-Vault/blob/master/src/maidsafe/vault/demultiplexer.h) para identificar a la persona y el tipo de dato que se envía. Los mensajes son dirigidos a esa persona.
 
-# Generalised Data Management
+# Gestión de datos Generalizado
 ___
-###Unversioned Data
+###Datos no versionados
 
-Storing a piece of data onto the network requires coordination and collaboration by several Personas. A chunk of data from user data is created at MaidNode and is managed by DataManagers. DataManagers ensures that several copies of data are stored and available at distant PmidNodes all the time. The following diagram shows a very basic flow of data storage process on the network.
+Almacenar un trozo de datos en la red requiere de la coordinación y la colaboración de varias Personas. Un chunk de datos a partir de datos de usuario se crea en MaidNode y es administrado por DataManagers. DataManagers asegura que varias copias de los datos se almacenan y están disponible en diferentes PmidNodes todo el tiempo. El siguiente diagrama muestra un flujo muy básico del proceso de almacenamiento de datos en la red.
 
 ![UnversionedData](./img/UnversionedData.png)
 
