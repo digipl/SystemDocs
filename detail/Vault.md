@@ -152,7 +152,7 @@ Usa un único ManagerDb
 * `Get<Data>` En respuesta a recibir un Get<data> este nodo intentará recuperar los datos desde cualquier PmidNode vivo y enviará los datos al solicitante a través del Routing reply_functor proporcionada con la solicitud.
 * * | **DataManager** => * live PmidNodes| _PmidNode_ |
 
-### Data Integrity Checks
+### Chequeo de integridad de datos
 En respuesta a un evento de rotación, (detectado como un Node Status Change) el DataManager creará un trozo aleatorio de datos y lo enviará a cada PmidNode con una solicitud para añadir estos datos y hacer un hash de los nuevos datos y responder con el nuevo valor. Esto permite que el DataManager evalue que todos los PmidNodes tienen los mismos datos (no dañados o perdidos).
 * * | **DataManager** [So, Sr]=>>>> * 4| **PmidManager** ->| _PmidNode_ |
 
