@@ -1,4 +1,4 @@
-## Vault Overview
+## Descripción general libreria Vault
 
 The MaidSafe Network consists of software processes (nodes), referred to as vaults. These vaults perform many functions on the network and these functional components are referred to as personas. The underlying network, when linked with [MaidSafe-Routing](https://github.com/maidsafe/MaidSafe-Routing/wiki), is an XOR network and as such a node may express closeness or responsibility to any other node or element on the network, if the node is in relative close proximity to the target. In this summary the phrase **NAE** (Network Addressable Element) is used to refer to anything with a network address including data.
 
