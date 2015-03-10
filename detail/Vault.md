@@ -72,20 +72,20 @@ Almacenar un trozo de datos en la red requiere de la coordinación y la colabora
 ####`Get<Data>`
 |  _MaidNode_ [So]=>>>> | [Ac, Fw] **DataManager** [So]=> * (# of live PmidNodes)|[Ac, Fw] _PmidNode_ |
 
-##Anatomy of a Manager Persona with Non-Versioned Data
-All personas follow a very similar pattern, they accumulate, firewall, handle and send on messages, and synchronise their results, whereupon agreement they record the result of an operation in a database. The results or values stored per operation differ with differing personas, but little else does.
+##Anatomía de un gestor "Persona" con datos no versionados
+Todos las "Personas" siguen un patrón muy similar, acumulan, firewall, sujetan y envian los mensajes y sincronizan sus resultados, con lo cual el acuerdo que registran es el resultado de una operación en una base de datos. Los resultados o valores almacenados por operación difieren según las diferentes "Personas", pero poco más.
 
-In practice, it is a priori assumed that nodes on the network are untrustworthy, however, cooperating/collaborating nodes are essential to the continued stability and health of the network. To ensure both conditions are met when receiving from an INAE, the group of nodes, under the guise of a known specific persona, surrounding the target element become responsible for validating the request. Synchronisation between the group allows each to accumulate one another's result to a predetermined number sufficient to satisfy the request. The process inherently detects message tampering or would-be hackers and with a ranking mechanism in place serial offenders are forced into network isolation.
+En la práctica, se supone, a priori, que los nodos de la red son indignos de confianza, sin embargo, la cooperación/colaboración de los nodos son esenciales para la estabilidad y la salud de la red. Para asegurar que se cumplan las dos condiciones, al recibir de un INAE, el grupo de nodos, bajo el disfraz de una "Persona" específica, que rodea el elemento objetivo se convierten en responsable de la validación de la solicitud. La sincronización entre el grupo permite a cada uno acumular la de otro dando como resultado un número predeterminado suficiente para satisfacer la solicitud. El proceso, inherentemente, detecta la manipulación del mensaje o los aspirantes a hackers y, con un mecanismo de clasificación, los delincuentes son forzados al aislamiento de la red.
 
-When receiving from a DNAE each persona accumulates on a single message only. This is possible since a connection exists between the nodes and that both routing and rUDP have confirmed the other nodes identity in a cryptographically secure manner.
+Cuando se recibe desde un DNAE cada "Persona" se acumula en un solo mensaje. Esto es posible ya que existe una conexión entre los nodos, y tanto el enrutamiento como el RUDP han confirmado la identidad de otros nodos de una manera criptográficamente segura.
 
-The variety of non-data messages are handled distinctly by each persona.
+La variedad de mensajes de "no datos" se gestionan de manera diferente por cada "Persona".
 
 ___
 
-###Versioned Data
-Storing a piece of versioned data such as a directory version onto the network is handled by different personas based on the privacy settings of the directory defined by the user. Privacy settings include private, public and shared versioned data. Different Identities are employed based on the privacy settings associated with the directories. Though different versioned data is created and forwarded by different personas, all of it is managed and stored onto the VersionManager.
-The following diagram shows a very basic flow of the versioned data storage process on the network based on different privacy settings.
+###Datos versionados
+Almacenar un trozo de datos versionado en la red, como una versión del directorio, es gestionada por diferentes "Personas" basados en la configuración de privacidad del directorio definido por el usuario. Las configuraciones de privacidad incluyen privadas, públicas y datos versionados compartidos. Diferentes identidades se emplean en base a la configuración de privacidad asociados a los directorios. Aunque se crea diferentes versiones de datos y se envía por diferentes "Personas", todo ello se gestiona y se almacena en el VersionManager.
+El siguiente diagrama muestra un flujo muy básico del proceso de almacenamiento de datos versionados en la red, sobre la base de diferentes configuraciones de privacidad.
 
 ![VersionedData](./img/VersionedData.png)
 
@@ -104,9 +104,9 @@ The following diagram shows a very basic flow of the versioned data storage proc
 * `Delete<Data>` |  _MaidNode_ [So]=>>>> |[Ac, Fw] **MaidManager** [So, Sy]->>>> | [Ac, Fw] **DataManager** [So, Sy]->>>> * 4| [Ac, Fw] **PmidManager** [So, Sy] =>|[Ac, Fw]_PmidNode_ | +
 * |  _MaidNode_ [So]=>>>> | [Ac, Fw, Sy, Uf] **VersionManager** |
 
-##Anatomy of a Manager Persona with Versioned Data
+##Anatomía de un gestor "Persona" con datos versionados
 
-These VM personas all must agree on the request as it is received. To accomplish this, the VM personas keep accumulating the messages received from previous personas. Once the expected limit is reached the request is synced with other VM personas in the group. Any VM persona receiving expected number of sync messages attempts to perform the request. Performing the request will be followed by returning the result of the action to the accumulator and calling reply functors associated to the requests from previous personas. Again `Get` simply attempts to return the self-calculated answer for speed, but all mutating calls require agreement with all the VersionManager personas involved in the call. This is a crucial difference with the non-versioned data managers. This difference is due to these personas being the ultimate answer to the request and sync is used for agreement rather than self-calculating the answer and leaving this up to the requester to agree on.
+Todos estos VM "personas" deben estar de acuerdo sobre la consulta en el momento que se recibe. Para lograr esto, los VM "Personas" mantienen la acumulación de los mensajes recibidos de las "Personas" anteriores. Una vez que se alcanza el límite de espera, la petición se sincroniza con otros VM "Personas" en el grupo. Cualquier VM "Persona" que recibe el número esperado de mensajes de sincronización intenta realizar la solicitud. Al realizar la solicitud, continuará devolviendo el resultado de la acción al acumulador y llamando a los funtores de contestación asociados a las peticiones de los personajes anteriores. Una vez más, un `GET` simplemente intenta devolver la respuesta autocalculada de velocidad, pero todas las llamadas mutadas requieren de un acuerdo con todos los personajes VersionManager involucrados en la llamada. Esta es una diferencia fundamental con los administradores de datos no versionados. Esta diferencia se debe a estas "Personas" son la última llamada a la solicitud, y la sincronización se utiliza para el acuerdo en lugar de auto-calcular la respuesta y dejarlo al acuerdo del solicitante.
 
 
 ## Generalised Communications Management
