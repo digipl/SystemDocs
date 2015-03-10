@@ -109,7 +109,7 @@ El siguiente diagrama muestra un flujo muy básico del proceso de almacenamiento
 Todos estos VM "personas" deben estar de acuerdo sobre la consulta en el momento que se recibe. Para lograr esto, los VM "Personas" mantienen la acumulación de los mensajes recibidos de las "Personas" anteriores. Una vez que se alcanza el límite de espera, la petición se sincroniza con otros VM "Personas" en el grupo. Cualquier VM "Persona" que recibe el número esperado de mensajes de sincronización intenta realizar la solicitud. Al realizar la solicitud, continuará devolviendo el resultado de la acción al acumulador y llamando a los funtores de contestación asociados a las peticiones de los personajes anteriores. Una vez más, un `GET` simplemente intenta devolver la respuesta autocalculada de velocidad, pero todas las llamadas mutadas requieren de un acuerdo con todos los personajes VersionManager involucrados en la llamada. Esta es una diferencia fundamental con los administradores de datos no versionados. Esta diferencia se debe a estas "Personas" son la última llamada a la solicitud, y la sincronización se utiliza para el acuerdo en lugar de auto-calcular la respuesta y dejarlo al acuerdo del solicitante.
 
 
-## Generalised Communications Management
+## Gestión de comunicación generalizada
 | Node Management      | Node      |
 | ----------------------|----------:|
 | [**MpidManager**](#mpidmanager)    | [_MpidNode_](#mpidnode)  |
@@ -142,27 +142,27 @@ Usa un único ManagerDb
 | **PmidManager** ->|[Ac, Fw] **DataManager** [So, Sy]->>>> |
 
 
-### Messages Out
-* `Put<Data>` When a data element is first stored or a DataManager requires to add another PmidNode to store data (due to PmidNodes failing, switching off otherwise losing data) this Nfs call is made to store the data.
+### Salida de mensajes
+* `Put<Data>` Cuando un elemento de datos se almacena por primera vez o una DataManager requiere añadir otro PmidNode para almacenar datos (debido a que el PmidNodes falla, se desconecta o pierde datos de otra manera) se realiza esta llamada NFS para almacenar los datos.
 * * | **DataManager** [So, Sy, Uf]->>>> | **PmidManager** |
 
-* `Delete<Data>` When the subscriber count approaches zero or the PmidNode is deemed to not be responsible for a data element any longer this Nfs call is made.
+* `Delete<Data>` Cuando el recuento de suscripción se aproxima a cero o la PmidNode se considera que deja de ser responsable de un elemento de datos, se hace esta llamada NFS.
 * * | **DataManager** [So, Sy, Uf]->>>> | **PmidManager** ->|
 
-* `Get<Data>` In response to recieving a Get<data> this node will attempt to retrieve the data from any live PmidNode and will send the data back to the requester via the Routing reply_functor provided with the request.
+* `Get<Data>` En respuesta a recibir un Get<data> este nodo intentará recuperar los datos desde cualquier PmidNode vivo y enviará los datos al solicitante a través del Routing reply_functor proporcionada con la solicitud.
 * * | **DataManager** => * live PmidNodes| _PmidNode_ |
 
 ### Data Integrity Checks
-In response to a churn event, (detected from Node Status Change as below) the DataManager will create a random peice of data and send this to each PmidNode with a request to append this data and hash the data again and respond with the new value. This allows the DataManager to evaluate that all PmidNodes hold the same data (not corrupted or lost).
+En respuesta a un evento de rotación, (detectado como un Node Status Change) el DataManager creará un trozo aleatorio de datos y lo enviará a cada PmidNode con una solicitud para añadir estos datos y hacer un hash de los nuevos datos y responder con el nuevo valor. Esto permite que el DataManager evalue que todos los PmidNodes tienen los mismos datos (no dañados o perdidos).
 * * | **DataManager** [So, Sr]=>>>> * 4| **PmidManager** ->| _PmidNode_ |
 
 
 ### Version Manager<a id="versionmanager"></a>
-The **VersionManager**, manages versioned data. This currently includes data that can be defined in [StructuredDataVersions](https://github.com/maidsafe/MaidSafe-Private/blob/master/include/maidsafe/data_types/structured_data_versions.h). Private data directories, private shared directories and public directories are currently managed in this structure. This persona is not limited to requiring versions and can consequently be used for structured data of many types with ease.
+The **VersionManager**, gestiona datos versionados. Esto, actualmente, incluye datos que puede ser definidos en [StructuredDataVersions](https://github.com/maidsafe/MaidSafe-Private/blob/master/include/maidsafe/data_types/structured_data_versions.h). Directorios de datos privados, directorios privados y directorios compartidos públicos se manejan actualmente en esta estructura. Esta "Persona" no se limita a las versiones requeridas y por consiguiente se puede utilizar para datos estructurados de muchos tipos con facilidad.
 
-### Container Structure
+### estructura del contenedor
 
-Uses a unique ManagerDb
+Usa un único ManagerDb
 
 * Key : data key + type + Entity ID
 * Value : StructuredDataVersions object (serialised)
@@ -177,32 +177,32 @@ Uses a unique ManagerDb
 * `GetBranch<Data>`
 * * |  _MaidNode_ =>>>> |[Ac, Fw] **VersionManager** |
 
-### Messages Out
- [None] All inputs are callbacks
+### Mensaje de salida
+ [None] Todas las entradas son devoluciones de llamada
 
-### Node Management Personas
-Node management personas, manage entity personas (nodes).
+### Node Management "Personas"
+Node management "Personas", gestiona entidades de "Personas" (nodos).
 
 ### Maid Manager<a id="MaidManager"></a>
-The **MaidManager** function is to manage the MaidNode. This means ensuring the client has an account and at least one registered PmidNode.
+La función **MaidManager** gestiona el MaidNode. Esto significa asegurarse que el cliente tiene una cuenta y al menos un PmidNode registrado.
 
-### Container Structure
-Uses the AccountDb
+### Estructura del contenedor
+Usa una AccountDb
 
 * Key : Hash of the data key (hashed to protect clients data)
 * Value : Number of copies (int32) : total cost (int32)
 
-### Header Structure
+### Estructura de cabecera
 
-* Total Data size Stored
-* Available Space
+* Tamaño total de datos almacenados
+* espacio disponible
 
-### Messages In
-* `PUT<Data>` A client can store an anonymous MAID packet on the network which creates the account. Then the MaidNode must register a PmidNode and does so with a vault registration packet, which is signed by the MAID and PMID private keys (that the client must have access to). The individual MaidManager will query the PmidManager group on start-up, churn event and client running low on space to ensure the PmidNode has enough offered space. On success, the MaidNode can send the data to the relevant DataManager and retrieve the cost to be paid.  On retrieval of the cost, the intention to record the entry in the database is synchronised with the other MaidManagers. The MergePolicy in this case will add the key to the database and/or increment the number of copies and total cost field.
+### Entrada de mensajes
+* `PUT<Data>` Un cliente puede almacenar un paquete MAID anónimo en la red que crea la cuenta. Entonces el MaidNode debe registrar un PmidNode y lo hace con un paquete de inscripción del Vault, que está firmado por el MAID con las claves privadas PMID (las cuales el cliente debe tener acceso). El MaidManager individual consultará el grupo PmidManager en el arranque, en un evento de rotación y cuando el cliente está bajo de recursos y no tiene suficiente espacio que garantizar al PmidNode. En caso de éxito, la MaidNode puede enviar los datos a la DataManager relevante y recuperar el costo a pagar. En cuanto se page el costo, la intención es que la entrada en la base de datos se sincronice con los otros MaidManagers. El MergePolicy en este caso se sumará la clave de la base de datos y/o incrementará el número de copias y el campo de coste total.
 
 * * |  _MaidNode_ ->>>> | [Ac, Fw]**MaidManager** [So]|
 
-* `Delete<Data>` The MaidManager will search the account record of the MAID client account for a corresponding PUT of the data key. On success the MaidManager will reduce the number of PUT chunks of that key. If multiple chunks are stored in the same key the cost is reduced by taking an average of the total cost paid for that key. Delete always returns success as the client only wastes it's own time in trying an attack of that nature.
+* `Delete<Data>` El MaidManager buscará en el registro de cuentas del cliente MAID un PUT correspondiente de la clave de datos. En caso de éxito el MaidManager reducirá el número de trozos PUT de esa clave. Si varios trozos se almacenan en la misma clave el costo se reduce tomando un promedio del costo total pagado por esa clave. La eliminación siempre devuelve un mensaje de éxito por lo que el cliente sólo desperdicia su propio tiempo en tratar un ataque de esa naturaleza.
 * * |  _MaidNode_ =>>>> | [Ac, Fw] **MaidManager** [So] |
 * `PutVersion<Data>`
 * * |  _MaidNode_ =>>>> | [Ac, Fw] **MaidManager** [So] |
@@ -224,33 +224,38 @@ Uses the AccountDb
 * * | **MaidManager** [So] =>>>> | **PmidNode** |
 
 ### Pmid Manager<a id="PmidManager"></a>
-The PAH (Pmid Account Holder) function is to manage the Pmid client. This means ensuring the client has an account and an accurate record of data elements held and any lost (early version of rank).
-### Container Structure
+La función PAH (Pmid Account Holder) gestiona al Pmid client. Esto significa asegurar que el cliente tiene una cuenta y un registro exacto de los elementos de datos realizada y ninguna perdida (versión inicial de rango).
 
-Uses the AccountDb
+### Estructura del contenedor
+
+Una una AccountDb
 
 * Key : Data key
 * Value : Size (int32)
 
 ### Header Structure
 
-* Total Data size Stored
-* Total Data Size lost
-* Available Space
+* Tamaño total de datos almacenados
+* Tamaño total de datos perdidos
+* Espacio disponible
 
-### Messages In
 
-* `Put<Data>` Store data on PmidNode and update stored counts for that PmidNode
+### Entrada de mensajes
+
+* `Put<Data>` Guarda datos en PmidNode y actualiza el contador de almacenaje para ese PmidNode
 * * | **DataManager** =>>>> | [Ac, Fw] **PmidManager** |
-* `Delete<Data>` Send delete to PmidNode and remove from stored counts for that pmidnode
+* `Delete<Data>` Manda un borrado a PmidNode and eleimina el contador de almacenaje de ese Pmidnode
 * * | **DataManager** ->>>> | [Ac, Fw] **PmidManager** |
-* `Get<Data>` Return data or error
+* `Get<Data>` Devuelve dato o error
 * * | **DataManager** =>>>> | [Ac(1), Fw] **PmidManager** |
-* `Lose<Data>` Send delete to PmidNode and add to lost count
+* `Lose<Data>` Enviar un borrado a PmidNode y añade uno al contador de perdida
 * `GetPMIDHealth`
-* * | **MaidManager** =>>>> | [ **PmidManager** | (no Fw or Ac, answer every call)
-### Messages Out
-* `SendAccount` This is sent to a _PmidNode_ when it rejoins the group. This will be detected by the **PmidManager** on reciept of a churn event. The account in this case is all data the _PmidNode_ should have stored and will not include any deleted or lost data that occurred whilst the _PmidNode_ was off line.
+* * | **MaidManager** =>>>> | [ **PmidManager** | (no Fw or Ac, devuelve cada llamada)
+* 
+### Salida de mensajes
+
+* `SendAccount` Se envía a _PmidNode_ cuando se une al grupo. Esto se detectará por el **PmidManager** a la recepción de un evento de rotación. 
+La cuenta en este caso son todos los datos que _PmidNode_ debe haber guardado y no incluirá ningún dato borrado o perdido que ocurra mientras el _PmidNode_ esté off line.
 * *   | **PmidManager** [So]-> | **PmidNode**
 
 
