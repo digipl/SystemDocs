@@ -16,7 +16,7 @@ Si el nodo que recibe el evento churn está entre los k nodos más cercanos al p
 La rotación, la duplicación de datos y garantizar que todos los miembros de un grupo están de acuerdo es gestionado por una combinación de sincronización, el acumulador y los mensajes del grupo. Se trata de un complejo conjunto de normas que requiere considerable atención en los casos difíciles.
 
 # Terminos y convenciones usados
-**_Por favor, tener en cuenta que estos términos se usan ampliamente en este documento y su lectura será muy dificil sin que sean totalemente comprendidos._**
+**_Por favor, tener en cuenta que estos términos se usan ampliamente en este documento y su lectura será muy dificil sin que sean totalmente comprendidos._**
 
 * Sy - [Sync](#sync), esta función sincroniza datos entre nodos del mismo grupo (conectados por proximidad).
 * Sr - [Sync](#sync), esta función sincroniza los resultados de los mensajes entre nodos del mismo grupo (conectados por porximidad).
