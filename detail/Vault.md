@@ -117,26 +117,26 @@ Todos estos VM "personas" deben estar de acuerdo sobre la consulta en el momento
 
 
 ---
-### Data Management Personas
-Data management personas are responsible for maintaining links between NAE keys and the addresses of the NAE that contains the content of the key in question. These vaults personas can be considered as managers of pointers to data as well as data lifetime and replication management, with the ability to withstand network churn.
+### "Personas" Data Management
+Data management "Personas" son responsables de mantener vínculos entre claves NAE y las direcciones NAE que contiene el contenido de la clave en cuestión. Estos Vault "Personas" pueden ser considerados como responsables de los punteros a los datos, así como de la duración de los datos y la gestión de la replicación, con capacidad para resistir la rotación de la red.
 
 ###Data Manager<a id="datamanager"></a>
-The **DataManager** persona manages pointers to non versioned data, such as file contents, network keys as defined in [passport](https://github.com/maidsafe/MaidSafe-Passport/wiki) and any other 'static' data elements.
+The **DataManager** "Persona" gestiona punteros a datos no versionados, como contenido de ficheros, claves de red como las definidas en [passport](https://github.com/maidsafe/MaidSafe-Passport/wiki) y cualquier otro elemento de datos estático.
 
-### Container Structure
-Uses a unique ManagerDb
+### Estructura de Contenedor
+Usa un único ManagerDb
 
 * Key : data key + type
 * Value : DataManagerValue object (serialised)
 
-### Messages In
-* `Put<Data>` This message is received from a MaidManager group (of K)and is accumulated. The database is checked for the existence of the key. If it exists then the subscriber count is incremented. If no record exists then each of the Data Managers of this group closes to the NAE being stored selects a connected node as a PmidNode to store on (if the message has a Data Holder hint then the closest of the data managers of this NAE attempts to store there). To store a chunk a `PUT<Data>`(key, content) message is sent to the PmidManagers responsible for the selected PmidNode.
+### Entrada de mensajes
+* `Put<Data>` Este mensaje es recibido por un grupo de MaidManager (de K) y se acumula. Se comprueba la base de datos para ver si esa clave existe. Si el registro no existe, entonces cada uno de los Data Managers de este grupo, cercanos al NAE que se quiere guardar, selecciona un nodo conectado como PmidNode para guardarlo (si el mensaje tiene una pista del Data Holder entonces el más cercano de los gestores de datos de este NAE intenta almacenarlo allí). Para guardar un chunk, un mensaje `PUT<Data>`(key, content) se manda al PmidManagers responsable del PmidNode seleccionado.
 * * | **MaidManager** ->>>> | [Ac, Fw]**DataManager**[So, Sy]->>>>|
 
-* `Delete<Data>` This message is received from a MaidManagers group (of K)and is accumulated. The database is checked for the existence of the key. If it exists then the subscriber count is decremented. When the count reaches zero (if it ever does) then a Delete<data>(key) is sent to all PmidManagers to delete the data.
+* `Delete<Data>` este mensaje es recibido por un grupo de MaidManagers group (de K) y se acumula. Se comprueba la base de datos para ver si esa clave existe. Si existe, el contador decrece. Cuando el contador llega a cero (si alguna vez lo hace) entonces un Delete<data>(key) es enviado a todos los PmidManagers para borrar los datos.
 * * | **MaidManager** ->>>> | [Ac, Fw] **DataManager** [So, Sy]->>>>|
 
-* `Get<Data>` This message is not accumulated, only fire-walled. This message can come from any persona, although should not reach this persona very frequently due to caching. If this message does reach here then the DataManager sends a GET<Data> direct to a PmidNode and retrieves the data, sending it back via the reply_functor passed by [routing](https://github.com/maidsafe/MaidSafe-Routing/wiki).
+* `Get<Data>` este mensake no se acumula, solo se envía. Este mensaje puede venir de cualquier "Persona", aunque no debe llegar a este personaje muy frecuentemente debido al almacenamiento en caché. Si este mensaje no llegue aquí entonces el DataManager envía un GET <Datos> directamente a un PmidNode y recupera los datos, enviando de nuevo a través de la reply_functor enviada por [routing](https://github.com/maidsafe/MaidSafe-Routing/wiki).
 * * |  _MaidNode_ ->>>> | [Ac, Fw] **DataManager** | (firewall)
 * `Node Status Change`
 | **PmidManager** ->|[Ac, Fw] **DataManager** [So, Sy]->>>> |
