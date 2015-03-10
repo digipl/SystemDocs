@@ -1,6 +1,6 @@
 ## Descripción general libreria Vault
 
-La Red MaidSafe consiste en procesadores de software (nodos), conocidos como Vaults. Estas Vaults realizan muchas funciones en la red y estos sus componentes funcionales se conocen como "personas". La red subyacente, cuando se une con [MaidSafe-Routing] (https://github.com/maidsafe/MaidSafe-Routing/wiki), es una red XOR y como un tal, un nodo puede expresar la cercanía o responsabilidad repecto a cualquier otro nodo o elemento en la red, si este nodo se encuentra lo suficientemente próximo. En este resumen, la frase ** ** NAE (Red direccionable Element) se utiliza para referenciar a cualquier cosa con una dirección de red incluyendo datos.
+La Red MaidSafe consiste en procesadores de software (nodos), conocidos como Vaults. Estas Vaults realizan muchas funciones en la red y estos sus componentes funcionales se conocen como "personas". La red subyacente, cuando se une con [MaidSafe-Routing] (https://github.com/maidsafe/MaidSafe-Routing/wiki), es una red XOR y como un tal, un nodo puede expresar la cercanía o responsabilidad repecto a cualquier otro nodo o elemento en la red, si este nodo se encuentra lo suficientemente próximo. En este resumen, la frase ** ** NAE (Net Address Element) se utiliza para referenciar a cualquier cosa con una dirección de red incluyendo datos.
 
 Los vaults cuentan con el [MaidSafe-Routing](https://github.com/maidsafe/MaidSafe-Routing/wiki) para calcular las responsabilidades sobre los NAE a través de [llamdas API](https://github.com/maidsafe/MaidSafe-Routing/blob/master/include/maidsafe/routing/routing_api.h) como por ejemplo
 ```C++
@@ -31,13 +31,13 @@ La rotación, la duplicación de datos y garantizar que todos los miembros de un
 * =>>>> representa un mensaje de grupo (con retorno)
 * => representa un mensaje directo (con retorno)
 
-### Maidsafe Identities
-The MaidSafe Network consists of many data types as well as many identity types. These identities are described in [MaidSafe-Passport](https://github.com/maidsafe/MaidSafe-Passport/wiki). The personas are particularly focussed on 4 of these identities and ensures the appropriate entities satisfy the requirements enforced by these identities.
+### Identidades Maidsafe
+La red MaidSafe consiste en muchos tipos de datos así como muchos tipos de identidad. Estas identidades se describen en [MaidSafe-Passport](https://github.com/maidsafe/MaidSafe-Passport/wiki). Las "Personas" están particularmente enfocados en 4 de estas identidades y asegura que las entidades correspondientes cumplen los requisitos impuestos por estas identidades.
 
-* MAID (MaidSafe Anonymous ID) - The client identity to manipulate non structured data. A client can have one of these.
-* PMID (Proxy Maidsafe ID) - The client identity to safely store non structured data. A client can have many of these.
-* MPID (Maidsafe Public ID)- The client identity to allow public id's (public network names, such as a persons name or nickname) to communicate securely. A client can have many of these.
-* MSID (Maidsafe Share ID) - The client identity to manager groups of MPID's to privately share data (structured and non structured). A client can have many of these. This type of identity has no NAE holder for security purposes.
+* MAID (MaidSafe Anonymous ID) - La identidad cliente para manipular datos no estructurados. Un cliente solo puede tener una.
+* PMID (Proxy Maidsafe ID) - La identidad cliente para guardar de forma segura datos no estructurados. Un cliente puede tener varios.
+* MPID (Maidsafe Public ID)- la identidad cliente que permite id públicas (nombre públicos como nombres de persona o alias) para comunicarse de forma segura. Un cliente puede tener varios de estas.
+* MSID (Maidsafe Share ID) - la identidad cliente para gestionar grupos de MPID que comparten datos privados (structurados y no estructurados). Un cliente puede tener varios de estas. Este tipo de identidad no tiene soporte NAE por motivos de seguridad.
 
 ### Vault "Personas"
 Las "personas" empleadas por un Vault de MaidSafe entran en dos categorias distintas, a saber, Data Management y Node Management. Estas categorias define las acciones, la agrupación de los nodos y su conocimiento de los alrededores y mensajes.
