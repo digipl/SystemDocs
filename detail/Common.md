@@ -1,11 +1,11 @@
 #Descripción general libreria Common
 
-La librería Maidsafe-Common proporciona muchos componentes que son ampliamente utilizados por otras bibliotecas MaidSafe. Se recomienda encarecidamente el uso de estos componentes ya que están bien probados y evolucionarán con el tiempo para aumentar su eficiencia y eficacia.
+La librería Maidsafe-Common proporciona muchos componentes que son ampliamente utilizados por otras librerías MaidSafe. Se recomienda encarecidamente el uso de estos componentes ya que están bien probados y evolucionarán con el tiempo para aumentar su eficiencia y eficacia.
 
 Generalmente, los componentes pueden dividirse en los siguientes grupos:
 
 _**Ayudas a la concurrencia**_
-* [Active-Object](https://github.com/maidsafe/MaidSafe-Common/wiki/Active-Object) - Una implementación del [Active Object Design Pattern](http://en.wikipedia.org/wiki/Active_object). Utíl para correr operaciones en un hilo seguro.
+* [Active-Object](https://github.com/maidsafe/MaidSafe-Common/wiki/Active-Object) - Una implementación del [Active Object Design Pattern](http://en.wikipedia.org/wiki/Active_object). Útil para correr operaciones en un hilo seguro.
 * [Asio-Service](https://github.com/maidsafe/MaidSafe-Common/wiki/Asio-Service) - Ayudantes para operaciones asíncronas y temporizadores basado en [Boost ASIO](http://www.boost.org/doc/libs/release/doc/html/boost_asio.html).
 * [Safe-Queue](https://github.com/maidsafe/MaidSafe-Common/wiki/Safe-Queue) - Cola interna sincronizada (con cerradura) basada en [deque](http://en.cppreference.com/w/cpp/container/deque). Por favor, considere mejor la estructura [boost lock free](http://www.boost.org/doc/libs/release/doc/html/lockfree.html). Este contenedor esta considerado obsoleto.
 
@@ -25,7 +25,7 @@ Su interfaz está disponible en los siguientes archivos:
 
 * [permanent_store.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/permanent_store.h) - Una clase de almacenamiento persistente usando el sistema de ficheros como medio de almacenaje.
 * [data_buffer.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/data_buffer.h) - Un buffer FIFO que utiliza una combinación de almacenamiento basado en disco y de almacenamiento basado en memoria. Está diseñado para permitir lectura/escritura rápida en memoria mientras un subproceso de fondo copia los datos en la parte del disco.
-* [data_store.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/data_store.h) - Una clase de almacenamiento basado en directivas.  Se suele usar concurrentemente junto a [DataBuffer](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/data_buffer.h) como directiva.
+* [data_store.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/data_store.h) - Una clase de almacenamiento basado en directivas. Se suele usar concurrentemente junto a [DataBuffer](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/data_buffer.h) como directiva.
 * [memory_buffer.h](https://github.com/maidsafe/MaidSafe-Common/blob/master/include/maidsafe/common/data_stores/memory_buffer.h) - Una clase de almacenamiento de memoria interna usando [`boost::circular_buffer`][boost_circular_buffer] para proporcionar un pequeño y rápido almacenamiento FIFO para los datos no persistentes.
 
 _**Tipos de datos**_
