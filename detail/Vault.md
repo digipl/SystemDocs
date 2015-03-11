@@ -36,15 +36,15 @@ La red MaidSafe consiste en muchos tipos de datos así como muchos tipos de iden
 
 * MAID (MaidSafe Anonymous ID) - La identidad cliente para manipular datos no estructurados. Un cliente solo puede tener una.
 * PMID (Proxy Maidsafe ID) - La identidad cliente para guardar de forma segura datos no estructurados. Un cliente puede tener varios.
-* MPID (Maidsafe Public ID)- la identidad cliente que permite id públicas (nombre públicos como nombres de persona o alias) para comunicarse de forma segura. Un cliente puede tener varios de estas.
-* MSID (Maidsafe Share ID) - la identidad cliente para gestionar grupos de MPID que comparten datos privados (structurados y no estructurados). Un cliente puede tener varios de estas. Este tipo de identidad no tiene soporte NAE por motivos de seguridad.
+* MPID (Maidsafe Public ID)- La identidad cliente que permite id públicas (nombre públicos como nombres de persona o alias) para comunicarse de forma segura. Un cliente puede tener varios de estas.
+* MSID (Maidsafe Share ID) - La identidad cliente para gestionar grupos de MPID que comparten datos privados (structurados y no estructurados). Un cliente puede tener varios de estas. Este tipo de identidad no tiene soporte NAE por motivos de seguridad.
 
 ### Vault "Personas"
 Las "personas" empleadas por un Vault de MaidSafe entran en dos categorias distintas, a saber, Data Management y Node Management. Estas categorias define las acciones, la agrupación de los nodos y su conocimiento de los alrededores y mensajes.
 * Data Management nodes son responsables de datos NAE específicos, por lo general punteros a los datos.
-* Node Management personas son responsables por una entidad "persona" (nodo) y gestiona las acciones y peticiones de dicha entidad.
+* Node Management "Personas" son responsables por una entidad "Persona" (nodo) y gestiona las acciones y peticiones de dicha entidad.
 
-Los mensajes entrantes son [demultiplexed](https://github.com/maidsafe/MaidSafe-Vault/blob/master/src/maidsafe/vault/demultiplexer.h) para identificar a la persona y el tipo de dato que se envía. Los mensajes son dirigidos a esa persona.
+Los mensajes entrantes son [demultiplexados](https://github.com/maidsafe/MaidSafe-Vault/blob/master/src/maidsafe/vault/demultiplexer.h) para identificar a la persona y el tipo de dato que se envía. Los mensajes son dirigidos a esa persona.
 
 # Gestión de datos Generalizado
 ___
@@ -136,13 +136,13 @@ Usa un único ManagerDb
 * `Delete<Data>` este mensaje es recibido por un grupo de MaidManagers group (de K) y se acumula. Se comprueba la base de datos para ver si esa clave existe. Si existe, el contador decrece. Cuando el contador llega a cero (si alguna vez lo hace) entonces un Delete<data>(key) es enviado a todos los PmidManagers para borrar los datos.
 * * | **MaidManager** ->>>> | [Ac, Fw] **DataManager** [So, Sy]->>>>|
 
-* `Get<Data>` este mensake no se acumula, solo se envía. Este mensaje puede venir de cualquier "Persona", aunque no debe llegar a este personaje muy frecuentemente debido al almacenamiento en caché. Si este mensaje no llegue aquí entonces el DataManager envía un GET <Datos> directamente a un PmidNode y recupera los datos, enviando de nuevo a través de la reply_functor enviada por [routing](https://github.com/maidsafe/MaidSafe-Routing/wiki).
+* `Get<Data>` este mensaje no se acumula, solo se envía. Este mensaje puede venir de cualquier "Persona", aunque no debe llegar a este personaje muy frecuentemente debido al almacenamiento en caché. Si este mensaje no llegue aquí entonces el DataManager envía un GET <Datos> directamente a un PmidNode y recupera los datos, enviando de nuevo a través de la reply_functor enviada por [routing](https://github.com/maidsafe/MaidSafe-Routing/wiki).
 * * |  _MaidNode_ ->>>> | [Ac, Fw] **DataManager** | (firewall)
 * `Node Status Change`
 | **PmidManager** ->|[Ac, Fw] **DataManager** [So, Sy]->>>> |
 
 
-### Mensakes salientes
+### Mensajes salientes
 * `Put<Data>` Cuando un elemento de datos se almacena por primera vez o una DataManager requiere añadir otro PmidNode para almacenar datos (debido a que el PmidNodes falla, se desconecta o pierde datos de otra manera) se realiza esta llamada NFS para almacenar los datos.
 * * | **DataManager** [So, Sy, Uf]->>>> | **PmidManager** |
 
@@ -224,7 +224,7 @@ Usa una AccountDb
 * * | **MaidManager** [So] =>>>> | **PmidNode** |
 
 ### Pmid Manager<a id="PmidManager"></a>
-La función PAH (Pmid Account Holder) gestiona al Pmid client. Esto significa asegurar que el cliente tiene una cuenta y un registro exacto de los elementos de datos realizada y ninguna perdida (versión inicial de rango).
+La función PAH (Pmid Account Holder) gestiona al Pmid client. Esto significa asegurar que el cliente tiene una cuenta y un registro exacto de los elementos de datos realizada y ninguna pérdida (versión inicial de rango).
 
 ### Estructura del contenedor
 
@@ -244,7 +244,7 @@ Una una AccountDb
 
 * `Put<Data>` Guarda datos en PmidNode y actualiza el contador de almacenaje para ese PmidNode
 * * | **DataManager** =>>>> | [Ac, Fw] **PmidManager** |
-* `Delete<Data>` Manda un borrado a PmidNode and eleimina el contador de almacenaje de ese Pmidnode
+* `Delete<Data>` Manda un borrado a PmidNode and elimina el contador de almacenaje de ese Pmidnode
 * * | **DataManager** ->>>> | [Ac, Fw] **PmidManager** |
 * `Get<Data>` Devuelve dato o error
 * * | **DataManager** =>>>> | [Ac(1), Fw] **PmidManager** |
@@ -362,9 +362,9 @@ Esta base de datos solo debe guardar mensajes mientras _MpidNode_ esté off-line
 
 La red está en constante flujo, con nodos apareciendo y desapareciendo continuamente. Esto fuerza a un mecanismo de cambio que pueda reconocer que nodos son responsable de que en tiempo real y reconocer eventos de rotación cerca de un nodo. Usando [MaidSafe-Routing](https://github.com/maidsafe/MaidSafe-Routing/wiki) la red puede detectar cambios en los nodos en un pequeño espacio de tiempo. El Routing tambien provee de un mecanismo que garantiza con gran precisión que nodos son responsables de que NAE (incluyendo el nodo peticionario de la red).
 
-Para resolver un elemento de datos, ya sea un `transfer` de cuenta o `action` sin resolver, el nodo requiere de un acuerdo de una mayoría de nodos cercanos al elemento. Como puede haber varios eventos de rotación durante una transferencia de estos datos, se requiere que el nodo maneje, por si mismo, estos eventos multiples de rotación. Para hacerlo, con cada evento de rotación, el nuevo nodo y los nodos antiguos verifican, mediante la comprobación, si el nodo antiguo habría dado un elemento de datos y reemplazan este node_id con la nueva ID del nodo. Si el nuevo nodo no contiene el elemento de datos pero debería (es decir, el nuevo nodo habría sido responsable de un elemento sin resolver), entonces el nuevo node_id se añade como si hubiera enviado los datos. Para hacer esto un poco más simple, todos los datos sincronizan al nodo añadido como habiendo "visto" el elemento actual, esto ayuda a conseguir el número de mayoría requerida. Cuando un nodo se agrega a los datos no resueltos de esta manera, se agrega al final del contenedor. Esto evitará que el nodo envie este elemento en un mensaje de sincronización.
+Para resolver un elemento de datos, ya sea un `transfer` de cuenta o `action` sin resolver, el nodo requiere de un acuerdo de una mayoría de nodos cercanos al elemento. Como puede haber varios eventos de rotación durante una transferencia de estos datos, se requiere que el nodo maneje, por si mismo, estos eventos multiples de rotación. Para hacerlo, con cada evento de rotación, el nuevo nodo y los nodos antiguos verifican, mediante la comprobación, si el nodo antiguo habría dado un elemento de datos y reemplazan este node_id con la nueva ID del nodo. Si el nuevo nodo no contiene el elemento de datos pero debería (es decir, el nuevo nodo habría sido responsable de un elemento sin resolver), entonces el nuevo node_id se añade como si hubiera enviado los datos. Para hacer esto un poco más simple, todos los datos sincronizan al nodo añadido como habiendo "visto" el elemento actual, esto ayuda a conseguir el número de mayoría requerida. Cuando un nodo se agrega a los datos no resueltos de esta manera, se agrega al final del contenedor. Esto evitará que el nodo envíe este elemento en un mensaje de sincronización.
 
-Cuando un nodo envía un mensaje de sincronización envía un identificador único y su propia ID junto con los datos sin resolver. Cada nodo de recepción crea un contenedor de la node_id y entry_id junto con los datos sin resolver. Cuando el tamaño de este recipiente es 0,5 * tamaño de los nodos cercanos +1, entonces los datos están resueltos y se escriben en el almacén de datos.
+Cuando un nodo envía un mensaje de sincronización, envía un identificador único y su propia ID junto con los datos sin resolver. Cada nodo de recepción crea un contenedor de la node_id y entry_id junto con los datos sin resolver. Cuando el tamaño de este recipiente es 0,5 * tamaño de los nodos cercanos +1, entonces los datos están resueltos y se escriben en el almacén de datos.
 
 Hay dos tipos de datos que requieren datos acumulativos (de un grupo) para resolver:
 
@@ -392,7 +392,7 @@ Cuando un nuevo nodo entra en un grupo, envía un mensajes de transferencia de c
 
 El registro de transferencia la cuenta es una entrada de una base de datos, requiere de un acuerdo para luego escribir directamente en la base de datos.
 
-Además, se proporcionan datos sin resolver a este nodo y otra vez este nodo añade su propia Id a estos datos, sin embargo, no se sincroniza estos datos de nuevo ya que los nodos del grupo cercano ya se han ocupado de esto, ya que recogen este nuevo nodo el evento de rotación. Los datos no resueltos ahora se deben resolver de acuerdo con el proceso anterior.
+Además, se proporcionan datos sin resolver a este nodo y otra vez este nodo añade su propia Id a estos datos, sin embargo, no se sincroniza estos datos de nuevo ya que los nodos del grupo cercano ya se han ocupado de esto, ya que recogen este nuevo nodo en el evento de rotación. Los datos no resueltos ahora se deben resolver de acuerdo con el proceso anterior.
 
 
 ### Acumulador
@@ -432,7 +432,7 @@ El API a la red del Vault se hace via Nfs cuyas políticas se pueden encontar en
 
 ### Ranking
 
-Los nodos con mal comportamiento tienen que ser reconocido por la red y actuar sobre ellos, de la misma manera aquellos serviciales y con buen comportamiento tambien deben tener un mayor respeto de los otros nodos. Para lograr esto se emplea un mecanismo de ranking. Este mecanismo de rankind, de los Vaults de red, maneja los nodos que pierden datos u otra forma de corrupción. Esto puede ser por muchas razones, como:
+Los nodos con mal comportamiento tienen que ser reconocido por la red y actuar sobre ellos, de la misma manera aquellos serviciales y con buen comportamiento tambien deben tener un mayor respeto de los otros nodos. Para lograr esto se emplea un mecanismo de ranking. Este mecanismo de ranking, de los Vaults de red, maneja los nodos que pierden datos u otra forma de corrupción. Esto puede ser por muchas razones, como:
 
 * Pobre ancho de banda
 * Cpu lenta
