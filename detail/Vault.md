@@ -129,7 +129,7 @@ Usa un único ManagerDb
 * Key : data key + type
 * Value : DataManagerValue object (serialised)
 
-### Entrada de mensajes
+### Mensajes entrantes
 * `Put<Data>` Este mensaje es recibido por un grupo de MaidManager (de K) y se acumula. Se comprueba la base de datos para ver si esa clave existe. Si el registro no existe, entonces cada uno de los Data Managers de este grupo, cercanos al NAE que se quiere guardar, selecciona un nodo conectado como PmidNode para guardarlo (si el mensaje tiene una pista del Data Holder entonces el más cercano de los gestores de datos de este NAE intenta almacenarlo allí). Para guardar un chunk, un mensaje `PUT<Data>`(key, content) se manda al PmidManagers responsable del PmidNode seleccionado.
 * * | **MaidManager** ->>>> | [Ac, Fw]**DataManager**[So, Sy]->>>>|
 
@@ -142,7 +142,7 @@ Usa un único ManagerDb
 | **PmidManager** ->|[Ac, Fw] **DataManager** [So, Sy]->>>> |
 
 
-### Salida de mensajes
+### Mensakes salientes
 * `Put<Data>` Cuando un elemento de datos se almacena por primera vez o una DataManager requiere añadir otro PmidNode para almacenar datos (debido a que el PmidNodes falla, se desconecta o pierde datos de otra manera) se realiza esta llamada NFS para almacenar los datos.
 * * | **DataManager** [So, Sy, Uf]->>>> | **PmidManager** |
 
@@ -160,14 +160,14 @@ En respuesta a un evento de rotación, (detectado como un Node Status Change) el
 ### Version Manager<a id="versionmanager"></a>
 The **VersionManager**, gestiona datos versionados. Esto, actualmente, incluye datos que puede ser definidos en [StructuredDataVersions](https://github.com/maidsafe/MaidSafe-Private/blob/master/include/maidsafe/data_types/structured_data_versions.h). Directorios de datos privados, directorios privados y directorios compartidos públicos se manejan actualmente en esta estructura. Esta "Persona" no se limita a las versiones requeridas y por consiguiente se puede utilizar para datos estructurados de muchos tipos con facilidad.
 
-### estructura del contenedor
+### Estructura del contenedor
 
 Usa un único ManagerDb
 
 * Key : data key + type + Entity ID
-* Value : StructuredDataVersions object (serialised)
+* Value : Objeto StructuredDataVersions (serializado)
 
-### Messages In
+### Mensajes entrantes
 * `PutVersion<Data>`
 * * | **MaidManager** =>>>> | [Ac, Fw] **VersionManager** [Sy, Uf] |
 * `DeleteBranchTillFork<Data>`
@@ -177,7 +177,7 @@ Usa un único ManagerDb
 * `GetBranch<Data>`
 * * |  _MaidNode_ =>>>> |[Ac, Fw] **VersionManager** |
 
-### Mensaje de salida
+### Mensajes salientes
  [None] Todas las entradas son devoluciones de llamada
 
 ### Node Management "Personas"
@@ -197,7 +197,7 @@ Usa una AccountDb
 * Tamaño total de datos almacenados
 * espacio disponible
 
-### Entrada de mensajes
+### Mensajes entrantes
 * `PUT<Data>` Un cliente puede almacenar un paquete MAID anónimo en la red que crea la cuenta. Entonces el MaidNode debe registrar un PmidNode y lo hace con un paquete de inscripción del Vault, que está firmado por el MAID con las claves privadas PMID (las cuales el cliente debe tener acceso). El MaidManager individual consultará el grupo PmidManager en el arranque, en un evento de rotación y cuando el cliente está bajo de recursos y no tiene suficiente espacio que garantizar al PmidNode. En caso de éxito, la MaidNode puede enviar los datos a la DataManager relevante y recuperar el costo a pagar. En cuanto se page el costo, la intención es que la entrada en la base de datos se sincronice con los otros MaidManagers. El MergePolicy en este caso se sumará la clave de la base de datos y/o incrementará el número de copias y el campo de coste total.
 
 * * |  _MaidNode_ ->>>> | [Ac, Fw]**MaidManager** [So]|
@@ -211,7 +211,7 @@ Usa una AccountDb
 * `Register/Unregister vault`
 * * |  _MaidNode_ =>>>> | [Ac, Fw] **MaidManager** [So] |
 
-### Messages Out
+### Mensajes salientes
 * `PUT<Data>`
 * * | **MaidManager** [So] ->>>> | **DataManager** |
 * `Delete<Data>`
@@ -233,14 +233,14 @@ Una una AccountDb
 * Key : Data key
 * Value : Size (int32)
 
-### Header Structure
+### Estructura de cabecera
 
 * Tamaño total de datos almacenados
 * Tamaño total de datos perdidos
 * Espacio disponible
 
 
-### Entrada de mensajes
+### Mensajes entrantes
 
 * `Put<Data>` Guarda datos en PmidNode y actualiza el contador de almacenaje para ese PmidNode
 * * | **DataManager** =>>>> | [Ac, Fw] **PmidManager** |
@@ -252,7 +252,7 @@ Una una AccountDb
 * `GetPMIDHealth`
 * * | **MaidManager** =>>>> | [ **PmidManager** | (no Fw or Ac, devuelve cada llamada)
 * 
-### Salida de mensajes
+### Mensajes salientes
 
 * `SendAccount` Se envía a _PmidNode_ cuando se une al grupo. Esto se detectará por el **PmidManager** a la recepción de un evento de rotación. 
 La cuenta en este caso son todos los datos que _PmidNode_ debe haber guardado y no incluirá ningún dato borrado o perdido que ocurra mientras el _PmidNode_ esté off line.
