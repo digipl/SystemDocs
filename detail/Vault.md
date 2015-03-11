@@ -261,23 +261,23 @@ La cuenta en este caso son todos los datos que _PmidNode_ debe haber guardado y 
 
 ### Mpid Manager<a id="mpidmanager"></a>
 
-The MPAH (Mpid Account Holder) function is to manage the Mpid client. This means ensuring the client has an account and a blacklist or whitelist if required by the client. This persona will also hold messages destined for an Mpid client who is currently off-line.
+La función MPAH (Mpid Account Holder) gestiona el cliente Mpid. Eso significa asegurar que que cliente tiene una cuenta y listas blancas o negras si son requeridas. Esta "Persona" tambien guarda mensajes destinados a un cliente Mpid que esté off-line.
 
-### Container Structure
-Uses the AccountDb
+### Estructura del contenedor
+Usa la AccountDb
 
 * Key : MpidName + SenderMpidName + messageID
 * Value : message contents
 
-This database should only hold records while _MpidNode_ is off-line.
+Esta base de datos solo debe guardar mensajes mientras _MpidNode_ esté off-line.
 
-### Header Structure
+### Estructura de cabecera
 
-* whitelist
-* blacklist
+* Lista blanca
+* Lista negra
 
 
-### Messages In
+### Mensajes entrantes
 
 * `Message`
 * * | _MpidNode_ =>>>> | this**MpidManager** [So]|
@@ -295,15 +295,15 @@ This database should only hold records while _MpidNode_ is off-line.
 * `BlackList`
 * * | _MpidNode_ =>>>> | this**MpidManager** [Sy]|(reply with blacklist)
 
-### Messages Out
-* `Message` On receipt of a message the lists are checked and the message is sent on. If the node is off-line then the message is stored locally, on receipt of a churn event the off-line list is checked for messages and these are sent to the client.
-* * | this**MpidManager** [So] -> | _MpidNode_ | (may come from database)
-* * | this**MpidManager** [So] =>>>> | **MpidManager** [Sy]| (live message from remote _MpidNode_)
+### Mensajes salientes
+* `Message` A la recepción de un mensaje la lista es chequeada y el mensaje enviado. Si el nodo está off-line entonces el mensaje se guarda localmente, cuando se recibe un evento de rotación la lista off-line se chequea y se envía al cliente.
+* * | this**MpidManager** [So] -> | _MpidNode_ | (puede venir de la base de datos)
+* * | this**MpidManager** [So] =>>>> | **MpidManager** [Sy]| (mensaje actual de un _MpidNode_)
 
-## Entity personas
+## "Personas" Entity
 ### Pmid Node<a id="pmidnode"></a>
 
-### Messages In
+### Mensajes entrantes
 
 * `Put<Data>`
 * *   | **PmidManager** -> |[Ac, Fw] **PmidNode**
@@ -311,23 +311,23 @@ This database should only hold records while _MpidNode_ is off-line.
 * *   | **PmidManager** -> |[Ac, Fw] **PmidNode**
 * `Get<Data>`
 * *   | **DataManager** => |[Ac, Fw] **PmidNode**
-* `SendAccount` This is sent to a _PmidNode_ when it rejoins the group. This will be detected by the **PmidManager** on reciept of a churn event. The account in this case is all data the _PmidNode_ should have stored and will not include any deleted or lost data that occurred whilst the _PmidNode_ was off line.
+* `SendAccount` Esto se envía a _PmidNode_ cuando se une al grupo. Esto se detecta por el **PmidManager** a la recepción de un evento de rotación. La cuenta, en este caso, son todos los datos que _PmidNode_ debe haber guardado y no incluirán ningún dato borrado o perdido ocurrido mientras _PmidNode_ estaba off line.
 * *   | **PmidManager** -> |[Ac, Fw] **PmidNode**
 
 
-### Messages Out
+### Mensajes salientes
 
 [none]
 
 ### Maid Node <a id="maidnode"></a>
 
-### Messages In
+### Mensajes entrantes
 
 [none]
 
-### Messages Out
+### Mensajes salientes
 
-* `Put<Data>` Returns error_code and PmidHealth
+* `Put<Data>` Devuelve error_code y PmidHealth
 * * |  _MaidNode_ [So]=>>>>| **MaidManager** |
 * `Delete<Data>` Returns error_code
 * * |  _MaidNode_ [So]=>>>>| **MaidManager** |
@@ -337,7 +337,7 @@ This database should only hold records while _MpidNode_ is off-line.
 
 ### Mpid Node<a id="mpidnode"></a>
 
-### Messages In
+### Mensajes entrantes
 
 * `Message`
 * * | _MpidNode_ =>>>> | this**MpidManager** [So]|
@@ -347,98 +347,98 @@ This database should only hold records while _MpidNode_ is off-line.
 * `RemoveFromWhiteList`
 * * | _MpidNode_ ->>>> | this**MpidManager** [Sy]|
 * `WhiteList`
-* * | _MpidNode_ =>>>> | this**MpidManager** [Sy]|(reply with whitelist)
+* * | _MpidNode_ =>>>> | this**MpidManager** [Sy]|(devuelve la lista blanca)
 * `AddToBlackList`
 * * | _MpidNode_ ->>>> | this**MpidManager** [Sy]|
 * `RemoveFromBlackList`
 * * | _MpidNode_ ->>>> | this**MpidManager** [Sy]|
 * `BlackList`
-* * | _MpidNode_ =>>>> | this**MpidManager** [Sy]|(reply with blacklist)
+* * | _MpidNode_ =>>>> | this**MpidManager** [Sy]|(devuelve la lista negra)
 
-### Messages Out
+### Mensakes salientes
 [none]
 
-# <a id="sync"></a>Synchronisation
+# <a id="sync"></a>Sincronización
 
-The network is in a constant state of flux, with nodes appearing and disappearing continually. This forces a state change mechanism that can recognise which nodes are responsible for what data in real time and recognising churn events near a node. Using [MaidSafe-Routing](https://github.com/maidsafe/MaidSafe-Routing/wiki) the network can detect node changes in a very short time period. Routing also provides a mechanism that can guarantee with great precision which nodes are responsible for which NAE (including the node querying the network).
+La red está en constante flujo, con nodos apareciendo y desapareciendo continuamente. Esto fuerza a un mecanismo de cambio que pueda reconocer que nodos son responsable de que en tiempo real y reconocer eventos de rotación cerca de un nodo. Usando [MaidSafe-Routing](https://github.com/maidsafe/MaidSafe-Routing/wiki) la red puede detectar cambios en los nodos en un pequeño espacio de tiempo. El Routing tambien provee de un mecanismo que garantiza con gran precisión que nodos son responsables de que NAE (incluyendo el nodo peticionario de la red).
 
-To resolve a data element, whether an `account transfer` or `unresolved action` then the node requires a majority of close nodes to agree on the element. As there can be multiple churn events during a transfer of such data, the node requires to handle this multiple churn event itself. To do this with each churn event the new node and old nodes are handled by checking if the old node had given a data element and replace this node_id with the new node id. If the data element did not contain the new node but should have (i.e. the new node would have been responsible for an unresolved element) then the new node_id is added as having sent the data. To make this a little simpler, all synchronise data has the current node added as having 'seen' the element, this helps with the majority size required. When a node adds itself to unresolved data in this manner it adds itself to the end of the container. This will prevent the node sending this element in a synchronise message.
+Para resolver un elemento de datos, ya sea un `transfer` de cuenta o `action` sin resolver, el nodo requiere de un acuerdo de una mayoría de nodos cercanos al elemento. Como puede haber varios eventos de rotación durante una transferencia de estos datos, se requiere que el nodo maneje, por si mismo, estos eventos multiples de rotación. Para hacerlo, con cada evento de rotación, el nuevo nodo y los nodos antiguos verifican, mediante la comprobación, si el nodo antiguo habría dado un elemento de datos y reemplazan este node_id con la nueva ID del nodo. Si el nuevo nodo no contiene el elemento de datos pero debería (es decir, el nuevo nodo habría sido responsable de un elemento sin resolver), entonces el nuevo node_id se añade como si hubiera enviado los datos. Para hacer esto un poco más simple, todos los datos sincronizan al nodo añadido como habiendo "visto" el elemento actual, esto ayuda a conseguir el número de mayoría requerida. Cuando un nodo se agrega a los datos no resueltos de esta manera, se agrega al final del contenedor. Esto evitará que el nodo envie este elemento en un mensaje de sincronización.
 
-When a node sends a synchronise message it sends a unique identifier and it's own id with the unresolved data. Each receiving node creates a container of the node_id and entry_id along with the unresolved data. When the size of this container is 0.5 * the close node size +1 then the data is resolved and written to the data store.
+Cuando un nodo envía un mensaje de sincronización envía un identificador único y su propia ID junto con los datos sin resolver. Cada nodo de recepción crea un contenedor de la node_id y entry_id junto con los datos sin resolver. Cuando el tamaño de este recipiente es 0,5 * tamaño de los nodos cercanos +1, entonces los datos están resueltos y se escriben en el almacén de datos.
 
-There are two types of data which require cumulative data (from a group) to resolve:
+Hay dos tipos de datos que requieren datos acumulativos (de un grupo) para resolver:
 
-* `synchronise` This is data that has not yet been synchronised (unresolved), but this node has 'seen' itself. This data contains the action required to be taken with the attributes to take that action, this can be thought of as a function (message type) and parameters to be applied.
-* `account transfer`, this type of data has been resolved and stored by the node. It is sent as the database value to be stored.
+* `synchronise` Estos son datos que todavía no se ha sincronizado (sin resolver), pero este nodo se ha "visto" a sí mismo. Estos datos contienen la acción requerida para ser tomado con los atributos para tomar esa acción, esto puede ser pensado como una función (tipo de mensaje) y los parámetros que se aplicarán.
+* `account transfer`, este tipo de datos ha sido resuelto y almacenada por el nodo. Se envía como el valor de base de datos para ser almacenado.
 
-##Synchronise to Validate Actions
+##Sincronizar para validar acciones
 
-Synchronise is used to ensure all nodes in the same close group responsible for a NAE agree on the data related to that NAE prior to storing (or performing) that related data. Nodes achieve this by creating a container of data to be resolved. For such data an unresolved entry may be added to the container when
-* the message is received from previous persona
-* an unresolved entry is received from similar persona (in a group) for a target the node is responsible for
+El sincronizar se utiliza para asegurar que todos los nodos cercanos del mismo grupo responsable de una NAE llegan a un acuerdo sobre los datos relativos a este NAE antes de guardar (o realizar) estos datos. Los nodos logran esto mediante la creación de un contenedor de datos a resolver. Para esos datos una entrada sin resolver se puede añadir al contenedor cuando
+* el mensaje se recibe de la "Persona" previa
+* una entrada sin resolver se recibe de una "Persona similar" (en un grupo) para el que un nodo es responsable objetivo
 
-The unresolved entry associated with data becomes resolved once the number of unresolved entries received for that data (from previous and similar personas) reaches an expected number. A node having resolved an entry may take part in sending to other node(s) deemed responsible for the data, ONLY if the node has received the data from a previous persona.
+Las entradas no resueltas, asociados con los datos, se resuelven una vez que el número de entradas no resueltos recibidas por ese dato (de personajes anteriores y similares) alcanza un número esperado. Un nodo que haya resuelto una entrada podrán participar en el envío a otro(s) nodo(s) y considerado responsable de los datos, SÓLO si el nodo ha recibido los datos de una persona anterior.
 
-Using routing to confirm responsibility a **manager node** will check all data held to ensure it is still responsible for the data (via the routing api). The node then checks which data the new node should have (if any). The data is sent to the new node as `unresolved data`.
-
-
-This process continues and each time the data is sent a counter is incremented, when this counter reaches a parameter (initially 100) the data is deemed non-resolvable and removed. When data does resolve it is not removed from the list as there could be further nodes to be added to the peer container component (we resolve on a majority and expect a unanimous number of nodes to be added and do not wish to create a new unresolved entry). When there are a complete set of peers who have sent the data (unanimous agreement) then the unresolved entry is removed.
-
-### Account Transfer
-
-Manager personas storing the information for nodes/data usually deliver their functionality based on cumulative decision making, where a group of close nodes co-operate to realise the desired functionality. Obviously, the correct decisions to a large extent depend on how well the group members are synchronised. The dynamic nature of the network, where a node in a group may leave or join, necessitates the demand for implementing efficient mechanisms to ensure each member of any group is synchronised with other group members and hold the most up to date information for any node/data it is responsible for.
-
-As a new node enters a group, it is sent account transfer messages, it's own address is added to an unresolved account transfer record (it is the close group -1 node) to ensure the group size calculations do not change although the group size cannot equal the system group size as this node is replacing a now missing node from that group.
-
-The account transfer record is a database entry and requires agreement and then writing direct to the database.
-
-In addition unresolved data is provided to this node and again this node add's it's own id to this data, however, it does not synchronise this data back to the close group as all nodes have taken care of this as they picked up this new node in the churn event. The unresolved data should now resolve as per the above process.
+Usando el routing para confirmar la responsabilidad a un **manager node** comprobará todos los datos mantenidos para asegurarse de que sigue siendo responsable de los datos (via el API routing). El nodo comprueba entonces los datos que el nuevo nodo debe tener (si tiene alguno). El dato se envía a un nuevo nodo como `unresolved data`.
 
 
-### Accumulator
+Este proceso continúa y cada vez que se envían los datos se incrementa un contador, cuando este contador llega a un parámetro (inicialmente 100) los datos se considera no resoluble y se retira. Cuando los datos no se resuelven no se eliminan de la lista ya que podría haber más nodos que se añaden al componente contenedor de pares (resolvemos con una mayoría y esperamos un número unánime los nodos que se agregarán y no queremos crear una nueva entrada sin resolver). Cuando hay un conjunto completo de compañeros que han enviado los datos (acuerdo unánime) a continuación, se elimina la entrada sin resolver.
 
-When receiving messages from a group of nodes, the network requires authority for the message to be validated. This is done by accumulating messages as they arrive after checking they come from a group that is responsible for sending the data (validated via routing api) and accumulating the messages until we receive at least close group -1 messages if the message comes from a **manager node** group. Messages that come from DNAE nodes accumulate on that single message. These nodes are verifiable as they are connected and will have performed an action to validate they are authorised to send that message.
+### Transferencia de cuentas
+
+Managers "personas" almacenan la información para los nodos/datos y normalmente entregan su funcionalidad basada en la acumulación en la toma de decisiones, donde un grupo de nodos cercanos cooperan para realizar la funcionalidad deseada. Obviamente, las decisiones correctas, en gran medida, dependen de lo bien que se sincronizan los miembros del grupo. La naturaleza dinámica de la red, donde un nodo de un grupo puede abandonar o unirse, requiere la implementación de mecanismos eficientes para asegurar que cada miembro de cualquier grupo se sincroniza con otros miembros del grupo y mantiene la información actualizada para cualquier nodo/datos del que es responsable.
+
+Cuando un nuevo nodo entra en un grupo, envía un mensajes de transferencia de cuenta, su propia dirección se agrega a un registro de transferencia de la cuenta sin resolver (es el grupo cercano -1 nodo) para asegurar que el calculo del tamaño del grupo no cambian aunque el tamaño del grupo no sea igual el tamaño del grupo del sistema cuando este nodo sea reemplazando por un nodo ahora ausente de ese grupo.
+
+El registro de transferencia la cuenta es una entrada de una base de datos, requiere de un acuerdo para luego escribir directamente en la base de datos.
+
+Además, se proporcionan datos sin resolver a este nodo y otra vez este nodo añade su propia Id a estos datos, sin embargo, no se sincroniza estos datos de nuevo ya que los nodos del grupo cercano ya se han ocupado de esto, ya que recogen este nuevo nodo el evento de rotación. Los datos no resueltos ahora se deben resolver de acuerdo con el proceso anterior.
+
+
+### Acumulador
+
+Cuando se reciben mensajes de un grupo de nodos, la red requiere autorización para que el mensaje sea validado. Esto se hace mediante la acumulación de mensajes a medida que llegan después de comprobar que proceden de un grupo que se encarga de enviar los datos (validado a través de la API de enrutamiento) y la acumulación de los mensajes hasta que recibamos al menos grupo cercano -1 mensajes si el mensaje proviene de un grupo **manager node**. Los mensajes que vienen de nodos DNAE se acumulan en ese único mensaje. Estos nodos son verificables ya que están conectados y se han llevado a cabo una acción para validar que están autorizados a enviar ese mensaje.
 
 ### Firewall
 
-When a message has been accumulated it is added to the firewall. This firewall will check any incoming messages and reply with the current error_code (and message if required by that message type). The error_code may be `synchronising` in cases where the accumulating node has accumulated enough messages to ensure they are valid, but cannot make a decision yet on the 'answer' to the message (it may require to synchronise or even send a message to another persona to retrieve further info).
+Cuando un mensaje se acumula se añade al firewall. Este firewall comprobará todos los mensajes entrantes y responderá con el actual error_code (y el mensaje si es requerido por ese tipo de mensajes). El error_code puede ser `synchronising` en los casos en que el nodo ha acumulado suficientes mensajes para asegurarse de que son válidos, pero no puede tomar una decisión todavía sobre la" respuesta "al mensaje (que puede requerir sincronizar o incluso enviar un mensaje a otro persona para recuperar más información).
 
-### Caching
+### Almacenamiento en Caché
 
-Caching is a very important facet of distributed networks. Cache data is likely to be stored in memory as opposed to disk. Currently two caching mechanisms have been defined that vaults aimed to stick with. The following sections present a general discussion, for the detailed implementation description, please have a look at [Caching](https://github.com/maidsafe/MaidSafe-Vault/wiki/Caching) .
+El almacenamiento en caché es una faceta muy importante de las redes distribuidas. Los datos de la caché, probablemente, se almacenen en la memoria en lugar de disco. Actualmente hay definidos, en los Vaults, dos mecanismos de mantenimiento de caché. Las siguientes secciones presentan una discusión general, para la descripción detallada de aplicación, por favor, eche un vistazo a [Caching](https://github.com/maidsafe/MaidSafe-Vault/wiki/Caching) .
 
-### Opportunistic Caching
+### Almacenamiento en Caché oportunista
 
-Opportunistic caching is always a first in first out (FIFO) mechanism. In response to a `Get` each node in the chain will add any cacheable data (such as self checking or immutable) to it's FIFO. This has many advantages:
+El almacenamiento en Caché oportunista es siempre un mecanismo FIFO (primero entra, primero sale). En respuesta a un `Get` cada nodo en la cadena añadirá cualquier dato cacheable a su FIFO (como autocomprobación o inmutable). Esto tiene muchas ventajas:
 
-* Multiple requests for the same data will speed up automatically.
-* Denial of service attacks become extremely difficult as the data simply surrounds the requester of that data if continually asked for.
-* Important data is faster when it's important and slows downs otherwise, making good use of network resources.
-* Close nodes can become temporary stores of data very easily, allowing many advantages to system designers.
-* If for instance a web site were located in a public share then that site would increase in speed with more viewers, this is a more logical approach than today's web sites which can run the risk of overload and crash.
+* Múltiples solicitudes de los mismos datos se acelerarán automáticamente.
+* Se hacen dificil los ataques de denegación de servicio, ya que los datos simplemente rodean al solicitante de datos si se le pregunta continuamente.
+* Los datos importantes van más rápido cuando más importante y menos cuando menos, haciendo un buen uso de los recursos de red.
+* Nodos cercanos pueden convertirse en guardianes temporales de datos muy fácilmente, lo que permite muchas ventajas a los diseñadores de sistemas.
+* Por ejemplo, un sitio web público acelerará su velocidad en relación al numero de usuarios, se trata de un enfoque más lógico que los sitios web de hoy en día que puede correr el riesgo de sobrecarga y cuelgue.
 
-### Deterministic Caching
+### Almacenamiento en Caché determinista
 
-This type of caching is not yet implemented.
+Este tipo de caché no está todavia implementado.
 
-Deterministic caching allows the network to effectively expand the number of nodes holding data and pointers to data when the data is accessed by a large number of nodes or users. This allows the network to cope with extremely popular data sets that may represent a microblogging technology that has extremely popular accounts.
+El almacenamiento en caché determinista permite que la red expanda, de manera efectiva, el número de nodos que mantienen datos y punteros a los datos cuando se accede a estos datos por un gran número de nodos o usuarios. Esto permitría a la red hacer frente a los datos extremadamente populares como los que pueden representar la tecnología de microblogging con cuentas extremadamente populares.
 
 
-In addition to this type of caching the network allows subscription lists, where identities can register to be alerted when a change happens that they wish to track, such as a microblogging site or a popular web site for news etc.
+Además de este tipo de almacenamiento en caché, la red permite las listas de suscripción, donde las identidades pueden inscribirse para recibir una alerta cuando ocurre un cambio que desean seguir, como un sitio de microblogging o un sitio web de noticias, etc.
 
-### NFS Policies
+### Políticas NFS
 
-The API to the vault network is via Nfs policies and these are found in the [nfs library](https://github.com/maidsafe/MaidSafe-Network-Filesystem).
+El API a la red del Vault se hace via Nfs cuyas políticas se pueden encontar en [nfs library](https://github.com/maidsafe/MaidSafe-Network-Filesystem).
 
 ### Ranking
 
-Misbehaving nodes require to be recognised by the network and acted on, likewise very helpful and well behaved nodes should command greater respect from other nodes. To achieve this a ranking mechanism is employed. This ranking mechanism in the vault network currently handles nodes that lose or otherwise corrupt data. This can be for many reasons such as:
+Los nodos con mal comportamiento tienen que ser reconocido por la red y actuar sobre ellos, de la misma manera aquellos serviciales y con buen comportamiento tambien deben tener un mayor respeto de los otros nodos. Para lograr esto se emplea un mecanismo de ranking. Este mecanismo de rankind, de los Vaults de red, maneja los nodos que pierden datos u otra forma de corrupción. Esto puede ser por muchas razones, como:
 
-* Poor bandwidth capability
-* Slow cpu
-* Infrequent availability (machine mostly off line for any reason)
-* Hard drive corruption
-* Hard drive being tampered with (users deleting system data)
-* And many more
+* Pobre ancho de banda
+* Cpu lenta
+* Disponibilidad infrecuente (la máquina está apagada la mayor parte del tiempo por alguna razón)
+* Corrupción del disco duro
+* Disco duro ha sido manipuladoh (el usuario ha borrado el sistema de datos)
+* Y muchos más
 
-Rather than measuring each element, which would be very expensive and complex, the network instead measures the amount of data a node can store and compares this with the data it loses. These figures together allow a calculation on the available space and it's worthiness, with a high rate of lost to stored making the vault itself less valuable.
+En lugar de medir cada elemento, lo que sería muy caro y complejo, la red mide la cantidad de datos que un nodo puede almacenar y compara esto con los datos que pierde. Estas cifras juntas permiten calcular el espacio disponible y su solvencia. Una alta tasa de perdida de almacenamiento hace que el valor del Vault disminuya.
