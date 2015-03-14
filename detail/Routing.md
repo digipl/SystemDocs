@@ -51,7 +51,7 @@ El hole punching se puede conseguir siempre y cuando los dos nodos no estén det
 
 Un nodo no-cliente es un nodo de enrutamiento completo que contribuye a la operación y mantenimiento de la red. Los nodos no-clientes son parte del DHT y son parte activa en la toma de decisiones de enrutamiento.
 Un nodo no-cliente puede :
-* Enviar solicitudes a cualquiera de los nodos no clientes
+* Enviar solicitudes a cualquier nodo no clientes
 * Enviar solicitudes a nodos cliente conectados
 * Recibir las solicitudes entrantes desde cualquier nodo de la red
 
